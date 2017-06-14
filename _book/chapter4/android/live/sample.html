@@ -480,7 +480,137 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h3 id="&#x793A;&#x4F8B;&#x4EE3;&#x7801;">&#x793A;&#x4F8B;&#x4EE3;&#x7801;</h3>
+<h4 id="&#x521B;&#x5EFA;&#x5168;&#x5C40;application">&#x521B;&#x5EFA;&#x5168;&#x5C40;Application</h4>
+<p>&#x521B;&#x5EFA;&#x5168;&#x5C40;Application&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x76EE;&#x6807;&#x5DE5;&#x7A0B;&#x5168;&#x5C40;Application&#x6587;&#x4EF6;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x5728;&#x8BE5;&#x6587;&#x4EF6;&#x5408;&#x9002;&#x7684;&#x5730;&#x65B9;&#x4F7F;&#x7528;EVSdk.init()&#x65B9;&#x6CD5;&#x6765;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5C06;&#x4E0A;&#x9762;&#x83B7;&#x53D6;&#x5230;&#x7684;APPID&#xFF0C;Access Key&#xFF0C;Secret Key&#x4F5C;&#x4E3A;&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x7684;&#x4F4D;&#x7F6E;&#x5E94;&#x8BE5;&#x662F;&#xFF1A;&#x76EE;&#x6807;&#x5DE5;&#x7A0B;&#x7528;&#x6237;&#x767B;&#x5F55;&#x6210;&#x529F;&#x540E;&#x8C03;&#x7528;&#x5168;&#x5C40;Application&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5C06;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x4F5C;&#x4E3A;EVSdk.init&#x7684;&#x53C2;&#x6570;&#x3002;&#x5982;&#x679C;&#x521D;&#x671F;&#x76EE;&#x6807;&#x5DE5;&#x7A0B;&#x6CA1;&#x6709;&#x7528;&#x6237;&#x7CFB;&#x7EDF;&#xFF0C;&#x5728;&#x5168;&#x5C40;Application&#x7684;onCreate()&#x51FD;&#x6570;&#x4E2D;&#x8C03;&#x7528;EVSdk.init()&#xFF0C;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x5373;&#x53EF;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>    @Override public void onCreate() {
+        super.onCreate();
+
+        app = this;
+
+        //&#x6253;&#x5F00;SDK&#x8BE6;&#x7EC6;&#x65E5;&#x5FD7;&#x5F00;&#x5173;
+        EVSdk.enableDebugLog();
+
+        //&#x521D;&#x59CB;&#x5316;SDK&#xFF0C;&#x4F20;&#x5165;APPID&#xFF0C;Access Key&#xFF0C;Secret Key&#xFF0C;userdata&#x7B49;&#x53C2;&#x6570;
+        EVSdk.init(app.getApplicationContext(), &quot;APPID&quot;, &quot;Access Key&quot;, &quot;Secret Key&quot;, &quot;userdata&quot;);
+    }
+</code></pre><h4 id="&#x521B;&#x5EFA;&#x63A8;&#x6D41;&#x4E3B;&#x754C;&#x9762;">&#x521B;&#x5EFA;&#x63A8;&#x6D41;&#x4E3B;&#x754C;&#x9762;</h4>
+<p>&#x53EF;&#x53C2;&#x8003;demo&#x5DE5;&#x7A0B;&#x4E2D;&#x7684;com.easyvaas.sdk.demo.RecorderActivity&#x7C7B;&#x5B8C;&#x6210;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x63A8;&#x6D41;&#x793A;&#x4F8B;</p>
+<ul>
+<li><p>&#x5728;AndroidManifest.xml&#x6587;&#x4EF6;&#x4E2D;&#x6CE8;&#x518C;Activity&#xFF0C;&#x56FA;&#x5B9A;&#x4E3A;&#x7AD6;&#x5C4F;&#x3001;&#x5168;&#x5C4F;&#x76F4;&#x64AD;</p>
+<pre><code>  &lt;activity
+      android:name=&quot;.RecorderActivity&quot;
+      android:label=&quot;@string/title_activity_recorder&quot;
+      android:screenOrientation=&quot;portrait&quot;
+      android:theme=&quot;@style/AppTheme.FullScreen&quot; &gt;
+  &lt;/activity&gt;
+</code></pre></li>
+<li><p>&#x5728;&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#x4E2D;&#x52A0;&#x5165;&#x9884;&#x89C8;View</p>
+<pre><code>&lt;android.opengl.GLSurfaceView
+      android:id=&quot;@+id/camera_preview&quot;
+      android:layout_width=&quot;match_parent&quot;
+      android:layout_height=&quot;match_parent&quot;
+      android:layout_alignParentBottom=&quot;true&quot;
+      android:layout_alignParentTop=&quot;true&quot; /&gt;
+</code></pre></li>
+<li><p>&#x521D;&#x59CB;&#x5316;CameraPreview</p>
+<pre><code>  mCameraPreviewView = (GLSurfaceView) this.findViewById(R.id.camera_preview);
+</code></pre></li>
+<li><p>&#x63A8;&#x6D41;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;</p>
+</li>
+</ul>
+<p>&#x63A8;&#x6D41;&#x53C2;&#x6570;EVStreamerParameter&#x4F7F;&#x7528;&#x4E86;Builder&#x6A21;&#x5F0F;&#xFF0C;&#x63A8;&#x6D41;&#x8FC7;&#x7A0B;&#x4E2D;&#x4E0D;&#x53EF;&#x52A8;&#x6001;&#x4FEE;&#x6539;&#x6216;&#x4E00;&#x4E9B;&#x521D;&#x59CB;&#x7684;&#x53C2;&#x6570;&#x901A;&#x8FC7;EVStreamerParameter&#x6765;&#x6307;&#x5B9A;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>    EVStreamerParameter.Builder builder = new EVStreamerParameter.Builder();
+    builder.setVideoResolution(LiveConstants.VIDEO_RESOLUTION_360P)
+            .setInitVideoBitrate(500)
+            .setAudioBitrate(32)
+            .setAudioCodec(LiveConstants.AUDIO_CODEC_AAC_LC)
+            .setUseFrontCamera(true)
+            .setIsBeautyOn(false);
+</code></pre><ul>
+<li>&#x521B;&#x5EFA;&#x63A8;&#x6D41;&#x4E8B;&#x4EF6;&#x3001;&#x9519;&#x8BEF;&#x56DE;&#x8C03;</li>
+</ul>
+<p>&#x63A8;&#x6D41;&#x8FC7;&#x7A0B;&#x4E2D;&#x51FA;&#x73B0;&#x9519;&#x8BEF;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x9519;&#x8BEF;&#x56DE;&#x8C03;&#x4E2D;&#x6355;&#x83B7;&#x76F8;&#x5173;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF0C;&#x7ED9;&#x4E88;&#x7528;&#x6237;&#x53CB;&#x597D;&#x7684;&#x63D0;&#x793A;&#x3002;&#x540C;&#x65F6;&#x4E00;&#x4E9B;&#x91CD;&#x8981;&#x7684;&#x4E8B;&#x4EF6;&#x4FE1;&#x606F;&#x4E5F;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x5408;&#x9002;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x4F8B;&#x5982;&#x6355;&#x83B7;&#x5230;StreamerConstants.EV_STREAMER_INFO_STREAM_SUCCESS&#x7684;&#x4E8B;&#x4EF6;&#xFF0C;&#x8868;&#x793A;&#x5E95;&#x5C42;&#x63A8;&#x6D41;&#x6A21;&#x5757;&#x771F;&#x6B63;&#x5F00;&#x59CB;&#x5DE5;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x4E00;&#x4E9B;&#x754C;&#x9762;&#x5143;&#x7D20;&#x66F4;&#x65B0;&#x7684;&#x4E00;&#x4E9B;&#x64CD;&#x4F5C;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>    private OnInfoListener mInfoListener = new OnInfoListener() {
+        @Override
+        public boolean onInfo(int what) {
+            switch (what) {
+                ...
+                case StreamerConstants.EV_STREAMER_INFO_STREAM_SUCCESS:
+                    //&#x66F4;&#x65B0;&#x754C;&#x9762;&#x663E;&#x793A;&#xFF0C;&#x5982;&#x5F00;&#x59CB;&#x8BA1;&#x65F6;
+                    break;
+            }
+            return true;
+        }
+    };
+
+    private OnErrorListener mErrorListener = new OnErrorListener() {
+        @Override
+        public boolean onError(int what) {
+            switch (what) {
+            ...
+            }
+        }
+    };
+</code></pre><ul>
+<li><p>&#x521B;&#x5EFA;EVLive&#x5BF9;&#x8C61;</p>
+<pre><code>  mEVLive = new EVLive(this);
+  mEVLive.setParameter(builder.build());
+  mEVLive.setCameraPreview(mCameraPreview);
+  mEVLive.setOnErrorListener(mErrorListener);
+  mEVLive.setOnInfoListener(mInfoListener);
+</code></pre></li>
+<li><p>&#x6444;&#x50CF;&#x5934;&#x9884;&#x89C8;</p>
+</li>
+</ul>
+<p>&#x5F00;&#x59CB;&#x63A8;&#x6D41;&#x524D;&#x9700;&#x8981;&#x6253;&#x5F00;&#x6444;&#x50CF;&#x5934;&#x9884;&#x89C8;&#xFF0C;&#x5E94;&#x7528;&#x8FDB;&#x5165;&#x540E;&#x53F0;&#x9700;&#x8981;&#x5173;&#x95ED;&#x6444;&#x50CF;&#x5934;&#x9884;&#x89C8;&#xFF0C;&#x5E94;&#x7528;&#x518D;&#x6B21;&#x56DE;&#x5230;&#x524D;&#x53F0;&#x91CD;&#x65B0;&#x6253;&#x5F00;&#x6444;&#x50CF;&#x5934;&#x9884;&#x89C8;&#xFF1A;</p>
+<pre><code>    mEVLive.startCameraPreview();
+</code></pre><ul>
+<li>&#x5F00;&#x59CB;&#x63A8;&#x6D41;</li>
+</ul>
+<p>&#x8C03;&#x7528;mEVLive.startStreaming()&#x51FD;&#x6570;&#x5F00;&#x59CB;&#x63A8;&#x6D41;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x9700;&#x8981;&#x4F20;&#x5165;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;lid&#x548C;key&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x7531;&#x4E1A;&#x52A1;&#x5C42;&#x63D0;&#x4F9B;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>    mEVLive.startStreaming(lid&#xFF0C; key);
+</code></pre><ul>
+<li><p>&#x63A8;&#x6D41;&#x8FC7;&#x7A0B;&#x4E2D;&#x5E38;&#x7528;&#x65B9;&#x6CD5;</p>
+<pre><code>  //&#x524D;&#x540E;&#x6444;&#x50CF;&#x5934;&#x5207;&#x6362;
+  mEVLive.switchCamera();
+
+  //&#x95EA;&#x5149;&#x706F;&#x5207;&#x6362;
+  mEVLive.switchFlashlight();
+
+  //&#x9759;&#x97F3;&#x5207;&#x6362;
+  mEVLive.switchAudioMute();
+</code></pre></li>
+<li><p>&#x505C;&#x6B62;&#x63A8;&#x6D41;</p>
+<pre><code>  mEVLive.stopLive();
+</code></pre></li>
+<li><p>Activity&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x56DE;&#x8C03;&#x5904;&#x7406;&#x3002;&#x63A8;&#x6D41;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x5904;&#x7406;&#x6765;&#x7535;&#x3001;&#x8BEF;&#x89E6;&#x3001;&#x5207;&#x540E;&#x53F0;&#x7B49;&#x60C5;&#x51B5;&#xFF0C;<strong>&#x8FD9;&#x4E9B;&#x72B6;&#x6001;&#x90FD;&#x4F9D;&#x8D56;&#x4E8E;Activity&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x6240;&#x4EE5;&#x5FC5;&#x987B;&#x5728;Activity&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x4E2D;&#x4E5F;&#x8C03;&#x7528;EVLive SDK&#x76F8;&#x5E94;&#x7684;&#x63A5;&#x53E3;</strong>&#xFF0C;&#x4EE5;&#x786E;&#x4FDD;&#x63A8;&#x6D41;&#x6B63;&#x5E38;&#x7ED3;&#x675F;&#x6216;&#x6062;&#x590D;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>  @Override
+  protected void onPause() {
+      super.onPause();
+      if (null != mEVLive) {
+          mEVLive.onPause();
+      }
+  }
+
+  @Override
+  protected void onResume() {
+      super.onResume();
+      if (null != mEVLive) {
+          mEVLive.onResume();
+      }
+  }
+
+  @Override
+  protected void onDestroy() {
+      super.onDestroy();
+      if (null != mEVLive) {
+          mEVLive.onDestroy();
+      }
+  }
+</code></pre></li>
+</ul>
+
                                 
                                 </section>
                             
@@ -523,7 +653,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"示例代码","level":"1.5.1.1.3","depth":4,"next":{"title":"功能说明","level":"1.5.1.1.4","depth":4,"path":"chapter4/android/live/instruction.md","ref":"chapter4/android/live/instruction.md","articles":[]},"previous":{"title":"快速开始","level":"1.5.1.1.2","depth":4,"path":"chapter4/android/live/quickstart.md","ref":"chapter4/android/live/quickstart.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/android/live/sample.md","mtime":"2017-06-05T03:48:50.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-05T06:28:54.884Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"示例代码","level":"1.5.1.1.3","depth":4,"next":{"title":"功能说明","level":"1.5.1.1.4","depth":4,"path":"chapter4/android/live/instruction.md","ref":"chapter4/android/live/instruction.md","articles":[]},"previous":{"title":"快速开始","level":"1.5.1.1.2","depth":4,"path":"chapter4/android/live/quickstart.md","ref":"chapter4/android/live/quickstart.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/android/live/sample.md","mtime":"2017-06-13T03:27:13.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-12T08:42:25.026Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

@@ -1,4 +1,4 @@
-## 直播端API参考说明 - Android
+## 消息交互API参考说明 - Android
 ### 方法
 #### 初始化 (EVMessage)
 
