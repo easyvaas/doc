@@ -20,6 +20,7 @@
     - EVMessage.h
     - EVMessageConfig.h
     - EVMessageManager.h
+    - EVMessageModel.h
     - EVMessageProtocol.h
 - EVSDKBase（文件夹）
     - libEVSDKBase.a
