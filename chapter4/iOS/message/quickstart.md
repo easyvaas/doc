@@ -2,7 +2,7 @@
 本节提供快速集成易视云iOS消息系统SDK的步骤和示例代码。具体可参考demo中相关代码。
 
 ## 开发环境配置及系统要求
-* 开发工具：Xcode 8 + [下载地址](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12)
+* 开发工具：Xcode 8.3 + [下载地址](https://itunes.apple.com/us/app/xcode/id497799835?ls=1&mt=12)
 * 系统要求：iOS 8 +
 
 ## 前置条件
