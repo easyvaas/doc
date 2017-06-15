@@ -402,6 +402,206 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../../iOS/history.html">
+            
+                <a href="../../iOS/history.html">
+            
+                    
+                    历史记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2" data-path="../../iOS/live.html">
+            
+                <a href="../../iOS/live.html">
+            
+                    
+                    推流端
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.2.1" data-path="../../iOS/live/overview.md">
+            
+                <span>
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2.2" data-path="../../iOS/live/quickstart.md">
+            
+                <span>
+            
+                    
+                    快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2.3" data-path="../../iOS/live/sample.md">
+            
+                <span>
+            
+                    
+                    示例代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2.4" data-path="../../iOS/live/instruction.md">
+            
+                <span>
+            
+                    
+                    功能说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.2.5" data-path="../../iOS/live/api.md">
+            
+                <span>
+            
+                    
+                    API参考
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3" data-path="../../iOS/player.html">
+            
+                <a href="../../iOS/player.html">
+            
+                    
+                    播放端
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4" data-path="../../iOS/message.html">
+            
+                <a href="../../iOS/message.html">
+            
+                    
+                    消息交互
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.4.1" data-path="../../iOS/message/overview.html">
+            
+                <a href="../../iOS/message/overview.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4.2" data-path="../../iOS/message/quickstart.html">
+            
+                <a href="../../iOS/message/quickstart.html">
+            
+                    
+                    快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4.3" data-path="../../iOS/message/sample.md">
+            
+                <span>
+            
+                    
+                    示例代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4.4" data-path="../../iOS/message/instruction.html">
+            
+                <a href="../../iOS/message/instruction.html">
+            
+                    
+                    功能说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.4.5" data-path="../../iOS/message/api.md">
+            
+                <span>
+            
+                    
+                    API参考
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.5.3" data-path="../../windows.html">
@@ -630,113 +830,54 @@ EVLive SDK&#x652F;&#x6301;AAC&#x7F16;&#x7801;&#x7B49;&#x7EA7;&#x7684;&#x9009;&#x
 |EV_LIVE_PUSH_KEY_ERROR | -3004 | &#x63A8;&#x6D41;&#x8BF7;&#x6C42;key&#x9519;&#x8BEF; |</p>
 <hr>
 <h3 id="&#x6C34;&#x5370;">&#x6C34;&#x5370;</h3>
-<p>&#x6C34;&#x5370;&#x529F;&#x80FD;&#x9700;&#x8981;&#x7533;&#x8BF7;&#x5F00;&#x901A;&#x624D;&#x80FD;&#x4F7F;&#x7528;&#xFF0C;&#x8BE5;&#x529F;&#x80FD;&#x5728;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x5173;&#x95ED;&#xFF0C;&#x8C03;&#x7528;&#x8BE5;&#x529F;&#x80FD;&#x63A5;&#x53E3;&#x65E0;&#x6548;&#x3002;</p>
-<pre><code>public void addWaterMarkLogo(String path, int region, int x, int y, int w, int h);
+<p>&#x63A8;&#x6D41;&#x7AEF;SDK&#x63D0;&#x4F9B;&#x6DFB;&#x52A0;&#x6C34;&#x5370;&#x529F;&#x80FD;&#xFF0C;&#x6C34;&#x5370;&#x4F4D;&#x7F6E;&#x3001;&#x900F;&#x660E;&#x5EA6;&#x53EF;&#x81EA;&#x5B9A;&#x4E49;&#x3002;</p>
+<pre><code>public void addWaterMarkLogo(String path, float x, float y, float w, float h, float alpha);
 </code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;</p>
 <ul>
 <li>path&#xFF0C;&#x7C7B;&#x578B;&#xFF1A;String&#x3002;logo&#x56FE;&#x7247;&#x6587;&#x4EF6;&#x7684;&#x8DEF;&#x5F84;&#xFF08;&#x672C;&#x5730;sdcard&#x8DEF;&#x5F84;&#x3001;assets&#x8DEF;&#x5F84;&#xFF09;</li>
-<li>region&#xFF0C;&#x7C7B;&#x578B;&#xFF1A;int&#x3002;logo&#x6587;&#x4EF6;&#x6446;&#x653E;&#x4F4D;&#x7F6E;&#xFF1A;0-&#x5DE6;&#x4E0A;&#x89D2;&#xFF0C;1-&#x53F3;&#x4E0A;&#xFF0C;2-&#x53F3;&#x4E0B;&#xFF0C;3-&#x5DE6;&#x4E0B;</li>
-<li>x&#xFF0C;&#x7C7B;&#x578B;&#xFF1A;int&#x3002;logo&#x53E0;&#x52A0;&#x4F4D;&#x7F6E;&#xFF0C;&#x79BB;&#x6700;&#x8FD1;&#x8FB9;&#x7684;&#x6A2A;&#x5411;&#x8DDD;&#x79BB;</li>
-<li>y&#xFF0C;&#x7C7B;&#x578B;&#xFF1A;int&#x3002;logo&#x53E0;&#x52A0;&#x4F4D;&#x7F6E;&#xFF0C;&#x79BB;&#x6700;&#x8FD1;&#x8FB9;&#x7684;&#x7EB5;&#x5411;&#x8DDD;&#x79BB;</li>
-<li>w&#xFF0C;&#x7C7B;&#x578B;&#xFF1A;int&#x3002;logo&#x56FE;&#x7247;&#x7684;&#x5BBD;&#x5EA6;</li>
-<li>h&#xFF0C;&#x7C7B;&#x578B;&#xFF1A;int&#x3002;logo&#x56FE;&#x7247;&#x7684;&#x9AD8;&#x5EA6;</li>
-<li>&#x4EE5;&#x4E0A;&#x6C34;&#x5370;&#x7684;&#x5750;&#x6807;&#x548C;&#x957F;&#x5BBD;&#x662F;&#x57FA;&#x4E8E;1280x720&#x7684;&#x5750;&#x6807;&#x7CFB;&#xFF0C;&#x5B9E;&#x9645;&#x4F4D;&#x7F6E;&#x9700;&#x8981;&#x6839;&#x636E;&#x7F16;&#x7801;&#x8F93;&#x51FA;&#x7684;&#x5206;&#x8FA8;&#x7387;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;</li>
+<li>x&#xFF0C;&#x7C7B;&#x578B;&#xFF1A;float&#x3002;&#x6C34;&#x5370;&#x56FE;&#x7247;&#x5DE6;&#x4E0A;&#x89D2;&#x9876;&#x70B9;x&#x5750;&#x6807;&#xFF0C;&#x53D6;&#x503C;0-1&#x4E4B;&#x95F4;&#x6D6E;&#x70B9;&#x6570;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x89C6;&#x9891;&#x5DE6;&#x4FA7;&#x5B9E;&#x9645;&#x8DDD;&#x79BB;=&#x9884;&#x89C8;width*x</li>
+<li>y&#xFF0C;&#x7C7B;&#x578B;&#xFF1A;float&#x3002;&#x6C34;&#x5370;&#x56FE;&#x7247;&#x5DE6;&#x4E0A;&#x89D2;&#x9876;&#x70B9;y&#x5750;&#x6807;&#xFF0C;&#x53D6;&#x503C;0-1&#x4E4B;&#x95F4;&#x6D6E;&#x70B9;&#x6570;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x89C6;&#x9891;&#x9876;&#x90E8;&#x5B9E;&#x9645;&#x8DDD;&#x79BB;=&#x9884;&#x89C8;height*y</li>
+<li>w&#xFF0C;&#x7C7B;&#x578B;&#xFF1A;float&#x3002;&#x6C34;&#x5370;&#x7684;&#x663E;&#x793A;&#x5BBD;&#x5EA6;&#xFF0C;0-1&#x4E4B;&#x95F4;&#xFF0C;&#x5B9E;&#x9645;&#x5BBD;&#x5EA6;=&#x9884;&#x89C8;width*w&#xFF0C;&#x4E3A;0&#x65F6;&#x4F1A;&#x6839;&#x636E;h&#x53CA;logo&#x56FE;&#x7247;&#x7684;&#x6BD4;&#x4F8B;&#x81EA;&#x9002;&#x5E94;</li>
+<li>h&#xFF0C;&#x7C7B;&#x578B;&#xFF1A;float&#x3002;&#x6C34;&#x5370;&#x7684;&#x663E;&#x793A;&#x9AD8;&#x5EA6;&#xFF0C;0-1&#x4E4B;&#x95F4;&#xFF0C;&#x5B9E;&#x9645;&#x5BBD;&#x5EA6;=&#x9884;&#x89C8;width*w&#xFF0C;&#x4E3A;0&#x65F6;&#x4F1A;&#x6839;&#x636E;w&#x53CA;logo&#x56FE;&#x7247;&#x7684;&#x6BD4;&#x4F8B;&#x81EA;&#x9002;&#x5E94;</li>
+<li>alpha&#xFF0C;&#x7C7B;&#x578B;&#xFF1A;float&#x3002;&#x6C34;&#x5370;&#x7684;&#x900F;&#x660E;&#x5EA6;&#xFF0C;0-1&#x4E4B;&#x95F4;</li>
 </ul>
 <p>&#x4F7F;&#x7528;&#x793A;&#x4F8B;&#xFF1A;</p>
-<pre><code>mEVLive.addWaterMarkLogo(&quot;/sdcard/test.png&quot;, 1, 10, 10, 160, 68);
+<pre><code>mEVLive.addWaterMarkLogo(TEST_WATERMARK_PATH, 0.08F, 0.06F, 0.2F, 0F, 0.8F);
 </code></pre><hr>
 <h3 id="&#x6DF7;&#x97F3;">&#x6DF7;&#x97F3;</h3>
-<p>SDK&#x652F;&#x6301;&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x64AD;&#x653E;&#x529F;&#x80FD;&#xFF0C;&#x5728;&#x4E3B;&#x64AD;&#x63D2;&#x5165;&#x8033;&#x673A;&#x65F6;&#x5B9E;&#x73B0;&#x4E86;&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x4E0E;mic&#x7684;&#x6DF7;&#x97F3;&#x529F;&#x80FD;&#x3002;
-&#x6DF7;&#x97F3;&#x529F;&#x80FD;&#x5728;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x5173;&#x95ED;&#xFF0C;&#x4E5F;&#x9700;&#x8981;&#x7533;&#x8BF7;&#x5F00;&#x901A;&#x624D;&#x80FD;&#x4F7F;&#x7528;&#xFF0C;&#x5426;&#x5219;&#x8C03;&#x7528;&#x8BE5;&#x529F;&#x80FD;&#x63A5;&#x53E3;&#x65E0;&#x6548;&#x3002;</p>
-<h4 id="&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x64AD;&#x653E;&#x529F;&#x80FD;">&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x64AD;&#x653E;&#x529F;&#x80FD;</h4>
-<p>com.easyvaas.sdk.live.base.audio.EVBgmPlayer&#x7C7B;&#x5B9E;&#x73B0;&#x4E86;&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x64AD;&#x653E;&#x529F;&#x80FD;&#xFF0C;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<p>SDK&#x652F;&#x6301;&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x64AD;&#x653E;&#x529F;&#x80FD;&#xFF0C;&#x5728;&#x4E3B;&#x64AD;&#x63D2;&#x5165;&#x8033;&#x673A;&#x65F6;&#x5B9E;&#x73B0;&#x4E86;&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x4E0E;mic&#x7684;&#x6DF7;&#x97F3;&#x529F;&#x80FD;&#x3002;&#x6253;&#x5F00;&#x548C;&#x5173;&#x95ED;&#x6DF7;&#x97F3;&#x529F;&#x80FD;&#x7684;&#x63A5;&#x53E3;&#xFF1A;</p>
+<pre><code>public void setEnableAudioMix(boolean enable);
+</code></pre><h3 id="&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x64AD;&#x653E;">&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x64AD;&#x653E;</h3>
+<p>&#x8C03;&#x7528;&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x76F8;&#x5173;&#x63A5;&#x53E3;&#x5B9E;&#x73B0;BGM&#x64AD;&#x653E;&#x548C;&#x63A7;&#x5236;&#xFF1A;</p>
 <ul>
-<li><p>&#x521B;&#x5EFA;&#x64AD;&#x653E;&#x5668;</p>
-<p>  mEVBgmPlayer = EVBgmPlayer.getInstance();</p>
-</li>
-<li><p>&#x521B;&#x5EFA;&#x64AD;&#x653E;&#x5668;&#x56DE;&#x8C03;</p>
-<pre><code>  mEVBgmPlayer.setOnBgmPlayerListener(new EVBgmPlayer.OnBgmPlayerListener() {
-          @Override public void onComplete() {
-              //&#x5904;&#x7406;&#x64AD;&#x653E;&#x5B8C;&#x6210;&#x4E8B;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x662F;&#x5355;&#x66F2;&#x5FAA;&#x73AF;&#x5219;&#x4E0D;&#x88AB;&#x8C03;&#x7528;
-          }
-
-          @Override public void onError(int err) {
-              //&#x5904;&#x7406;&#x64AD;&#x653E;&#x9519;&#x8BEF;&#x4E8B;&#x4EF6;
-          }
-      });
+<li><p>&#x521D;&#x59CB;&#x5316;BGM&#x64AD;&#x653E;&#x5668;</p>
+<pre><code>  mEVLive.setBgmOnCompletionListener(new IMediaPlayer.OnCompletionListener() {
+      @Override
+      public void onCompletion(IMediaPlayer iMediaPlayer) {
+          Logger.d(TAG, &quot;end of bgm&quot;);
+      }
+  });
+  mEVLive.setBgmOnErrorListener(new IMediaPlayer.OnErrorListener() {
+      @Override
+      public boolean onError(IMediaPlayer iMediaPlayer, int what, int extra) {
+          Logger.e(TAG, &quot;bgm play error: &quot; + what + &quot;, extra: &quot; + extra);
+          return false;
+      }
+  });
+  mEVLive.setBgmVolume(0.5F);
+  mEVLive.setBgmMute(false);
+  mEVLive.setEnableAudioMix(true);
 </code></pre></li>
-<li><p>&#x64AD;&#x653E;&#x63A7;&#x5236;&#x63A5;&#x53E3;</p>
-<pre><code>  //&#x8BBE;&#x7F6E;&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x97F3;&#x91CF;&#xFF0C;&#x540C;&#x65F6;&#x5F71;&#x54CD;&#x63A8;&#x6D41;&#x7AEF;&#x548C;&#x89C2;&#x770B;&#x7AEF;&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x7684;&#x97F3;&#x91CF;
-  public void setVolume(float volume);
-
-  //&#x8BBE;&#x7F6E;&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x9759;&#x97F3;&#xFF0C;&#x4EC5;&#x4EC5;&#x5F71;&#x54CD;&#x63A8;&#x6D41;&#x7AEF;&#xFF0C;&#x89C2;&#x770B;&#x7AEF;&#x6DF7;&#x97F3;&#x4E0D;&#x53D7;&#x5F71;&#x54CD;
-  public void setMute(boolean mute);
+<li><p>&#x6253;&#x5F00;BGM&#x64AD;&#x653E;&#x5668;</p>
+<pre><code>  mEVLive.startBgmPlayer(mBgmFilePath, true);
 </code></pre></li>
-</ul>
-<h4 id="&#x6DF7;&#x97F3;&#x529F;&#x80FD;">&#x6DF7;&#x97F3;&#x529F;&#x80FD;</h4>
-<ul>
-<li><p>&#x5F00;&#x542F;&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x64AD;&#x653E;&#x53CA;&#x6DF7;&#x97F3;</p>
-<pre><code>  mEVLive.setBgmPlayer(mEVBgmPlayer);
-
-  //TEST_MP3&#x4E3A;&#x672C;&#x5730;&#x97F3;&#x4E50;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#xFF0C;true&#x8868;&#x793A;&#x5355;&#x66F2;&#x5FAA;&#x73AF;
-  mEVLive.startBgmPlayer(TEST_MP3, true);
-
-  //&#x8BBE;&#x7F6E;&#x8033;&#x673A;&#x662F;&#x5426;&#x63D2;&#x5165;&#xFF0C;&#x4E0A;&#x5C42;&#x9700;&#x8981;&#x76D1;&#x542C;&#x8033;&#x673A;&#x63D2;&#x5165;&#x548C;&#x62D4;&#x51FA;&#x4E8B;&#x4EF6;&#xFF0C;&#x53C2;&#x6570;&#x4F20;&#x5165;true&#x65F6;&#x624D;&#x89E6;&#x53D1;&#x6DF7;&#x97F3;&#x6D41;&#x7A0B;
-  mEVLive.setHeadsetPlugged(true);
-</code></pre></li>
-<li><p>&#x505C;&#x6B62;&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x64AD;&#x653E;&#x53CA;&#x6DF7;&#x97F3;</p>
+<li><p>&#x5173;&#x95ED;BGM&#x64AD;&#x653E;&#x5668;</p>
 <pre><code>  mEVLive.stopBgmPlayer();
 </code></pre></li>
 </ul>
 <h3 id="&#x7F8E;&#x989C;">&#x7F8E;&#x989C;</h3>
-<p>&#x76F4;&#x64AD;&#x7AEF;SDK&#x652F;&#x6301;&#x7F8E;&#x989C;&#x529F;&#x80FD;&#xFF0C;&#x5728;&#x5F00;&#x542F;&#x76F4;&#x64AD;&#x524D;&#x548C;&#x76F4;&#x64AD;&#x8FC7;&#x7A0B;&#x4E2D;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x7F8E;&#x989C;&#x529F;&#x80FD;&#x5F00;&#x5173;&#x7684;&#x8BBE;&#x7F6E;&#x3002;
-&#x7F8E;&#x989C;&#x529F;&#x80FD;&#x5728;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x5173;&#x95ED;&#xFF0C;&#x4E5F;&#x9700;&#x8981;&#x7533;&#x8BF7;&#x5F00;&#x901A;&#x624D;&#x80FD;&#x4F7F;&#x7528;&#xFF0C;&#x5426;&#x5219;&#x8C03;&#x7528;&#x8BE5;&#x529F;&#x80FD;&#x63A5;&#x53E3;&#x65E0;&#x6548;&#x3002;</p>
+<p>&#x76F4;&#x64AD;&#x7AEF;SDK&#x652F;&#x6301;&#x7F8E;&#x989C;&#x529F;&#x80FD;&#xFF0C;&#x5728;&#x5F00;&#x542F;&#x76F4;&#x64AD;&#x524D;&#x548C;&#x76F4;&#x64AD;&#x8FC7;&#x7A0B;&#x4E2D;&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x7F8E;&#x989C;&#x529F;&#x80FD;&#x5F00;&#x5173;&#x7684;&#x8BBE;&#x7F6E;&#x3002;</p>
 <ul>
-<li>&#x4FEE;&#x6539;&#x9884;&#x89C8;View</li>
-</ul>
-<p>&#x8981;&#x4F7F;&#x7528;&#x7F8E;&#x989C;&#x529F;&#x80FD;&#xFF0C;&#x9996;&#x5148;&#x5C06;&#x9884;&#x89C8;View&#x7531;com.easyvaas.sdk.live.base.view.CameraPreview&#x4FEE;&#x6539;&#x4E3A;com.easyvaas.sdk.live.base.view.CameraTextureView&#xFF0C;layout&#x6587;&#x4EF6;&#x4FEE;&#x6539;&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code>    &lt;FrameLayout
-        android:layout_width=&quot;match_parent&quot;
-        android:layout_height=&quot;match_parent&quot;
-        android:background=&quot;@android:color/black&quot;&gt;
-
-        &lt;com.easyvaas.sdk.live.base.view.CameraTextureView
-            android:id=&quot;@+id/txv_preview&quot;
-            android:layout_width=&quot;match_parent&quot;
-            android:layout_height=&quot;match_parent&quot; /&gt;
-    &lt;/FrameLayout&gt;
-</code></pre><ul>
-<li><p>&#x8BBE;&#x7F6E;TextureView.SurfaceTextureListener&#x56DE;&#x8C03;</p>
-<pre><code>  private TextureView.SurfaceTextureListener mSurfaceTextureListener = new TextureView.SurfaceTextureListener() {
-      @Override public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
-          if (mEVLive != null) {
-              mEVLive.createPreview(surface, width, height);
-          }
-      }
-
-      @Override public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
-          if (mEVLive != null) {
-          mEVLive.updatePreview(width, height);
-      }
-  }
-
-      @Override public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
-          if (mEVLive != null) {
-              mEVLive.destroyPreview();
-          }
-
-          return true;
-      }
-  }
-</code></pre></li>
-</ul>
-<ul>
-<li><p>&#x521D;&#x59CB;&#x5316;CameraTextureView</p>
-<pre><code>  mCamTextureView = (CameraTextureView)this.findViewById(R.id.txv_preview);
-  mCamTextureView.setKeepScreenOn(true);
-  mCamTextureView.setSurfaceTextureListener(mSurfaceTextureListener);
-  mCamTextureView.requestLayout();
-</code></pre></li>
 <li><p>&#x8BBE;&#x7F6E;&#x5F00;&#x59CB;&#x76F4;&#x64AD;&#x65F6;&#x5C31;&#x5F00;&#x542F;&#x7F8E;&#x989C;</p>
 <pre><code>  builder.setIsBeautyOn(true);
   mEVLive.setParameter(builder.build());
@@ -747,91 +888,40 @@ EVLive SDK&#x652F;&#x6301;AAC&#x7F16;&#x7801;&#x7B49;&#x7EA7;&#x7684;&#x9009;&#x
 </code></pre></li>
 </ul>
 <h3 id="&#x8FDE;&#x9EA6;">&#x8FDE;&#x9EA6;</h3>
-<p>&#x76F4;&#x64AD;&#x7AEF;SDK&#x652F;&#x6301;&#x8FDE;&#x9EA6;&#x529F;&#x80FD;&#xFF0C;&#x5728;&#x76F4;&#x64AD;&#x8FC7;&#x7A0B;&#x4E2D;&#x7279;&#x5B9A;&#x89C2;&#x4F17;&#x53EF;&#x4EE5;&#x53D1;&#x8D77;&#x8FDE;&#x9EA6;&#x8BF7;&#x6C42;&#xFF0C;&#x4E3B;&#x64AD;&#x63A5;&#x53D7;&#x8FDE;&#x9EA6;&#x8BF7;&#x6C42;&#x540E;&#xFF0C;&#x8FDE;&#x9EA6;&#x89C2;&#x4F17;&#x548C;&#x4E3B;&#x64AD;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x5B9E;&#x65F6;&#x4E92;&#x52A8;&#x3002;&#x76EE;&#x524D;&#x7248;&#x672C;&#x4EC5;&#x652F;&#x6301;1&#x5BF9;1&#x8FDE;&#x9EA6;&#x3002;</p>
-<h4 id="&#x89D2;&#x8272;&#x5B9A;&#x4E49;">&#x89D2;&#x8272;&#x5B9A;&#x4E49;</h4>
-<p>&#x5F00;&#x542F;&#x8FDE;&#x9EA6;&#x529F;&#x80FD;&#x540E;&#xFF0C;&#x53C2;&#x4E0E;&#x8005;&#x89D2;&#x8272;&#x7531;&#x4E4B;&#x524D;&#x7684;&#x4E3B;&#x64AD;/&#x89C2;&#x4F17;&#x4E8C;&#x8005;&#x5173;&#x7CFB;&#x8F6C;&#x53D8;&#x4E3A;&#x4E3B;&#x64AD;/&#x8F85;&#x64AD;/&#x89C2;&#x4F17;&#x4E09;&#x8005;&#x5173;&#x7CFB;&#xFF0C;&#x65B0;&#x589E;&#x4E86;&#x8F85;&#x64AD;&#x89D2;&#x8272;&#xFF0C;&#x5373;&#x53D1;&#x8D77;&#x8FDE;&#x9EA6;&#x8BF7;&#x6C42;&#x7684;&#x89C2;&#x4F17;&#x5728;&#x901A;&#x8FC7;&#x8FDE;&#x9EA6;&#x8BF7;&#x6C42;&#x540E;&#x5347;&#x7EA7;&#x4E3A;&#x8F85;&#x64AD;&#x3002;</p>
-<h4 id="&#x4E3B;&#x64AD;&#x7AEF;&#x5B9E;&#x73B0;">&#x4E3B;&#x64AD;&#x7AEF;&#x5B9E;&#x73B0;</h4>
+<p>&#x76F4;&#x64AD;&#x7AEF;SDK&#x652F;&#x6301;&#x8FDE;&#x9EA6;&#x529F;&#x80FD;&#xFF0C;&#x5728;&#x76F4;&#x64AD;&#x8FC7;&#x7A0B;&#x4E2D;&#x7279;&#x5B9A;&#x89C2;&#x4F17;&#x53EF;&#x4EE5;&#x53D1;&#x8D77;&#x8FDE;&#x9EA6;&#x8BF7;&#x6C42;&#xFF0C;&#x4E3B;&#x64AD;&#x63A5;&#x53D7;&#x8FDE;&#x9EA6;&#x8BF7;&#x6C42;&#x540E;&#xFF0C;&#x8FDE;&#x9EA6;&#x89C2;&#x4F17;&#x548C;&#x4E3B;&#x64AD;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x5B9E;&#x65F6;&#x4E92;&#x52A8;&#x3002;&#x76EE;&#x524D;&#x7248;&#x672C;&#x4EC5;&#x652F;&#x6301;1&#x5BF9;1&#x8FDE;&#x9EA6;&#x3002;
+<strong><em>&#x91CD;&#x8981;&#x63D0;&#x793A;&#xFF1A;</em></strong>&#x8981;&#x6D4B;&#x8BD5;&#x6216;&#x4F7F;&#x7528;&#x8FDE;&#x9EA6;&#x529F;&#x80FD;&#xFF0C;&#x9700;&#x8981;&#x5411;&#x6613;&#x89C6;&#x4E91;&#x5546;&#x52A1;&#x4EBA;&#x5458;&#x7533;&#x8BF7;&#x8FDE;&#x9EA6;id&#xFF0C;&#x5426;&#x5219;&#x70B9;&#x51FB;&#x754C;&#x9762;&#x4E0A;&#x7684;&#x8FDE;&#x9EA6;&#x6309;&#x94AE;&#x4F1A;&#x63D0;&#x793A;&#x201C;id&#x4E3A;&#x7A7A;&#xFF0C;&#x65E0;&#x6CD5;&#x8FDB;&#x5165;&#x8FDE;&#x9EA6;&#x201D;</p>
 <ul>
-<li>&#x5B9A;&#x4E49;&#x663E;&#x793A;&#x8F85;&#x64AD;&#x89C6;&#x9891;&#x7684;View</li>
-</ul>
-<p>&#x4E3B;&#x64AD;&#x548C;&#x8F85;&#x64AD;&#x8FDE;&#x9EA6;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x4E3B;&#x64AD;&#x7AEF;&#x663E;&#x793A;&#x8F85;&#x64AD;&#x7684;&#x89C6;&#x9891;&#x6570;&#x636E;&#xFF0C;&#x5728;&#x539F;&#x6709;ui&#x4E0A;&#x52A0;&#x5165;&#x4E00;&#x4E2A;FrameLayout&#x7528;&#x4E8E;&#x663E;&#x793A;&#x8F85;&#x64AD;&#x89C6;&#x9891;&#x3002;&#x4F8B;&#x5982;&#x5728;&#x53F3;&#x4E0B;&#x89D2;&#x663E;&#x793A;&#x8F85;&#x64AD;&#x89C6;&#x9891;&#xFF1A;</p>
-<pre><code>&lt;FrameLayout
-    android:layout_width=&quot;120dp&quot;
-    android:id=&quot;@+id/fl_remote_container&quot;
-    android:layout_alignParentRight=&quot;true&quot;
-    android:layout_alignParentBottom=&quot;true&quot;
-    android:layout_marginBottom=&quot;50dp&quot;
-    android:layout_height=&quot;214dp&quot;&gt;
-&lt;/FrameLayout&gt;
-</code></pre><ul>
-<li>&#x521D;&#x59CB;&#x5316;&#x8FDE;&#x9EA6;&#x53C2;&#x6570;</li>
-</ul>
-<p>&#x4E3B;&#x64AD;&#x63A5;&#x53D7;&#x8FDE;&#x9EA6;&#x8BF7;&#x6C42;&#x540E;&#x9996;&#x5148;&#x9700;&#x8981;&#x521D;&#x59CB;&#x5316;&#x8FDE;&#x9EA6;&#x53C2;&#x6570;&#x3002;</p>
-<pre><code>mEVLive.initInteractiveLiveConfig(this, true); //&#x4E3B;&#x64AD;&#x7AEF;isAnchor&#x53C2;&#x6570;&#x4E3A;true
-</code></pre><ul>
-<li>&#x8BBE;&#x7F6E;&#x8F85;&#x64AD;&#x89C6;&#x9891;&#x7A97;&#x53E3;</li>
-</ul>
-<p>&#x8BBE;&#x7F6E;&#x8F85;&#x64AD;&#x7A97;&#x53E3;</p>
-<pre><code>mFlRemoteViewContainer= (FrameLayout) this.findViewById(R.id.fl_remote_container);
-mEVLive.setRemoteVideoViewContainer(mFlRemoteViewContainer);
-</code></pre><ul>
-<li>&#x8BBE;&#x7F6E;&#x8FDE;&#x9EA6;&#x72B6;&#x6001;&#x56DE;&#x8C03;</li>
-</ul>
-<p>&#x8BBE;&#x7F6E;&#x56DE;&#x8C03;</p>
-<pre><code>mEVLive.setOnInteractiveLiveListener(listener);
-</code></pre><ul>
-<li>&#x5F00;&#x59CB;&#x8FDE;&#x9EA6;</li>
-</ul>
-<p>&#x6839;&#x636E;&#x4E0A;&#x5C42;&#x4E1A;&#x52A1;&#x7CFB;&#x7EDF;&#x83B7;&#x53D6;&#x5230;&#x552F;&#x4E00;&#x7684;&#x901A;&#x8BDD;id callId&#xFF0C;&#x5F00;&#x59CB;&#x8FDE;&#x9EA6;</p>
-<pre><code>mEVLive.startInteractiveLive(callId);
-</code></pre><ul>
-<li>&#x7ED3;&#x675F;&#x8FDE;&#x9EA6;</li>
-</ul>
-<p>&#x7ED3;&#x675F;&#x8FDE;&#x9EA6;</p>
-<pre><code>mEVLive.endInteractiveLive();
-</code></pre><h4 id="&#x8F85;&#x64AD;&#x7AEF;&#x5B9E;&#x73B0;">&#x8F85;&#x64AD;&#x7AEF;&#x5B9E;&#x73B0;</h4>
+<li><p>&#x521D;&#x59CB;&#x5316;&#x8FDE;&#x9EA6;&#x53C2;&#x6570;</p>
+<p>  &#x4F7F;&#x7528;&#x8FDE;&#x9EA6;&#x529F;&#x80FD;&#x4E4B;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x521D;&#x59CB;&#x5316;&#x8FDE;&#x9EA6;&#x53C2;&#x6570;&#xFF0C;&#x4F20;&#x5165;&#x6709;&#x6548;&#x7684;&#x8FDE;&#x9EA6;id&#xFF0C;&#x4E00;&#x822C;&#x5728;&#x754C;&#x9762;&#x7684;OnCreate&#x51FD;&#x6570;&#x4E2D;&#x8C03;&#x7528;&#xFF1A;</p>
+<pre><code>  mEVLive.initInteractiveLiveConfig(id, true); //&#x5982;&#x679C;&#x662F;&#x4E3B;&#x64AD;&#x7AEF;isAnchor&#x53C2;&#x6570;&#x4E3A;true
+</code></pre></li>
+<li><p>&#x8BBE;&#x7F6E;&#x8FDE;&#x9EA6;&#x5C0F;&#x7A97;&#x53E3;&#x4F4D;&#x7F6E;</p>
+<pre><code>  mEVLive.setRTCSubScreenRect(0.65F, 0.1F, 0.35F, 0.3F);
+</code></pre><p>  &#x53C2;&#x6570;&#x8BF4;&#x660E;&#xFF1A;</p>
 <ul>
-<li>&#x5B9A;&#x4E49;&#x663E;&#x793A;&#x4E3B;&#x64AD;&#x548C;&#x8F85;&#x64AD;&#x89C6;&#x9891;&#x7684;View</li>
+<li>width  float 0-1&#x4E4B;&#x95F4;&#xFF0C;&#x5B9E;&#x9645;&#x5BBD;&#x5EA6;=&#x9884;&#x89C8;width*width&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;0.35f</li>
+<li>height float 0-1&#x4E4B;&#x95F4;&#xFF0C;&#x5B9E;&#x9645;&#x9AD8;&#x5EA6;=&#x9884;&#x89C8;height*height&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;0.3f</li>
+<li>left   float &#x5DE6;&#x4E0A;&#x89D2;&#x9876;&#x70B9;x&#x5750;&#x6807;&#xFF0C;0-1&#x4E4B;&#x95F4;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x89C6;&#x9891;&#x5DE6;&#x4FA7;&#x5B9E;&#x9645;&#x8DDD;&#x79BB;=&#x9884;&#x89C8;width*left&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;0.65f</li>
+<li>top    float &#x5DE6;&#x4E0A;&#x89D2;&#x9876;&#x70B9;y&#x5750;&#x6807;&#xFF0C;0-1&#x4E4B;&#x95F4;&#xFF0C;&#x76F8;&#x5BF9;&#x4E8E;&#x89C6;&#x9891;&#x9876;&#x90E8;&#x5B9E;&#x9645;&#x8DDD;&#x79BB;=&#x9884;&#x89C8;height*top&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;0.f</li>
 </ul>
-<p>&#x8F85;&#x64AD;&#x5728;&#x89C2;&#x770B;&#x89C6;&#x9891;&#x65F6;&#x53D1;&#x8D77;&#x8FDE;&#x9EA6;&#x8BF7;&#x6C42;&#xFF0C;&#x8BF7;&#x6C42;&#x901A;&#x8FC7;&#x5E76;&#x4E14;&#x8FDE;&#x9EA6;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x5148;&#x9000;&#x51FA;&#x64AD;&#x653E;&#x7A97;&#x53E3;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x4E3B;&#x64AD;&#x7684;&#x89C6;&#x9891;&#x6570;&#x636E;&#x5168;&#x5C4F;&#x663E;&#x793A;&#xFF0C;&#x5728;&#x5C0F;&#x7A97;&#x53E3;&#x663E;&#x793A;&#x672C;&#x5730;&#x89C6;&#x9891;&#x6570;&#x636E;&#x3002;&#x4E3B;&#x64AD;&#x5168;&#x5C4F;&#x663E;&#x793A;&#xFF0C;&#x672C;&#x5730;&#x89C6;&#x9891;&#x53F3;&#x4E0B;&#x89D2;&#x663E;&#x793A;&#x7684;layout&#x5982;&#x4E0B;&#xFF1A;</p>
-<pre><code>&lt;FrameLayout
-    android:id=&quot;@+id/fl_remote_container&quot;
-    android:layout_width=&quot;match_parent&quot;
-    android:layout_height=&quot;match_parent&quot;/&gt;
+</li>
+<li><p>&#x8BBE;&#x7F6E;&#x8F85;&#x64AD;&#x5927;&#x7A97;&#x53E3;</p>
+<p>  SDK&#x5185;&#x90E8;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x8F85;&#x64AD;&#x4E3A;&#x5927;&#x7A97;&#x53E3;&#xFF0C;&#x5373;&#x8FDE;&#x9EA6;&#x6210;&#x529F;&#x540E;&#x5927;&#x7A97;&#x53E3;&#x603B;&#x662F;&#x663E;&#x793A;&#x5BF9;&#x65B9;&#x7684;&#x753B;&#x9762;</p>
+<pre><code>  mEVLive.setEnableMainScreenRemote(false);  //enable&#x53C2;&#x6570;&#x8D4B;&#x503C;false&#xFF0C;&#x8BBE;&#x7F6E;&#x5BF9;&#x65B9;&#x4E3A;&#x5C0F;&#x7A97;&#x53E3;&#xFF0C;&#x81EA;&#x5DF1;&#x7684;camera&#x9884;&#x89C8;&#x4E3A;&#x5927;&#x7A97;&#x53E3;
+</code></pre></li>
+<li><p>&#x8BBE;&#x7F6E;&#x8FDE;&#x9EA6;&#x72B6;&#x6001;&#x56DE;&#x8C03;</p>
+<pre><code>  mEVLive.setOnInteractiveLiveListener(listener);
+</code></pre></li>
+<li><p>&#x5F00;&#x59CB;&#x8FDE;&#x9EA6;</p>
+<p>  &#x6839;&#x636E;&#x4E0A;&#x5C42;&#x4E1A;&#x52A1;&#x7CFB;&#x7EDF;&#x83B7;&#x53D6;&#x5230;&#x552F;&#x4E00;&#x7684;&#x901A;&#x8BDD;id callId&#xFF0C;&#x5F00;&#x59CB;&#x8FDE;&#x9EA6;</p>
+<pre><code>  mEVLive.startInteractiveLive(callId);
+</code></pre></li>
+<li><p>&#x7ED3;&#x675F;&#x8FDE;&#x9EA6;</p>
+<p>  &#x7ED3;&#x675F;&#x8FDE;&#x9EA6;</p>
+<pre><code>  mEVLive.endInteractiveLive();
+</code></pre></li>
+</ul>
 
-&lt;FrameLayout
-    android:id=&quot;@+id/fl_local_container&quot;
-    android:layout_width=&quot;120dp&quot;
-    android:layout_height=&quot;214dp&quot;
-    android:layout_alignParentBottom=&quot;true&quot;
-    android:layout_alignParentRight=&quot;true&quot;/&gt;
-</code></pre><ul>
-<li>&#x521D;&#x59CB;&#x5316;&#x8FDE;&#x9EA6;&#x53C2;&#x6570;</li>
-</ul>
-<p>&#x8F85;&#x64AD;&#x5F00;&#x59CB;&#x8FDE;&#x9EA6;&#x9996;&#x5148;&#x4E5F;&#x9700;&#x8981;&#x521D;&#x59CB;&#x5316;&#x8FDE;&#x9EA6;&#x53C2;&#x6570;&#x3002;</p>
-<pre><code>mEVLive.initInteractiveLiveConfig(this, false);  //&#x8F85;&#x64AD;&#x7AEF;isAnchor&#x53C2;&#x6570;&#x4E3A;false
-</code></pre><ul>
-<li>&#x8BBE;&#x7F6E;&#x4E3B;&#x64AD;&#x548C;&#x8F85;&#x64AD;&#x7684;&#x89C6;&#x9891;&#x7A97;&#x53E3;</li>
-</ul>
-<p>&#x4E3B;&#x64AD;&#x7A97;&#x53E3;&#x4E3A;&#x8FDC;&#x7A0B;&#x7A97;&#x53E3;&#xFF0C;&#x8F85;&#x64AD;&#x7A97;&#x53E3;&#x4E3A;&#x672C;&#x5730;&#x7A97;&#x53E3;</p>
-<pre><code>mEVLive.setRemoteVideoViewContainer((FrameLayout) findViewById(R.id.fl_remote_container));
-mEVLive.setLocalVideoViewContainer((FrameLayout) findViewById(R.id.fl_local_container));
-</code></pre><ul>
-<li>&#x8BBE;&#x7F6E;&#x8FDE;&#x9EA6;&#x72B6;&#x6001;&#x56DE;&#x8C03;</li>
-</ul>
-<p>&#x8BBE;&#x7F6E;&#x56DE;&#x8C03;</p>
-<pre><code>mEVLive.setOnInteractiveLiveListener(listener);
-</code></pre><ul>
-<li>&#x5F00;&#x59CB;&#x8FDE;&#x9EA6;</li>
-</ul>
-<p>&#x5F00;&#x59CB;&#x8FDE;&#x9EA6;</p>
-<pre><code>mEVLive.startInteractiveLive(callId);
-</code></pre><ul>
-<li>&#x7ED3;&#x675F;&#x8FDE;&#x9EA6;</li>
-</ul>
-<p>&#x7ED3;&#x675F;&#x8FDE;&#x9EA6;</p>
-<pre><code>mEVLive.endInteractiveLive();
-</code></pre>
                                 
                                 </section>
                             
@@ -874,7 +964,7 @@ mEVLive.setLocalVideoViewContainer((FrameLayout) findViewById(R.id.fl_local_cont
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"功能说明","level":"1.5.1.1.4","depth":4,"next":{"title":"API参考","level":"1.5.1.1.5","depth":4,"path":"chapter4/android/live/api.md","ref":"chapter4/android/live/api.md","articles":[]},"previous":{"title":"示例代码","level":"1.5.1.1.3","depth":4,"path":"chapter4/android/live/sample.md","ref":"chapter4/android/live/sample.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/android/live/instruction.md","mtime":"2017-06-13T03:36:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-12T08:42:25.026Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"功能说明","level":"1.5.1.1.4","depth":4,"next":{"title":"API参考","level":"1.5.1.1.5","depth":4,"path":"chapter4/android/live/api.md","ref":"chapter4/android/live/api.md","articles":[]},"previous":{"title":"示例代码","level":"1.5.1.1.3","depth":4,"path":"chapter4/android/live/sample.md","ref":"chapter4/android/live/sample.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/android/live/instruction.md","mtime":"2017-06-15T04:35:35.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-14T06:53:44.126Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

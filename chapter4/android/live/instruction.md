@@ -84,122 +84,61 @@ EVLive SDK支持AAC编码等级的选择，目前支持AACObject_LC和AACObject_
 ### 水印
 推流端SDK提供添加水印功能，水印位置、透明度可自定义。
 
-    public void addWaterMarkLogo(String path, int region, int x, int y, int w, int h);
+    public void addWaterMarkLogo(String path, float x, float y, float w, float h, float alpha);
     
 参数说明：
 
 * path，类型：String。logo图片文件的路径（本地sdcard路径、assets路径）
-* region，类型：int。logo文件摆放位置：0-左上角，1-右上，2-右下，3-左下
-* x，类型：int。logo叠加位置，离最近边的横向距离
-* y，类型：int。logo叠加位置，离最近边的纵向距离
-* w，类型：int。logo图片的宽度
-* h，类型：int。logo图片的高度
-* 以上水印的坐标和长宽是基于1280x720的坐标系，实际位置需要根据编码输出的分辨率进行计算
+* x，类型：float。水印图片左上角顶点x坐标，取值0-1之间浮点数，相对于视频左侧实际距离=预览width*x
+* y，类型：float。水印图片左上角顶点y坐标，取值0-1之间浮点数，相对于视频顶部实际距离=预览height*y
+* w，类型：float。水印的显示宽度，0-1之间，实际宽度=预览width*w，为0时会根据h及logo图片的比例自适应
+* h，类型：float。水印的显示高度，0-1之间，实际宽度=预览width*w，为0时会根据w及logo图片的比例自适应
+* alpha，类型：float。水印的透明度，0-1之间
 
 使用示例：
 
-    mEVLive.addWaterMarkLogo("/sdcard/test.png", 1, 10, 10, 160, 68);
+    mEVLive.addWaterMarkLogo(TEST_WATERMARK_PATH, 0.08F, 0.06F, 0.2F, 0F, 0.8F);
 
 ***
 
 ### 混音
-SDK支持背景音乐播放功能，在主播插入耳机时实现了背景音乐与mic的混音功能。
-混音功能在默认情况下关闭，也需要申请开通才能使用，否则调用该功能接口无效。
 
-#### 背景音乐播放功能
-com.easyvaas.sdk.live.base.audio.EVBgmPlayer类实现了背景音乐播放功能，使用方法：
+SDK支持背景音乐播放功能，在主播插入耳机时实现了背景音乐与mic的混音功能。打开和关闭混音功能的接口：
 
-* 创建播放器
+    public void setEnableAudioMix(boolean enable);
 
-    mEVBgmPlayer = EVBgmPlayer.getInstance();
+### 背景音乐播放
+调用背景音乐相关接口实现BGM播放和控制：
 
-* 创建播放器回调
+* 初始化BGM播放器
+
+        mEVLive.setBgmOnCompletionListener(new IMediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(IMediaPlayer iMediaPlayer) {
+                Logger.d(TAG, "end of bgm");
+            }
+        });
+        mEVLive.setBgmOnErrorListener(new IMediaPlayer.OnErrorListener() {
+            @Override
+            public boolean onError(IMediaPlayer iMediaPlayer, int what, int extra) {
+                Logger.e(TAG, "bgm play error: " + what + ", extra: " + extra);
+                return false;
+            }
+        });
+        mEVLive.setBgmVolume(0.5F);
+        mEVLive.setBgmMute(false);
+        mEVLive.setEnableAudioMix(true);
+
+* 打开BGM播放器
     
-        mEVBgmPlayer.setOnBgmPlayerListener(new EVBgmPlayer.OnBgmPlayerListener() {
-                @Override public void onComplete() {
-                    //处理播放完成事件，如果是单曲循环则不被调用
-                }
+        mEVLive.startBgmPlayer(mBgmFilePath, true);
 
-                @Override public void onError(int err) {
-                    //处理播放错误事件
-                }
-            });
-
-* 播放控制接口
-
-        //设置背景音乐音量，同时影响推流端和观看端背景音乐的音量
-        public void setVolume(float volume);
-        
-        //设置背景音乐静音，仅仅影响推流端，观看端混音不受影响
-        public void setMute(boolean mute);
-
-
-#### 混音功能
-
-* 开启背景音乐播放及混音
-
-        mEVLive.setBgmPlayer(mEVBgmPlayer);
-        
-        //TEST_MP3为本地音乐文件路径，true表示单曲循环
-        mEVLive.startBgmPlayer(TEST_MP3, true);
-        
-        //设置耳机是否插入，上层需要监听耳机插入和拔出事件，参数传入true时才触发混音流程
-        mEVLive.setHeadsetPlugged(true);
-
-* 停止背景音乐播放及混音
+* 关闭BGM播放器
 
         mEVLive.stopBgmPlayer();
         
 ### 美颜
 直播端SDK支持美颜功能，在开启直播前和直播过程中可以进行美颜功能开关的设置。
-美颜功能在默认情况下关闭，也需要申请开通才能使用，否则调用该功能接口无效。
-
-* 修改预览View
-
-要使用美颜功能，首先将预览View由com.easyvaas.sdk.live.base.view.CameraPreview修改为com.easyvaas.sdk.live.base.view.CameraTextureView，layout文件修改如下：
-
-		<FrameLayout
-        	android:layout_width="match_parent"
-        	android:layout_height="match_parent"
-        	android:background="@android:color/black">
-	
-        	<com.easyvaas.sdk.live.base.view.CameraTextureView
-            	android:id="@+id/txv_preview"
-            	android:layout_width="match_parent"
-            	android:layout_height="match_parent" />
-    	</FrameLayout>
-
-* 设置TextureView.SurfaceTextureListener回调
-	
-		private TextureView.SurfaceTextureListener mSurfaceTextureListener = new TextureView.SurfaceTextureListener() {
-			@Override public void onSurfaceTextureAvailable(SurfaceTexture surface, int width, int height) {
-        		if (mEVLive != null) {
-            		mEVLive.createPreview(surface, width, height);
-        		}
-    		}
-
-    		@Override public void onSurfaceTextureSizeChanged(SurfaceTexture surface, int width, int height) {
-        		if (mEVLive != null) {
-            	mEVLive.updatePreview(width, height);
-        	}
-    	}
-
-    		@Override public boolean onSurfaceTextureDestroyed(SurfaceTexture surface) {
-        		if (mEVLive != null) {
-            		mEVLive.destroyPreview();
-        		}
-
-        		return true;
-    		}
-		}
-	
-
-* 初始化CameraTextureView
-
-		mCamTextureView = (CameraTextureView)this.findViewById(R.id.txv_preview);
-        mCamTextureView.setKeepScreenOn(true);
-        mCamTextureView.setSurfaceTextureListener(mSurfaceTextureListener);
-        mCamTextureView.requestLayout();
 
 * 设置开始直播时就开启美颜
 
@@ -213,105 +152,56 @@ com.easyvaas.sdk.live.base.audio.EVBgmPlayer类实现了背景音乐播放功能
 
 ### 连麦
 直播端SDK支持连麦功能，在直播过程中特定观众可以发起连麦请求，主播接受连麦请求后，连麦观众和主播之间进行实时互动。目前版本仅支持1对1连麦。
-
-#### 角色定义
-
-开启连麦功能后，参与者角色由之前的主播/观众二者关系转变为主播/辅播/观众三者关系，新增了辅播角色，即发起连麦请求的观众在通过连麦请求后升级为辅播。
-
-#### 主播端实现
-
-* 定义显示辅播视频的View
-
-主播和辅播连麦成功后，需要在主播端显示辅播的视频数据，在原有ui上加入一个FrameLayout用于显示辅播视频。例如在右下角显示辅播视频：
-
-	<FrameLayout
-        android:layout_width="120dp"
-        android:id="@+id/fl_remote_container"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp"
-        android:layout_height="214dp">
-    </FrameLayout>
+***重要提示：***要测试或使用连麦功能，需要向易视云商务人员申请连麦id，否则点击界面上的连麦按钮会提示“id为空，无法进入连麦”
 
 * 初始化连麦参数
 
-主播接受连麦请求后首先需要初始化连麦参数。
+    使用连麦功能之前，需要初始化连麦参数，传入有效的连麦id，一般在界面的OnCreate函数中调用：
 
-	mEVLive.initInteractiveLiveConfig(this, true); //主播端isAnchor参数为true
+    ```
+    mEVLive.initInteractiveLiveConfig(id, true); //如果是主播端isAnchor参数为true
+    ```
 
+* 设置连麦小窗口位置
 
-* 设置辅播视频窗口
-
-设置辅播窗口
-
-	mFlRemoteViewContainer= (FrameLayout) this.findViewById(R.id.fl_remote_container);
-	mEVLive.setRemoteVideoViewContainer(mFlRemoteViewContainer);
-
-* 设置连麦状态回调
-
-设置回调
+    ```
+    mEVLive.setRTCSubScreenRect(0.65F, 0.1F, 0.35F, 0.3F);
+    ```
 	
-	mEVLive.setOnInteractiveLiveListener(listener);
+	参数说明：
+    * width  float 0-1之间，实际宽度=预览width*width，默认值0.35f
+    * height float 0-1之间，实际高度=预览height*height，默认值0.3f
+    * left   float 左上角顶点x坐标，0-1之间，相对于视频左侧实际距离=预览width*left，默认值0.65f
+    * top    float 左上角顶点y坐标，0-1之间，相对于视频顶部实际距离=预览height*top，默认值0.f
 
-* 开始连麦
+* 设置辅播大窗口
 
-根据上层业务系统获取到唯一的通话id callId，开始连麦
-
-	mEVLive.startInteractiveLive(callId);
-
-* 结束连麦
-
-结束连麦
-
-	mEVLive.endInteractiveLive();
-
-#### 辅播端实现
-
-* 定义显示主播和辅播视频的View
-
-辅播在观看视频时发起连麦请求，请求通过并且连麦成功后，先退出播放窗口，然后将主播的视频数据全屏显示，在小窗口显示本地视频数据。主播全屏显示，本地视频右下角显示的layout如下：
-
-	<FrameLayout
-        android:id="@+id/fl_remote_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-    <FrameLayout
-        android:id="@+id/fl_local_container"
-        android:layout_width="120dp"
-        android:layout_height="214dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"/>
-
-* 初始化连麦参数
-
-辅播开始连麦首先也需要初始化连麦参数。
-
-	mEVLive.initInteractiveLiveConfig(this, false);  //辅播端isAnchor参数为false
-
-* 设置主播和辅播的视频窗口
-
-主播窗口为远程窗口，辅播窗口为本地窗口
-
-	mEVLive.setRemoteVideoViewContainer((FrameLayout) findViewById(R.id.fl_remote_container));
-    mEVLive.setLocalVideoViewContainer((FrameLayout) findViewById(R.id.fl_local_container));
+    SDK内部默认情况下辅播为大窗口，即连麦成功后大窗口总是显示对方的画面
+    
+    ```
+    mEVLive.setEnableMainScreenRemote(false);  //enable参数赋值false，设置对方为小窗口，自己的camera预览为大窗口
+    ```
 
 * 设置连麦状态回调
 
-设置回调
-
-	mEVLive.setOnInteractiveLiveListener(listener);
+    ```
+    mEVLive.setOnInteractiveLiveListener(listener);
+    ```
 
 * 开始连麦
 
-开始连麦
-
-	mEVLive.startInteractiveLive(callId);
+    根据上层业务系统获取到唯一的通话id callId，开始连麦
+    
+    ```
+    mEVLive.startInteractiveLive(callId);
+    ```
 
 * 结束连麦
 
-结束连麦
+    结束连麦
 
-	mEVLive.endInteractiveLive();
+    ```
+    mEVLive.endInteractiveLive();
+    ```
 
 
