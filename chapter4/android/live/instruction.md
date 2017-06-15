@@ -58,9 +58,10 @@ EVLive SDK支持AAC编码等级的选择，目前支持AACObject_LC和AACObject_
 |EV_LIVE_INFO_NETWORK_ISSUE | 107 | 网络变差，码率开始降低|
 |EV_LIVE_INFO_NETWORK_BAD | 108 | 网络卡顿，开始丢包|
 
+
 错误状态码如下表：
 
-名称 | 数值 | 含义
+|名称 | 数值 | 含义 |
 |:--|:--|:--|
 |EV_LIVE_ERROR_STARTING | -1001 | 直播开始过程中出错|
 |EV_LIVE_ERROR_STREAMING | -1002 | 直播过程中出错|
