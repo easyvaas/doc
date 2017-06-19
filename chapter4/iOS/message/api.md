@@ -207,7 +207,7 @@ typedef void(^EVMessageCallBack)(NSDictionary *response, NSError *error);
 - (void)EVMessageRecievedNewMessageInTopic:(NSString *)topic
                                sendedFrom:(NSString *)userid
                                   message:(NSString *)message
-                                 userData:(NSString *)userData;
+                                 userData:(NSDictionary *)userData;
 ```
 
 #### 用户加入当前话题
