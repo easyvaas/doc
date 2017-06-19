@@ -133,7 +133,7 @@
     // 连接关闭
 }
 
-- (void)EVMessageRecievedNewMessageInTopic:(NSString *)topic sendedFrom:(NSString *)userid message:(NSString *)message userData:(NSString *)userData {
+- (void)EVMessageRecievedNewMessageInTopic:(NSString *)topic sendedFrom:(NSString *)userid message:(NSString *)message userData:(NSDictionary *)userData {
     // 收到了新的消息
 }
 
