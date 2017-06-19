@@ -39,10 +39,10 @@
             * [API参考](chapter4/iOS/message/api.md)
     * [Windows SDK](chapter4/windows.md)
     * [JS SDK](chapter4/js.md)
-        * [历史记录](chapter4/JS/history.md)
-        * [播放端](chapter4/JS/player.md)
-            * [API参考](chapter4/JS/player/api.md)
-        * [消息交互](chapter4/JS/message.md)
+        * [历史记录](chapter4/js/history.md)
+        * [播放端](chapter4/js/player.md)
+            * [API参考](chapter4/js/player/api.md)
+        * [消息交互](chapter4/js/message.md)
 
 
 

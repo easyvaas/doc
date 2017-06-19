@@ -1,6 +1,6 @@
 ## **功能详细使用说明**
 
-### 推流参数设置/Users/liya/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/b152f13cf0ec7da7f34f374fb06fd42a/Message/MessageTemp/9e20f478899dc29eb19741386f9343c8/File/杨林工作初步安排.md
+### 推流参数设置
 
 * 视频分辨率
 目前支持360p（360x640），540p（540x960），720p（720x1280）三种分辨率，分别对应预定义的常量：
