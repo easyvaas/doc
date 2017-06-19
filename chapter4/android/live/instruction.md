@@ -1,6 +1,7 @@
 ## **功能详细使用说明**
 
-### 推流参数设置
+### 推流参数设置/Users/liya/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/b152f13cf0ec7da7f34f374fb06fd42a/Message/MessageTemp/9e20f478899dc29eb19741386f9343c8/File/杨林工作初步安排.md
+
 * 视频分辨率
 目前支持360p（360x640），540p（540x960），720p（720x1280）三种分辨率，分别对应预定义的常量：
     * LiveConstants.VIDEO_RESOLUTION_360P
@@ -81,6 +82,26 @@ EVLive SDK支持AAC编码等级的选择，目前支持AACObject_LC和AACObject_
 |EV_LIVE_PUSH_KEY_ERROR | -3004 | 推流请求key错误 |
 
 ***
+
+### 横屏直播
+推流端SDK支持横屏推流，除了上层需要做一些处理外，需要调用推流端的相关接口通知底层。
+
+上层ui相关代码：
+
+```
+setRequestedOrientation(mIsLandscape
+                ? ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
+                : ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+```
+
+调用接口通知SDK进行采集画面的旋转：
+
+```
+mEVLive.setParameter(builder.build());
+mEVLive.setDisplayOrientation(mIsLandscape ? 90 : 0);
+```
+
+***注意事项：*** setDisplayOrientation接口必须在setParameter接口之后调用
 
 ### 水印
 推流端SDK提供添加水印功能，水印位置、透明度可自定义。

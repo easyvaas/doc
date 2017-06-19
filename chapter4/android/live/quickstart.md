@@ -14,8 +14,8 @@
 
 ```
 dependencies {
-		compile 'com.easyvaas.sdk:evcore:1.1.4'  //集成时填写当前发布的最新版本号
-		compile 'com.easyvaas.sdk:evlive:1.1.1' //集成时填写当前发布的最新版本号
+		compile 'com.easyvaas.sdk:evcore:1.1.6'  //集成时填写当前发布的最新版本号
+		compile 'com.easyvaas.sdk:evlive:1.1.3' //集成时填写当前发布的最新版本号
 	}
 ```
 

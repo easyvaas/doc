@@ -8,6 +8,7 @@
 * [API Reference](chapter3/README.md)
 * [SDK](chapter4/README.md)
     * [Android SDK](chapter4/android.md)
+        * [历史记录](chapter4/android/history.md)
         * [推流端](chapter4/android/live.md)
             * [概述](chapter4/android/live/overview.md)
             * [快速开始](chapter4/android/live/quickstart.md)
