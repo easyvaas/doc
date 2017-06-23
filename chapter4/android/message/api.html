@@ -758,15 +758,320 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="&#x6D88;&#x606F;&#x4EA4;&#x4E92;api&#x53C2;&#x8003;&#x8BF4;&#x660E;---android">&#x6D88;&#x606F;&#x4EA4;&#x4E92;API&#x53C2;&#x8003;&#x8BF4;&#x660E; - Android</h2>
-<h3 id="&#x65B9;&#x6CD5;">&#x65B9;&#x6CD5;</h3>
+<h3 id="&#x4E3B;&#x8981;&#x65B9;&#x6CD5;">&#x4E3B;&#x8981;&#x65B9;&#x6CD5;</h3>
 <h4 id="&#x521D;&#x59CB;&#x5316;-evmessage">&#x521D;&#x59CB;&#x5316; (EVMessage)</h4>
 <pre><code>public EVMessage(Context context)
 </code></pre><p>&#x8BE5;&#x65B9;&#x6CD5;&#x521B;&#x5EFA;EVMessage&#x5BF9;&#x8C61;</p>
 <h4 id="&#x8BBE;&#x7F6E;&#x56DE;&#x8C03;&#xFF08;setmessagecallback&#xFF09;">&#x8BBE;&#x7F6E;&#x56DE;&#x8C03;&#xFF08;setMessageCallback&#xFF09;</h4>
 <pre><code>public void setMessageCallback(MessageCallback callback)
-</code></pre><p>&#x8BBE;&#x7F6E;&#x6D88;&#x606F;&#x7CFB;&#x7EDF;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;&#x6D88;&#x606F;&#x7CFB;&#x7EDF;&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x5404;&#x79CD;&#x4E8B;&#x4EF6;&#x7684;&#x56DE;&#x8C03;&#xFF0C;&#x5305;&#x62EC;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x3001;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x3001;&#x63A5;&#x6536;&#x6D88;&#x606F;&#x7B49;&#x4E8B;&#x4EF6;&#x7684;&#x56DE;&#x8C03;&#x3002;MessageCallback&#x7684;&#x5B9A;&#x4E49;&#x8BE6;&#x89C1;&#x4E0B;&#x65B9;&#x4E8B;&#x4EF6;&#x4E2D;&#x7684;&#x63CF;&#x8FF0;</p>
+</code></pre><p>&#x8BBE;&#x7F6E;&#x6D88;&#x606F;&#x7CFB;&#x7EDF;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;&#x6D88;&#x606F;&#x7CFB;&#x7EDF;&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x5404;&#x79CD;&#x4E8B;&#x4EF6;&#x7684;&#x56DE;&#x8C03;&#xFF0C;&#x5305;&#x62EC;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x3001;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x3001;&#x63A5;&#x6536;&#x6D88;&#x606F;&#x7B49;&#x4E8B;&#x4EF6;&#x7684;&#x56DE;&#x8C03;&#x3002;MessageCallback&#x7684;&#x5B9A;&#x4E49;&#x8BE6;&#x89C1;&#x4E0B;&#x65B9;&#x56DE;&#x8C03;&#x4E8B;&#x4EF6;&#x4E2D;&#x7684;&#x63CF;&#x8FF0;</p>
 <h4 id="&#x8FDE;&#x63A5;&#xFF08;connect&#xFF09;">&#x8FDE;&#x63A5;&#xFF08;connect&#xFF09;</h4>
-<h3 id="&#x4E8B;&#x4EF6;">&#x4E8B;&#x4EF6;</h3>
+<pre><code>public void connect(String topic)
+</code></pre><p>&#x8FDE;&#x63A5;&#x623F;&#x95F4;&#xFF0C;&#x623F;&#x95F4;&#x53F7;topic&#x5B57;&#x7B26;&#x4E32;&#x7531;&#x4E0A;&#x5C42;&#x4E1A;&#x52A1;&#x6307;&#x5B9A;&#xFF0C;&#x4E00;&#x822C;&#x4EE5;&#x89C6;&#x9891;&#x552F;&#x4E00;id&#x4F5C;&#x4E3A;&#x623F;&#x95F4;&#x53F7;</p>
+<h4 id="&#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF08;send&#xFF09;">&#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF08;send&#xFF09;</h4>
+<pre><code>public void send(String topic, String message, String userdata, String type,
+                     MyRequestCallBack&lt;String&gt; callBack)
+</code></pre><p>&#x8BE5;&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF0C;&#x6D88;&#x606F;&#x7EA7;&#x522B;&#x3001;&#x662F;&#x5426;&#x4FDD;&#x5B58;&#x3001;&#x662F;&#x5426;&#x8FC7;&#x6EE4;&#x7B49;&#x8BBE;&#x7F6E;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x503C;&#x3002;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#x5982;&#x4E0B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">topic</td>
+<td style="text-align:left">&#x623F;&#x95F4;&#x552F;&#x4E00;id</td>
+</tr>
+<tr>
+<td style="text-align:left">message</td>
+<td style="text-align:left">&#x6587;&#x672C;&#x6D88;&#x606F;&#x5185;&#x5BB9;&#xFF0C;&#x7528;&#x6237;&#x53D1;&#x9001;&#x666E;&#x901A;&#x6587;&#x672C;&#x6D88;&#x606F;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;</td>
+</tr>
+<tr>
+<td style="text-align:left">userdata</td>
+<td style="text-align:left">&#x7528;&#x6237;&#x53D1;&#x9001;&#x81EA;&#x5B9A;&#x4E49;&#x6D88;&#x606F;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;&#x4E00;&#x822C;&#x4E3A;json&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x7531;&#x4E0A;&#x5C42;&#x4E1A;&#x52A1;&#x7CFB;&#x7EDF;&#x5B9A;&#x4E49;&#x8BE5;&#x534F;&#x8BAE;</td>
+</tr>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:left">&#x6D88;&#x606F;&#x7C7B;&#x578B;&#xFF0C;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x7684;&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td style="text-align:left">callBack</td>
+<td style="text-align:left">&#x53D1;&#x9001;&#x6D88;&#x606F;&#x5F02;&#x6B65;&#x56DE;&#x8C03;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF08;sendmsg&#xFF09;">&#x53D1;&#x9001;&#x6D88;&#x606F;&#xFF08;sendMsg&#xFF09;</h4>
+<pre><code>public void sendMsg(String topic, String message, String userdata, String type, int level,
+                        boolean save, boolean filter, MyRequestCallBack&lt;String&gt; callBack)
+</code></pre><p>&#x8BE5;&#x65B9;&#x6CD5;&#x662F;send&#x65B9;&#x6CD5;&#x7684;&#x9AD8;&#x7EA7;&#x7248;&#x672C;&#xFF0C;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x6D88;&#x606F;&#x7EA7;&#x522B;&#x3001;&#x662F;&#x5426;&#x4FDD;&#x5B58;&#x3001;&#x662F;&#x5426;&#x8FC7;&#x6EE4;&#x7B49;&#x3002;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#x5982;&#x4E0B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">topic</td>
+<td style="text-align:left">&#x623F;&#x95F4;&#x552F;&#x4E00;id</td>
+</tr>
+<tr>
+<td style="text-align:left">message</td>
+<td style="text-align:left">&#x6587;&#x672C;&#x6D88;&#x606F;&#x5185;&#x5BB9;&#xFF0C;&#x7528;&#x6237;&#x53D1;&#x9001;&#x666E;&#x901A;&#x6587;&#x672C;&#x6D88;&#x606F;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;&#x53EF;&#x4EE5;&#x4E3A;&#x7A7A;</td>
+</tr>
+<tr>
+<td style="text-align:left">userdata</td>
+<td style="text-align:left">&#x7528;&#x6237;&#x53D1;&#x9001;&#x81EA;&#x5B9A;&#x4E49;&#x6D88;&#x606F;&#x65F6;&#x4F7F;&#x7528;&#xFF0C;&#x4E00;&#x822C;&#x4E3A;json&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x7531;&#x4E0A;&#x5C42;&#x4E1A;&#x52A1;&#x7CFB;&#x7EDF;&#x5B9A;&#x4E49;&#x8BE5;&#x534F;&#x8BAE;</td>
+</tr>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:left">&#x6D88;&#x606F;&#x7C7B;&#x578B;&#xFF0C;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x7684;&#x7C7B;&#x578B;</td>
+</tr>
+<tr>
+<td style="text-align:left">level</td>
+<td style="text-align:left">&#x4F18;&#x5148;&#x7EA7;[0,10]&#xFF0C;&#x503C;&#x8D8A;&#x5927;&#x8D8A;&#x91CD;&#x8981;&#xFF0C;&#x5176;&#x4E2D;level&#x4E3A;9,10&#x7684;&#x4E0D;&#x80FD;&#x8FC7;&#x6EE4;</td>
+</tr>
+<tr>
+<td style="text-align:left">save</td>
+<td style="text-align:left">&#x6D88;&#x606F;&#x662F;&#x5426;&#x4FDD;&#x5B58;</td>
+</tr>
+<tr>
+<td style="text-align:left">filter</td>
+<td style="text-align:left">&#x662F;&#x5426;&#x4F7F;&#x7528;&#x5173;&#x952E;&#x8BCD;&#x8FC7;&#x6EE4;</td>
+</tr>
+<tr>
+<td style="text-align:left">callBack</td>
+<td style="text-align:left">&#x53D1;&#x9001;&#x6D88;&#x606F;&#x5F02;&#x6B65;&#x56DE;&#x8C03;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x83B7;&#x53D6;&#x6700;&#x8FD1;n&#x6761;&#x5386;&#x53F2;&#x6D88;&#x606F;&#xFF08;getlasthistorymsgs&#xFF09;">&#x83B7;&#x53D6;&#x6700;&#x8FD1;N&#x6761;&#x5386;&#x53F2;&#x6D88;&#x606F;&#xFF08;getLastHistoryMsgs&#xFF09;</h4>
+<pre><code>public void getLastHistoryMsgs(String topic, int count, String type)
+</code></pre><p>&#x8BE5;&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x6700;&#x8FD1;&#x7684;N&#x6761;&#x5386;&#x53F2;&#x6D88;&#x606F;&#xFF0C;&#x7B2C;&#x4E00;&#x6B21;&#x83B7;&#x53D6;&#x5386;&#x53F2;&#x6D88;&#x606F;&#x65F6;&#x4F7F;&#x7528;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">topic</td>
+<td style="text-align:left">&#x623F;&#x95F4;&#x552F;&#x4E00;id</td>
+</tr>
+<tr>
+<td style="text-align:left">count</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x5386;&#x53F2;&#x6D88;&#x606F;&#x7684;&#x6761;&#x6570;</td>
+</tr>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:left">&#x9017;&#x53F7;&#x5206;&#x9694;&#x7684;&#x5B57;&#x7B26;&#x4E32;,&#x8868;&#x793A;&#x5386;&#x53F2;&#x6D88;&#x606F;&#x7684;&#x6D88;&#x606F;&#x7C7B;&#x578B;,&#x4F8B;&#x5982;&quot;sys,msg,gift&quot;,&#x4E3A;&#x7A7A;&#x8868;&#x793A;&#x83B7;&#x53D6;&#x5168;&#x90E8;&#x7C7B;&#x578B;&#x7684;&#x5386;&#x53F2;&#x6D88;&#x606F;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x83B7;&#x53D6;&#x4ECE;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x7684;n&#x6761;&#x5386;&#x53F2;&#x6D88;&#x606F;&#xFF08;gethistorymsgs&#xFF09;">&#x83B7;&#x53D6;&#x4ECE;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x7684;N&#x6761;&#x5386;&#x53F2;&#x6D88;&#x606F;&#xFF08;getHistoryMsgs&#xFF09;</h4>
+<pre><code>public void getHistoryMsgs(String topic, int start, int count, String type)
+</code></pre><p>&#x8BE5;&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x83B7;&#x53D6;&#x4ECE;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x7684;N&#x6761;&#x5386;&#x53F2;&#x6D88;&#x606F;&#xFF0C;&#x5F53;start&#x4E3A;0&#x65F6;&#xFF0C;&#x548C;getLastHistoryMsgs&#x65B9;&#x6CD5;&#x6548;&#x679C;&#x76F8;&#x540C;</p>
+<h4 id="&#x5173;&#x95ED;&#xFF08;close&#xFF09;">&#x5173;&#x95ED;&#xFF08;close&#xFF09;</h4>
+<pre><code>public void close()
+</code></pre><p>&#x9000;&#x51FA;&#x804A;&#x5929;&#x4EA4;&#x4E92;&#x754C;&#x9762;&#x65F6;&#x8C03;&#x7528;&#x8BE5;&#x51FD;&#x6570;&#xFF0C;&#x5173;&#x95ED;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#xFF0C;&#x505C;&#x6B62;&#x63A5;&#x6536;&#x6D88;&#x606F;&#x3002;</p>
+<h3 id="&#x56DE;&#x8C03;&#x4E8B;&#x4EF6;&#xFF08;messagecallback&#xFF09;">&#x56DE;&#x8C03;&#x4E8B;&#x4EF6;&#xFF08;MessageCallback&#xFF09;</h3>
+<p>MessageCallback&#x63A5;&#x53E3;&#x7C7B;&#x7528;&#x4E8E;&#x6D88;&#x606F;SDK&#x5411;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x53D1;&#x9001;&#x56DE;&#x8C03;&#x4E8B;&#x4EF6;&#x901A;&#x77E5;&#xFF0C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x901A;&#x8FC7;&#x8BE5;&#x63A5;&#x53E3;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#x83B7;&#x53D6;SDK&#x7684;&#x4E8B;&#x4EF6;&#x901A;&#x77E5;&#x3002;</p>
+<h4 id="&#x8FDE;&#x63A5;&#x6210;&#x529F;&#x56DE;&#x8C03;&#xFF08;onconnected&#xFF09;">&#x8FDE;&#x63A5;&#x6210;&#x529F;&#x56DE;&#x8C03;&#xFF08;onConnected&#xFF09;</h4>
+<pre><code>void onConnected()
+</code></pre><p>&#x8868;&#x793A;&#x5BA2;&#x6237;&#x7AEF;&#x5DF2;&#x7ECF;&#x52A0;&#x5165;&#x804A;&#x5929;&#x4EA4;&#x4E92;&#x623F;&#x95F4;&#xFF0C;&#x623F;&#x95F4;id&#x662F;connect&#x65B9;&#x6CD5;&#x4E2D;&#x6307;&#x5B9A;&#x7684;&#x623F;&#x95F4;id&#x3002;</p>
+<h4 id="&#x63A5;&#x6536;&#x5230;&#x6D88;&#x606F;&#x56DE;&#x8C03;&#xFF08;onnewmessage&#xFF09;">&#x63A5;&#x6536;&#x5230;&#x6D88;&#x606F;&#x56DE;&#x8C03;&#xFF08;onNewMessage&#xFF09;</h4>
+<pre><code>void onNewMessage(final String message, final String userdata, final String userid,
+                      final String topic, final String type)
+</code></pre><p>&#x8868;&#x793A;&#x6536;&#x5230;&#x4EA4;&#x4E92;&#x623F;&#x95F4;&#x4E2D;&#x7684;&#x65B0;&#x6D88;&#x606F;&#xFF0C;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#x5982;&#x4E0B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">message</td>
+<td style="text-align:left">&#x6587;&#x672C;&#x6D88;&#x606F;&#x5185;&#x5BB9;</td>
+</tr>
+<tr>
+<td style="text-align:left">userdata</td>
+<td style="text-align:left">&#x81EA;&#x5B9A;&#x4E49;&#x6D88;&#x606F;&#x5B57;&#x7B26;&#x4E32;</td>
+</tr>
+<tr>
+<td style="text-align:left">userid</td>
+<td style="text-align:left">&#x7528;&#x6237;&#x552F;&#x4E00;id</td>
+</tr>
+<tr>
+<td style="text-align:left">topic</td>
+<td style="text-align:left">&#x623F;&#x95F4;&#x552F;&#x4E00;id</td>
+</tr>
+<tr>
+<td style="text-align:left">type</td>
+<td style="text-align:left">&#x6D88;&#x606F;&#x7C7B;&#x578B;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x5386;&#x53F2;&#x6D88;&#x606F;&#x56DE;&#x8C03;&#xFF08;onhistorymessage&#xFF09;">&#x5386;&#x53F2;&#x6D88;&#x606F;&#x56DE;&#x8C03;&#xFF08;onHistoryMessage&#xFF09;</h4>
+<pre><code>void onHistoryMessage(final List&lt;MsgInfoEntity&gt; msgs, final int next, final int count)
+</code></pre><p>&#x8C03;&#x7528;&#x83B7;&#x53D6;&#x5386;&#x53F2;&#x6D88;&#x606F;&#x7684;&#x5F02;&#x6B65;&#x56DE;&#x8C03;&#x901A;&#x77E5;&#xFF0C;&#x53C2;&#x6570;&#x8BF4;&#x660E;&#x5982;&#x4E0B;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">msgs</td>
+<td style="text-align:left">&#x5386;&#x53F2;&#x6D88;&#x606F;&#x5217;&#x8868;</td>
+</tr>
+<tr>
+<td style="text-align:left">next</td>
+<td style="text-align:left">&#x4E0B;&#x4E00;&#x6761;&#x5386;&#x53F2;&#x6D88;&#x606F;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x7EE7;&#x7EED;&#x83B7;&#x53D6;&#x5386;&#x53F2;&#x6D88;&#x606F;&#x7684;&#x8D77;&#x59CB;&#x7D22;&#x5F15;</td>
+</tr>
+<tr>
+<td style="text-align:left">count</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x5230;&#x7684;&#x5386;&#x53F2;&#x6D88;&#x606F;&#x6761;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x7528;&#x6237;&#x8FDB;&#x5165;&#x56DE;&#x8C03;&#xFF08;onuserjoin&#xFF09;">&#x7528;&#x6237;&#x8FDB;&#x5165;&#x56DE;&#x8C03;&#xFF08;onUserJoin&#xFF09;</h4>
+<pre><code>void onUserJoin(final List&lt;String&gt; users)
+</code></pre><p>&#x8868;&#x793A;&#x623F;&#x95F4;&#x4E2D;&#x6709;&#x7528;&#x6237;&#x52A0;&#x5165;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">users</td>
+<td style="text-align:left">&#x52A0;&#x5165;&#x623F;&#x95F4;&#x7528;&#x6237;id&#x7684;&#x5217;&#x8868;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x7528;&#x6237;&#x79BB;&#x5F00;&#x56DE;&#x8C03;&#xFF08;onuserleave&#xFF09;">&#x7528;&#x6237;&#x79BB;&#x5F00;&#x56DE;&#x8C03;&#xFF08;onUserLeave&#xFF09;</h4>
+<pre><code>void onUserLeave(final List&lt;String&gt; users)
+</code></pre><p>&#x8868;&#x793A;&#x623F;&#x95F4;&#x4E2D;&#x6709;&#x7528;&#x6237;&#x79BB;&#x5F00;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">users</td>
+<td style="text-align:left">&#x79BB;&#x5F00;&#x623F;&#x95F4;&#x7528;&#x6237;id&#x7684;&#x5217;&#x8868;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x6B63;&#x5728;&#x89C2;&#x770B;&#x4EBA;&#x6570;&#x56DE;&#x8C03;&#xFF08;onwatchingcount&#xFF09;">&#x6B63;&#x5728;&#x89C2;&#x770B;&#x4EBA;&#x6570;&#x56DE;&#x8C03;&#xFF08;onWatchingCount&#xFF09;</h4>
+<pre><code>void onWatchingCount(int watchingCount)
+</code></pre><p>&#x623F;&#x95F4;&#x5B9E;&#x65F6;&#x89C2;&#x770B;&#x4EBA;&#x6570;&#x6709;&#x53D8;&#x5316;&#x4F1A;&#x56DE;&#x8C03;&#x8BE5;&#x65B9;&#x6CD5;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">watchingCount</td>
+<td style="text-align:left">&#x4E92;&#x52A8;&#x623F;&#x95F4;&#x5728;&#x7EBF;&#x4EBA;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x5DF2;&#x89C2;&#x770B;&#x4EBA;&#x6570;&#x56DE;&#x8C03;&#xFF08;onwatchedcount&#xFF09;">&#x5DF2;&#x89C2;&#x770B;&#x4EBA;&#x6570;&#x56DE;&#x8C03;&#xFF08;onWatchedCount&#xFF09;</h4>
+<pre><code>void onWatchedCount(int watchedCount)
+</code></pre><p>&#x623F;&#x95F4;&#x5DF2;&#x7ECF;&#x89C2;&#x770B;&#x4EBA;&#x6570;&#x6709;&#x53D8;&#x5316;&#x56DE;&#x8C03;&#x8BE5;&#x65B9;&#x6CD5;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x63CF;&#x8FF0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">watchedCount</td>
+<td style="text-align:left">&#x4E92;&#x52A8;&#x623F;&#x95F4;&#x7D2F;&#x8BA1;&#x5728;&#x7EBF;&#x4EBA;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x9519;&#x8BEF;&#x56DE;&#x8C03;&#xFF08;onerror&#xFF09;">&#x9519;&#x8BEF;&#x56DE;&#x8C03;&#xFF08;onError&#xFF09;</h4>
+<pre><code>void onError(final int errCode)
+</code></pre><p>&#x7528;&#x6237;&#x4E92;&#x52A8;&#x8FC7;&#x7A0B;&#x4E2D;&#x53D1;&#x751F;&#x9519;&#x8BEF;&#xFF0C;&#x56DE;&#x8C03;&#x8BE5;&#x65B9;&#x6CD5;&#x3002;&#x9519;&#x8BEF;&#x7801;&#x8BE6;&#x60C5;&#xFF1A;</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">&#x540D;&#x79F0;</th>
+<th style="text-align:left">&#x6570;&#x7EC4;</th>
+<th style="text-align:left">&#x542B;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">EV_MESSAGE_ERROR_NETWORK_TIMEOUT</td>
+<td style="text-align:left">-1001</td>
+<td style="text-align:left">&#x8FDE;&#x63A5;&#x8D85;&#x65F6;</td>
+</tr>
+<tr>
+<td style="text-align:left">EV_MESSAGE_ERROR_NETWORK_INVALID_URL</td>
+<td style="text-align:left">-1002</td>
+<td style="text-align:left">&#x6D88;&#x606F;&#x670D;&#x52A1;&#x5668;URL&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td style="text-align:left">EV_MESSAGE_ERROR_NETWORK_NOT_CONNECT</td>
+<td style="text-align:left">-1003</td>
+<td style="text-align:left">&#x672A;&#x8FDE;&#x63A5;</td>
+</tr>
+<tr>
+<td style="text-align:left">EV_MESSAGE_ERROR_NETWORK_UNKNOWN</td>
+<td style="text-align:left">-1101</td>
+<td style="text-align:left">&#x672A;&#x77E5;&#x7684;&#x7F51;&#x7EDC;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td style="text-align:left">EV_MESSAGE_ERROR_SDK_INIT</td>
+<td style="text-align:left">-2001</td>
+<td style="text-align:left">sdk&#x672A;&#x521D;&#x59CB;&#x5316;&#x6216;&#x521D;&#x59CB;&#x5316;&#x4E0D;&#x6210;&#x529F;</td>
+</tr>
+<tr>
+<td style="text-align:left">EV_MESSAGE_ERROR_LOGIN</td>
+<td style="text-align:left">-2002</td>
+<td style="text-align:left">&#x7528;&#x6237;&#x767B;&#x5F55;&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td style="text-align:left">EV_MESSAGE_ERROR_INTERNAL_SERVER</td>
+<td style="text-align:left">-3001</td>
+<td style="text-align:left">&#x6D88;&#x606F;&#x670D;&#x52A1;&#x5668;&#x5185;&#x90E8;&#x9519;&#x8BEF;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="&#x91CD;&#x8FDE;&#x56DE;&#x8C03;&#xFF08;onreconnecting&#xFF09;">&#x91CD;&#x8FDE;&#x56DE;&#x8C03;&#xFF08;onReconnecting&#xFF09;</h4>
+<pre><code>void onReconnecting()
+</code></pre><p>&#x7531;&#x4E8E;&#x7F51;&#x7EDC;&#x539F;&#x56E0;&#xFF0C;&#x5BA2;&#x6237;&#x7AEF;&#x53EF;&#x80FD;&#x4F1A;&#x548C;&#x6D88;&#x606F;&#x670D;&#x52A1;&#x5668;&#x5931;&#x53BB;&#x8FDE;&#x63A5;&#xFF0C;&#x4E92;&#x52A8;&#x6D88;&#x606F;SDK&#x4F1A;&#x8FDB;&#x884C;&#x81EA;&#x52A8;&#x91CD;&#x8FDE;&#xFF0C;&#x5F00;&#x59CB;&#x91CD;&#x8FDE;&#x65F6;&#x89E6;&#x53D1;&#x6B64;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;&#x3002;</p>
+<h4 id="&#x91CD;&#x8FDE;&#x6210;&#x529F;&#x56DE;&#x8C03;&#xFF08;onreconnected&#xFF09;">&#x91CD;&#x8FDE;&#x6210;&#x529F;&#x56DE;&#x8C03;&#xFF08;onReconnected&#xFF09;</h4>
+<pre><code>void onReconnected()
+</code></pre><p>&#x4E92;&#x52A8;&#x6D88;&#x606F;SDK&#x5185;&#x90E8;&#x91CD;&#x8FDE;&#x6210;&#x529F;&#x540E;&#x89E6;&#x53D1;&#x6B64;&#x56DE;&#x8C03;&#x65B9;&#x6CD5;&#x3002;</p>
+<h4 id="&#x91CD;&#x8FDE;&#x5931;&#x8D25;&#x56DE;&#x8C03;&#xFF08;onreconnectfailed&#xFF09;">&#x91CD;&#x8FDE;&#x5931;&#x8D25;&#x56DE;&#x8C03;&#xFF08;onReconnectFailed&#xFF09;</h4>
+<pre><code>void onReconnectFailed()
+</code></pre><p>&#x4E92;&#x52A8;&#x6D88;&#x606F;SDK&#x5185;&#x90E8;&#x4E0D;&#x4F1A;&#x65E0;&#x9650;&#x91CD;&#x8FDE;&#xFF0C;&#x5F53;&#x91CD;&#x8FDE;&#x6B21;&#x6570;&#x8D85;&#x8FC7;&#x4E00;&#x5B9A;&#x9650;&#x5236;&#x8FD8;&#x672A;&#x8FDE;&#x63A5;&#x4E0A;&#x6D88;&#x606F;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4F1A;&#x89E6;&#x53D1;&#x91CD;&#x8FDE;&#x5931;&#x8D25;&#x56DE;&#x8C03;&#x3002;</p>
+<h4 id="&#x8FDE;&#x63A5;&#x65AD;&#x5F00;&#x56DE;&#x8C03;&#xFF08;onclose&#xFF09;">&#x8FDE;&#x63A5;&#x65AD;&#x5F00;&#x56DE;&#x8C03;&#xFF08;onClose&#xFF09;</h4>
+<pre><code>void onClose()
+</code></pre><p>&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x6D88;&#x606F;&#x670D;&#x52A1;&#x5668;&#x8FDE;&#x63A5;&#x65AD;&#x5F00;&#x4F1A;&#x89E6;&#x53D1;&#x6B64;&#x56DE;&#x8C03;&#x3002;</p>
 
                                 
                                 </section>
@@ -810,7 +1115,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"API参考","level":"1.5.1.4.5","depth":4,"next":{"title":"iOS SDK","level":"1.5.2","depth":2,"path":"chapter4/iOS.md","ref":"chapter4/iOS.md","articles":[{"title":"历史记录","level":"1.5.2.1","depth":3,"path":"chapter4/iOS/history.md","ref":"chapter4/iOS/history.md","articles":[]},{"title":"推流端","level":"1.5.2.2","depth":3,"path":"chapter4/iOS/live.md","ref":"chapter4/iOS/live.md","articles":[{"title":"概述","level":"1.5.2.2.1","depth":4,"path":"chapter4/iOS/live/overview.md","ref":"chapter4/iOS/live/overview.md","articles":[]},{"title":"快速开始","level":"1.5.2.2.2","depth":4,"path":"chapter4/iOS/live/quickstart.md","ref":"chapter4/iOS/live/quickstart.md","articles":[]},{"title":"示例代码","level":"1.5.2.2.3","depth":4,"path":"chapter4/iOS/live/sample.md","ref":"chapter4/iOS/live/sample.md","articles":[]},{"title":"功能说明","level":"1.5.2.2.4","depth":4,"path":"chapter4/iOS/live/instruction.md","ref":"chapter4/iOS/live/instruction.md","articles":[]},{"title":"API参考","level":"1.5.2.2.5","depth":4,"path":"chapter4/iOS/live/api.md","ref":"chapter4/iOS/live/api.md","articles":[]}]},{"title":"播放端","level":"1.5.2.3","depth":3,"path":"chapter4/iOS/player.md","ref":"chapter4/iOS/player.md","articles":[]},{"title":"消息交互","level":"1.5.2.4","depth":3,"path":"chapter4/iOS/message.md","ref":"chapter4/iOS/message.md","articles":[{"title":"概述","level":"1.5.2.4.1","depth":4,"path":"chapter4/iOS/message/overview.md","ref":"chapter4/iOS/message/overview.md","articles":[]},{"title":"快速开始","level":"1.5.2.4.2","depth":4,"path":"chapter4/iOS/message/quickstart.md","ref":"chapter4/iOS/message/quickstart.md","articles":[]},{"title":"示例代码","level":"1.5.2.4.3","depth":4,"path":"chapter4/iOS/message/sample.md","ref":"chapter4/iOS/message/sample.md","articles":[]},{"title":"功能说明","level":"1.5.2.4.4","depth":4,"path":"chapter4/iOS/message/instruction.md","ref":"chapter4/iOS/message/instruction.md","articles":[]},{"title":"API参考","level":"1.5.2.4.5","depth":4,"path":"chapter4/iOS/message/api.md","ref":"chapter4/iOS/message/api.md","articles":[]}]}]},"previous":{"title":"功能说明","level":"1.5.1.4.4","depth":4,"path":"chapter4/android/message/instruction.md","ref":"chapter4/android/message/instruction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/android/message/api.md","mtime":"2017-06-12T08:34:09.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-19T09:37:33.983Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"API参考","level":"1.5.1.4.5","depth":4,"next":{"title":"iOS SDK","level":"1.5.2","depth":2,"path":"chapter4/iOS.md","ref":"chapter4/iOS.md","articles":[{"title":"历史记录","level":"1.5.2.1","depth":3,"path":"chapter4/iOS/history.md","ref":"chapter4/iOS/history.md","articles":[]},{"title":"推流端","level":"1.5.2.2","depth":3,"path":"chapter4/iOS/live.md","ref":"chapter4/iOS/live.md","articles":[{"title":"概述","level":"1.5.2.2.1","depth":4,"path":"chapter4/iOS/live/overview.md","ref":"chapter4/iOS/live/overview.md","articles":[]},{"title":"快速开始","level":"1.5.2.2.2","depth":4,"path":"chapter4/iOS/live/quickstart.md","ref":"chapter4/iOS/live/quickstart.md","articles":[]},{"title":"示例代码","level":"1.5.2.2.3","depth":4,"path":"chapter4/iOS/live/sample.md","ref":"chapter4/iOS/live/sample.md","articles":[]},{"title":"功能说明","level":"1.5.2.2.4","depth":4,"path":"chapter4/iOS/live/instruction.md","ref":"chapter4/iOS/live/instruction.md","articles":[]},{"title":"API参考","level":"1.5.2.2.5","depth":4,"path":"chapter4/iOS/live/api.md","ref":"chapter4/iOS/live/api.md","articles":[]}]},{"title":"播放端","level":"1.5.2.3","depth":3,"path":"chapter4/iOS/player.md","ref":"chapter4/iOS/player.md","articles":[]},{"title":"消息交互","level":"1.5.2.4","depth":3,"path":"chapter4/iOS/message.md","ref":"chapter4/iOS/message.md","articles":[{"title":"概述","level":"1.5.2.4.1","depth":4,"path":"chapter4/iOS/message/overview.md","ref":"chapter4/iOS/message/overview.md","articles":[]},{"title":"快速开始","level":"1.5.2.4.2","depth":4,"path":"chapter4/iOS/message/quickstart.md","ref":"chapter4/iOS/message/quickstart.md","articles":[]},{"title":"示例代码","level":"1.5.2.4.3","depth":4,"path":"chapter4/iOS/message/sample.md","ref":"chapter4/iOS/message/sample.md","articles":[]},{"title":"功能说明","level":"1.5.2.4.4","depth":4,"path":"chapter4/iOS/message/instruction.md","ref":"chapter4/iOS/message/instruction.md","articles":[]},{"title":"API参考","level":"1.5.2.4.5","depth":4,"path":"chapter4/iOS/message/api.md","ref":"chapter4/iOS/message/api.md","articles":[]}]}]},"previous":{"title":"功能说明","level":"1.5.1.4.4","depth":4,"path":"chapter4/android/message/instruction.md","ref":"chapter4/android/message/instruction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/android/message/api.md","mtime":"2017-06-23T07:40:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-23T07:42:22.784Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
