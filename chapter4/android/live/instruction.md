@@ -191,10 +191,10 @@ SDK支持背景音乐播放功能，在主播插入耳机时实现了背景音�
     ```
 	
 	参数说明：
-    * width  float 0-1之间，实际宽度=预览width*width，默认值0.35f
-    * height float 0-1之间，实际高度=预览height*height，默认值0.3f
     * left   float 左上角顶点x坐标，0-1之间，相对于视频左侧实际距离=预览width*left，默认值0.65f
     * top    float 左上角顶点y坐标，0-1之间，相对于视频顶部实际距离=预览height*top，默认值0.f
+    * width  float 0-1之间，实际宽度=预览width*width，默认值0.35f
+    * height float 0-1之间，实际高度=预览height*height，默认值0.3f
 
 * 设置辅播大窗口
 
