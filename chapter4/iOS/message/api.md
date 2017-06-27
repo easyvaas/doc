@@ -1,4 +1,4 @@
-## 直播端API参考说明 - iOS
+## 消息系统API参考说明 - iOS
 ### - 主动调用方法
 #### 初始化(EVMessageManager)
 使用 Easyvaas 的消息系统时，首先需要初始化 SDK
