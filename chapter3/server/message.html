@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>查询流列表 · GitBook</title>
+        <title>消息服务 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="video-notify.html" />
+    <link rel="next" href="channel-create.html" />
     
     
-    <link rel="prev" href="live-stop.html" />
+    <link rel="prev" href="video-notify.html" />
     
 
     </head>
@@ -361,7 +361,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.1.2.3" data-path="live-list.html">
+        <li class="chapter " data-level="1.4.1.2.3" data-path="live-list.html">
             
                 <a href="live-list.html">
             
@@ -392,7 +392,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.1.3" data-path="message.html">
+        <li class="chapter active" data-level="1.4.1.3" data-path="message.html">
             
                 <a href="message.html">
             
@@ -1077,7 +1077,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >查询流列表</a>
+        <a href="../.." >消息服务</a>
     </h1>
 </div>
 
@@ -1092,165 +1092,63 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="&#x67E5;&#x8BE2;&#x6D41;&#x5217;&#x8868;">&#x67E5;&#x8BE2;&#x6D41;&#x5217;&#x8868;</h3>
-<h4 id="&#x63A5;&#x53E3;&#x8BF4;&#x660E;">&#x63A5;&#x53E3;&#x8BF4;&#x660E;</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">&#x540D;&#x79F0;</th>
-<th style="text-align:left">&#x5185;&#x5BB9;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">&#x63A5;&#x53E3;&#x540D;&#x79F0;</td>
-<td style="text-align:left">/live/list</td>
-</tr>
-<tr>
-<td style="text-align:left">&#x529F;&#x80FD;&#x8BF4;&#x660E;</td>
-<td style="text-align:left">&#x670D;&#x52A1;&#x4F7F;&#x7528;&#x8005;&#x5728;&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;&#x7684;&#x89C6;&#x9891;&#x4E1A;&#x52A1;&#x540E;&#x53F0;&#x4E2D;&#x8C03;&#x7528;&#x8BE5;&#x63A5;&#x53E3;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x76F4;&#x64AD;&#x6D41;&#x5217;&#x8868;</td>
-</tr>
-<tr>
-<td style="text-align:left">&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;</td>
-<td style="text-align:left"><a href="http://video.api.easyvaas.com/v1" target="_blank">http://video.api.easyvaas.com/v1</a></td>
-</tr>
-<tr>
-<td style="text-align:left">&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;</td>
-<td style="text-align:left">GET</td>
-</tr>
-</tbody>
-</table>
-<h4 id="&#x53C2;&#x6570;&#x8BF4;&#x660E;">&#x53C2;&#x6570;&#x8BF4;&#x660E;</h4>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
-<th style="text-align:left">&#x5FC5;&#x586B;</th>
-<th style="text-align:left">&#x7C7B;&#x578B;</th>
-<th style="text-align:left">&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">appid</td>
-<td style="text-align:left">&#x662F;</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&#x670D;&#x52A1;&#x4F7F;&#x7528;&#x8005;&#x5BF9;&#x5E94;&#x7684;appid</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li><p>&#x8BF7;&#x6C42;&#x793A;&#x4F8B;</p>
-<pre><code>  http://video.api.easyvaas.com/v1/live/list?appid=evdev
-</code></pre></li>
-</ul>
-<h4 id="&#x63A5;&#x53E3;&#x5E94;&#x7B54;">&#x63A5;&#x53E3;&#x5E94;&#x7B54;</h4>
-<ul>
-<li>&#x5E94;&#x7B54;&#x793A;&#x4F8B;</li>
-</ul>
-<pre><code>{
-    &quot;state&quot;:0,
-    &quot;message&quot;:&quot;ok&quot;,
-    &quot;content&quot;:{
-        &quot;streams&quot;:[
-        {
-            &quot;lid&quot;:&quot;123456&quot;,
-            &quot;state&quot;:1
-        }&#xFF0C;
-        {
-            &quot;lid&quot;:&quot;1234567&quot;,
-            &quot;state&quot;:1
-        }&#xFF0C;
-        {
-            &quot;lid&quot;:&quot;1234568&quot;,
-            &quot;state&quot;:1
-        }
-    ]
-    }
-}
+                                <h2 id="&#x6D88;&#x606F;&#x670D;&#x52A1;api">&#x6D88;&#x606F;&#x670D;&#x52A1;API</h2>
+<p>&#x6613;&#x89C6;&#x4E91;&#x6D88;&#x606F;&#x670D;&#x52A1;API&#x63D0;&#x4F9B;&#x6D88;&#x606F;&#x76F8;&#x5173;&#x7684;API&#x63A5;&#x53E3;&#xFF0C;&#x5E2E;&#x52A9;&#x670D;&#x52A1;&#x4F7F;&#x7528;&#x8005;&#x5FEB;&#x901F;&#x642D;&#x5EFA;&#x81EA;&#x5DF1;&#x7684;&#x6D88;&#x606F;&#x540E;&#x53F0;&#x670D;&#x52A1;&#x3002;</p>
+<h3 id="&#x8C03;&#x7528;&#x65B9;&#x5F0F;">&#x8C03;&#x7528;&#x65B9;&#x5F0F;</h3>
+<h4 id="&#x670D;&#x52A1;&#x57DF;&#x540D;">&#x670D;&#x52A1;&#x57DF;&#x540D;</h4>
+<pre><code>msg.api.easyvaas.com
+</code></pre><h4 id="&#x670D;&#x52A1;&#x7248;&#x672C;&#x53F7;">&#x670D;&#x52A1;&#x7248;&#x672C;&#x53F7;</h4>
+<pre><code>v1
+</code></pre><h4 id="&#x901A;&#x4FE1;&#x534F;&#x8BAE;">&#x901A;&#x4FE1;&#x534F;&#x8BAE;</h4>
+<pre><code>HTTP
+</code></pre><h4 id="&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;">&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;</h4>
+<pre><code>GET
+</code></pre><h4 id="&#x5B57;&#x7B26;&#x7F16;&#x7801;">&#x5B57;&#x7B26;&#x7F16;&#x7801;</h4>
+<pre><code>UTF-8
+</code></pre><h4 id="&#x8FD4;&#x56DE;&#x503C;&#x5B9A;&#x4E49;">&#x8FD4;&#x56DE;&#x503C;&#x5B9A;&#x4E49;</h4>
+<p>&#x670D;&#x52A1;&#x7AEF;API&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x7EDF;&#x4E00;&#x4E3A;&#x4EE5;&#x4E0B;&#x683C;&#x5F0F;&#x7684;json&#x4E32;</p>
+<pre><code>{state : 0,  message : &apos;&apos;, content :  {}}
 </code></pre><ul>
-<li>&#x8FD4;&#x56DE;&#x53C2;&#x6570;&#x8BF4;&#x660E;</li>
+<li>state, &#x63A5;&#x53E3;&#x8FD4;&#x56DE;&#x7684;&#x72B6;&#x6001;&#x7801;&#xFF0C;0-&#x63A5;&#x53E3;&#x8BBF;&#x95EE;&#x6B63;&#x5E38;&#xFF0C;&#x5176;&#x4ED6;&#x975E;&#x96F6;&#x503C;&#x8868;&#x793A;&#x63A5;&#x53E3;&#x8BBF;&#x95EE;&#x51FA;&#x9519;</li>
+<li>message, Human-Readable&#x7684;&#x9519;&#x8BEF;&#x63CF;&#x8FF0;&#xFF0C;&#x6CA1;&#x6709;&#x9519;&#x8BEF;&#x65F6;&#x4E3A;&#x7A7A;&#x3002;</li>
+<li>content, &#x4E1A;&#x52A1;&#x6570;&#x636E;&#x7ED3;&#x6784;</li>
 </ul>
+<h4 id="api&#x6982;&#x89C8;">API&#x6982;&#x89C8;</h4>
 <table>
 <thead>
 <tr>
-<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
-<th style="text-align:left">&#x7C7B;&#x578B;</th>
-<th style="text-align:left">&#x8BF4;&#x660E;</th>
+<th style="text-align:left">&#x63A5;&#x53E3;&#x529F;&#x80FD;</th>
+<th style="text-align:left">&#x63A5;&#x53E3;&#x540D;&#x79F0;</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left">streams</td>
-<td style="text-align:left">List</td>
-<td style="text-align:left">&#x76F4;&#x64AD;&#x6D41;&#x5217;&#x8868;</td>
+<td style="text-align:left">channel&#x521B;&#x5EFA;</td>
+<td style="text-align:left">/channel/create</td>
 </tr>
 <tr>
-<td style="text-align:left">streams[].lid</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&#x76F4;&#x64AD;&#x6D41;id</td>
+<td style="text-align:left">&#x5220;&#x9664;&#x6D88;&#x606F;</td>
+<td style="text-align:left">/msg/delete</td>
 </tr>
 <tr>
-<td style="text-align:left">streams[].state</td>
-<td style="text-align:left">int</td>
-<td style="text-align:left">&#x76F4;&#x64AD;&#x6D41;&#x72B6;&#x6001;&#xFF0C;&#x8BE6;&#x7EC6;&#x89C1;&#x76F4;&#x64AD;&#x6D41;&#x72B6;&#x6001;&#x8BF4;&#x660E;</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>&#x76F4;&#x64AD;&#x6D41;&#x72B6;&#x6001;&#x8BF4;&#x660E;</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">&#x72B6;&#x6001;&#x503C;</th>
-<th style="text-align:left">&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">-1</td>
-<td style="text-align:left">EXITE&#xFF0C;&#x6D41;&#x9000;&#x51FA;</td>
+<td style="text-align:left">&#x5386;&#x53F2;&#x6D88;&#x606F;</td>
+<td style="text-align:left">/msg/history</td>
 </tr>
 <tr>
-<td style="text-align:left">0</td>
-<td style="text-align:left">PREPAREE&#xFF0C;&#x6D41;&#x5F00;&#x59CB;&#x524D;</td>
+<td style="text-align:left">&#x53D1;&#x9001;&#x6D88;&#x606F;</td>
+<td style="text-align:left">/msg/send</td>
 </tr>
 <tr>
-<td style="text-align:left">1</td>
-<td style="text-align:left">STREAME&#xFF0C;&#x6D41;&#x5F00;&#x59CB;</td>
+<td style="text-align:left">&#x7528;&#x6237;&#x7981;&#x8A00;</td>
+<td style="text-align:left">/user/shutup</td>
 </tr>
 <tr>
-<td style="text-align:left">2</td>
-<td style="text-align:left">BREAKE&#xFF0C;&#x6D41;&#x65AD;&#x5F00;</td>
+<td style="text-align:left">&#x83B7;&#x53D6;&#x7528;&#x6237;&#x7981;&#x8A00;&#x5217;&#x8868;</td>
+<td style="text-align:left">/user/shutuplist</td>
 </tr>
 <tr>
-<td style="text-align:left">3</td>
-<td style="text-align:left">PAUSEE&#xFF0C;&#x6D41;&#x6682;&#x65F6;&#x505C;&#x6B62;&#x63A8;&#x9001;</td>
-</tr>
-</tbody>
-</table>
-<h4 id="&#x9519;&#x8BEF;&#x7801;&#x8BF4;&#x660E;">&#x9519;&#x8BEF;&#x7801;&#x8BF4;&#x660E;</h4>
-<p>&#x63A5;&#x53E3;&#x8BBF;&#x95EE;&#x8FD4;&#x56DE;json&#x5B57;&#x7B26;&#x4E32;&#x4E2D;state&#x4E0D;&#x4E3A;0&#xFF0C;&#x63A5;&#x53E3;&#x8BBF;&#x95EE;&#x51FA;&#x9519;&#xFF0C;&#x9519;&#x8BEF;&#x8BF4;&#x660E;&#x5982;&#x4E0B;</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">state</th>
-<th style="text-align:left">&#x9519;&#x8BEF;&#x63CF;&#x8FF0;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">1</td>
-<td style="text-align:left">&#x53C2;&#x6570;&#x9519;&#x8BEF;</td>
-</tr>
-<tr>
-<td style="text-align:left">2</td>
-<td style="text-align:left">&#x7CFB;&#x7EDF;&#x5185;&#x90E8;&#x9519;&#x8BEF;</td>
-</tr>
-<tr>
-<td style="text-align:left">102</td>
-<td style="text-align:left">appid&#x9519;&#x8BEF;</td>
+<td style="text-align:left">&#x53D6;&#x6D88;&#x7528;&#x6237;&#x7981;&#x8A00;</td>
+<td style="text-align:left">/user/unshutup</td>
 </tr>
 </tbody>
 </table>
@@ -1281,12 +1179,12 @@
 
             
                 
-                <a href="live-stop.html" class="navigation navigation-prev " aria-label="Previous page: 禁播流">
+                <a href="video-notify.html" class="navigation navigation-prev " aria-label="Previous page: 视频服务事件通知">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="video-notify.html" class="navigation navigation-next " aria-label="Next page: 视频服务事件通知">
+                <a href="channel-create.html" class="navigation navigation-next " aria-label="Next page: channel创建">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1297,7 +1195,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"查询流列表","level":"1.4.1.2.3","depth":4,"next":{"title":"视频服务事件通知","level":"1.4.1.2.4","depth":4,"path":"chapter3/server/video-notify.md","ref":"chapter3/server/video-notify.md","articles":[]},"previous":{"title":"禁播流","level":"1.4.1.2.2","depth":4,"path":"chapter3/server/live-stop.md","ref":"chapter3/server/live-stop.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter3/server/live-list.md","mtime":"2017-06-27T03:41:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-27T11:46:44.734Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"消息服务","level":"1.4.1.3","depth":3,"next":{"title":"channel创建","level":"1.4.1.3.1","depth":4,"path":"chapter3/server/channel-create.md","ref":"chapter3/server/channel-create.md","articles":[]},"previous":{"title":"视频服务事件通知","level":"1.4.1.2.4","depth":4,"path":"chapter3/server/video-notify.md","ref":"chapter3/server/video-notify.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter3/server/message.md","mtime":"2017-06-27T10:58:23.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-27T11:46:44.734Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

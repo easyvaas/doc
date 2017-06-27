@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>查询流列表 · GitBook</title>
+        <title>取消用户禁言 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.2">
@@ -61,10 +61,10 @@
     <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="video-notify.html" />
+    <link rel="next" href="../../chapter4/" />
     
     
-    <link rel="prev" href="live-stop.html" />
+    <link rel="prev" href="user-shutup-list.html" />
     
 
     </head>
@@ -361,7 +361,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4.1.2.3" data-path="live-list.html">
+        <li class="chapter " data-level="1.4.1.2.3" data-path="live-list.html">
             
                 <a href="live-list.html">
             
@@ -484,7 +484,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.4.1.3.7" data-path="user-unshutup.html">
+        <li class="chapter active" data-level="1.4.1.3.7" data-path="user-unshutup.html">
             
                 <a href="user-unshutup.html">
             
@@ -1077,7 +1077,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >查询流列表</a>
+        <a href="../.." >取消用户禁言</a>
     </h1>
 </div>
 
@@ -1092,7 +1092,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h3 id="&#x67E5;&#x8BE2;&#x6D41;&#x5217;&#x8868;">&#x67E5;&#x8BE2;&#x6D41;&#x5217;&#x8868;</h3>
+                                <h3 id="&#x89E3;&#x9664;&#x7528;&#x6237;&#x7981;&#x8A00;">&#x89E3;&#x9664;&#x7528;&#x6237;&#x7981;&#x8A00;</h3>
 <h4 id="&#x63A5;&#x53E3;&#x8BF4;&#x660E;">&#x63A5;&#x53E3;&#x8BF4;&#x660E;</h4>
 <table>
 <thead>
@@ -1104,15 +1104,15 @@
 <tbody>
 <tr>
 <td style="text-align:left">&#x63A5;&#x53E3;&#x540D;&#x79F0;</td>
-<td style="text-align:left">/live/list</td>
+<td style="text-align:left">/user/unshutup</td>
 </tr>
 <tr>
 <td style="text-align:left">&#x529F;&#x80FD;&#x8BF4;&#x660E;</td>
-<td style="text-align:left">&#x670D;&#x52A1;&#x4F7F;&#x7528;&#x8005;&#x5728;&#x81EA;&#x5DF1;&#x5B9E;&#x73B0;&#x7684;&#x89C6;&#x9891;&#x4E1A;&#x52A1;&#x540E;&#x53F0;&#x4E2D;&#x8C03;&#x7528;&#x8BE5;&#x63A5;&#x53E3;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x76F4;&#x64AD;&#x6D41;&#x5217;&#x8868;</td>
+<td style="text-align:left">&#x5BF9;&#x67D0;&#x4E00;&#x7528;&#x6237;&#x7981;&#x8A00;</td>
 </tr>
 <tr>
 <td style="text-align:left">&#x670D;&#x52A1;&#x5668;&#x5730;&#x5740;</td>
-<td style="text-align:left"><a href="http://video.api.easyvaas.com/v1" target="_blank">http://video.api.easyvaas.com/v1</a></td>
+<td style="text-align:left"><a href="http://api.msg.easyvaas.com/v1/server/" target="_blank">http://api.msg.easyvaas.com/v1/server/</a></td>
 </tr>
 <tr>
 <td style="text-align:left">&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;</td>
@@ -1137,11 +1137,23 @@
 <td style="text-align:left">String</td>
 <td style="text-align:left">&#x670D;&#x52A1;&#x4F7F;&#x7528;&#x8005;&#x5BF9;&#x5E94;&#x7684;appid</td>
 </tr>
+<tr>
+<td style="text-align:left">channel</td>
+<td style="text-align:left">&#x5426;</td>
+<td style="text-align:left">string</td>
+<td style="text-align:left">&#x6240;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x901A;&#x9053;&#x540D;&#x79F0;&#xFF0C;&#x6CE8;&#x610F;&#x5168;&#x5C40;&#x552F;&#x4E00;&#xFF0C;&#x4E0D;&#x586B;&#x8868;&#x793A;&#x5BF9;&#x6240;&#x6709;channel&#x90FD;&#x89E3;&#x9664;&#x7981;&#x8A00;</td>
+</tr>
+<tr>
+<td style="text-align:left">userid</td>
+<td style="text-align:left">&#x662F;</td>
+<td style="text-align:left">String</td>
+<td style="text-align:left">&#x7528;&#x6237;ID</td>
+</tr>
 </tbody>
 </table>
 <ul>
 <li><p>&#x8BF7;&#x6C42;&#x793A;&#x4F8B;</p>
-<pre><code>  http://video.api.easyvaas.com/v1/live/list?appid=evdev
+<pre><code>  http://api.msg.easyvaas.com/v1/server/user/shutup?appid=evdev&amp;channel=test&amp;userid=xyk
 </code></pre></li>
 </ul>
 <h4 id="&#x63A5;&#x53E3;&#x5E94;&#x7B54;">&#x63A5;&#x53E3;&#x5E94;&#x7B54;</h4>
@@ -1149,88 +1161,12 @@
 <li>&#x5E94;&#x7B54;&#x793A;&#x4F8B;</li>
 </ul>
 <pre><code>{
-    &quot;state&quot;:0,
-    &quot;message&quot;:&quot;ok&quot;,
-    &quot;content&quot;:{
-        &quot;streams&quot;:[
-        {
-            &quot;lid&quot;:&quot;123456&quot;,
-            &quot;state&quot;:1
-        }&#xFF0C;
-        {
-            &quot;lid&quot;:&quot;1234567&quot;,
-            &quot;state&quot;:1
-        }&#xFF0C;
-        {
-            &quot;lid&quot;:&quot;1234568&quot;,
-            &quot;state&quot;:1
-        }
-    ]
-    }
+  &quot;state&quot;: 0,
+  &quot;message&quot;: &quot;OK&quot;,
+  &quot;content&quot;: {
+  }
 }
-</code></pre><ul>
-<li>&#x8FD4;&#x56DE;&#x53C2;&#x6570;&#x8BF4;&#x660E;</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">&#x53C2;&#x6570;&#x540D;&#x79F0;</th>
-<th style="text-align:left">&#x7C7B;&#x578B;</th>
-<th style="text-align:left">&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">streams</td>
-<td style="text-align:left">List</td>
-<td style="text-align:left">&#x76F4;&#x64AD;&#x6D41;&#x5217;&#x8868;</td>
-</tr>
-<tr>
-<td style="text-align:left">streams[].lid</td>
-<td style="text-align:left">String</td>
-<td style="text-align:left">&#x76F4;&#x64AD;&#x6D41;id</td>
-</tr>
-<tr>
-<td style="text-align:left">streams[].state</td>
-<td style="text-align:left">int</td>
-<td style="text-align:left">&#x76F4;&#x64AD;&#x6D41;&#x72B6;&#x6001;&#xFF0C;&#x8BE6;&#x7EC6;&#x89C1;&#x76F4;&#x64AD;&#x6D41;&#x72B6;&#x6001;&#x8BF4;&#x660E;</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>&#x76F4;&#x64AD;&#x6D41;&#x72B6;&#x6001;&#x8BF4;&#x660E;</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">&#x72B6;&#x6001;&#x503C;</th>
-<th style="text-align:left">&#x8BF4;&#x660E;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">-1</td>
-<td style="text-align:left">EXITE&#xFF0C;&#x6D41;&#x9000;&#x51FA;</td>
-</tr>
-<tr>
-<td style="text-align:left">0</td>
-<td style="text-align:left">PREPAREE&#xFF0C;&#x6D41;&#x5F00;&#x59CB;&#x524D;</td>
-</tr>
-<tr>
-<td style="text-align:left">1</td>
-<td style="text-align:left">STREAME&#xFF0C;&#x6D41;&#x5F00;&#x59CB;</td>
-</tr>
-<tr>
-<td style="text-align:left">2</td>
-<td style="text-align:left">BREAKE&#xFF0C;&#x6D41;&#x65AD;&#x5F00;</td>
-</tr>
-<tr>
-<td style="text-align:left">3</td>
-<td style="text-align:left">PAUSEE&#xFF0C;&#x6D41;&#x6682;&#x65F6;&#x505C;&#x6B62;&#x63A8;&#x9001;</td>
-</tr>
-</tbody>
-</table>
-<h4 id="&#x9519;&#x8BEF;&#x7801;&#x8BF4;&#x660E;">&#x9519;&#x8BEF;&#x7801;&#x8BF4;&#x660E;</h4>
+</code></pre><h4 id="&#x9519;&#x8BEF;&#x7801;&#x8BF4;&#x660E;">&#x9519;&#x8BEF;&#x7801;&#x8BF4;&#x660E;</h4>
 <p>&#x63A5;&#x53E3;&#x8BBF;&#x95EE;&#x8FD4;&#x56DE;json&#x5B57;&#x7B26;&#x4E32;&#x4E2D;state&#x4E0D;&#x4E3A;0&#xFF0C;&#x63A5;&#x53E3;&#x8BBF;&#x95EE;&#x51FA;&#x9519;&#xFF0C;&#x9519;&#x8BEF;&#x8BF4;&#x660E;&#x5982;&#x4E0B;</p>
 <table>
 <thead>
@@ -1249,8 +1185,12 @@
 <td style="text-align:left">&#x7CFB;&#x7EDF;&#x5185;&#x90E8;&#x9519;&#x8BEF;</td>
 </tr>
 <tr>
-<td style="text-align:left">102</td>
+<td style="text-align:left">101</td>
 <td style="text-align:left">appid&#x9519;&#x8BEF;</td>
+</tr>
+<tr>
+<td style="text-align:left">102</td>
+<td style="text-align:left">channel&#x4E0D;&#x5B58;&#x5728;</td>
 </tr>
 </tbody>
 </table>
@@ -1281,12 +1221,12 @@
 
             
                 
-                <a href="live-stop.html" class="navigation navigation-prev " aria-label="Previous page: 禁播流">
+                <a href="user-shutup-list.html" class="navigation navigation-prev " aria-label="Previous page: 获取禁言用户列表">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="video-notify.html" class="navigation navigation-next " aria-label="Next page: 视频服务事件通知">
+                <a href="../../chapter4/" class="navigation navigation-next " aria-label="Next page: SDK">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -1297,7 +1237,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"查询流列表","level":"1.4.1.2.3","depth":4,"next":{"title":"视频服务事件通知","level":"1.4.1.2.4","depth":4,"path":"chapter3/server/video-notify.md","ref":"chapter3/server/video-notify.md","articles":[]},"previous":{"title":"禁播流","level":"1.4.1.2.2","depth":4,"path":"chapter3/server/live-stop.md","ref":"chapter3/server/live-stop.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter3/server/live-list.md","mtime":"2017-06-27T03:41:36.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-27T11:46:44.734Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"取消用户禁言","level":"1.4.1.3.7","depth":4,"next":{"title":"SDK","level":"1.5","depth":1,"path":"chapter4/README.md","ref":"chapter4/README.md","articles":[{"title":"Android SDK","level":"1.5.1","depth":2,"path":"chapter4/android.md","ref":"chapter4/android.md","articles":[{"title":"历史记录","level":"1.5.1.1","depth":3,"path":"chapter4/android/history.md","ref":"chapter4/android/history.md","articles":[]},{"title":"推流端","level":"1.5.1.2","depth":3,"path":"chapter4/android/live.md","ref":"chapter4/android/live.md","articles":[{"title":"概述","level":"1.5.1.2.1","depth":4,"path":"chapter4/android/live/overview.md","ref":"chapter4/android/live/overview.md","articles":[]},{"title":"快速开始","level":"1.5.1.2.2","depth":4,"path":"chapter4/android/live/quickstart.md","ref":"chapter4/android/live/quickstart.md","articles":[]},{"title":"示例代码","level":"1.5.1.2.3","depth":4,"path":"chapter4/android/live/sample.md","ref":"chapter4/android/live/sample.md","articles":[]},{"title":"功能说明","level":"1.5.1.2.4","depth":4,"path":"chapter4/android/live/instruction.md","ref":"chapter4/android/live/instruction.md","articles":[]},{"title":"API参考","level":"1.5.1.2.5","depth":4,"path":"chapter4/android/live/api.md","ref":"chapter4/android/live/api.md","articles":[]}]},{"title":"播放端","level":"1.5.1.3","depth":3,"path":"chapter4/android/player.md","ref":"chapter4/android/player.md","articles":[]},{"title":"消息交互","level":"1.5.1.4","depth":3,"path":"chapter4/android/message.md","ref":"chapter4/android/message.md","articles":[{"title":"概述","level":"1.5.1.4.1","depth":4,"path":"chapter4/android/message/overview.md","ref":"chapter4/android/message/overview.md","articles":[]},{"title":"快速开始","level":"1.5.1.4.2","depth":4,"path":"chapter4/android/message/quickstart.md","ref":"chapter4/android/message/quickstart.md","articles":[]},{"title":"示例代码","level":"1.5.1.4.3","depth":4,"path":"chapter4/android/message/sample.md","ref":"chapter4/android/message/sample.md","articles":[]},{"title":"功能说明","level":"1.5.1.4.4","depth":4,"path":"chapter4/android/message/instruction.md","ref":"chapter4/android/message/instruction.md","articles":[]},{"title":"API参考","level":"1.5.1.4.5","depth":4,"path":"chapter4/android/message/api.md","ref":"chapter4/android/message/api.md","articles":[]}]}]},{"title":"iOS SDK","level":"1.5.2","depth":2,"path":"chapter4/iOS.md","ref":"chapter4/iOS.md","articles":[{"title":"历史记录","level":"1.5.2.1","depth":3,"path":"chapter4/iOS/history.md","ref":"chapter4/iOS/history.md","articles":[]},{"title":"推流端","level":"1.5.2.2","depth":3,"path":"chapter4/iOS/live.md","ref":"chapter4/iOS/live.md","articles":[{"title":"概述","level":"1.5.2.2.1","depth":4,"path":"chapter4/iOS/live/overview.md","ref":"chapter4/iOS/live/overview.md","articles":[]},{"title":"快速开始","level":"1.5.2.2.2","depth":4,"path":"chapter4/iOS/live/quickstart.md","ref":"chapter4/iOS/live/quickstart.md","articles":[]},{"title":"示例代码","level":"1.5.2.2.3","depth":4,"path":"chapter4/iOS/live/sample.md","ref":"chapter4/iOS/live/sample.md","articles":[]},{"title":"功能说明","level":"1.5.2.2.4","depth":4,"path":"chapter4/iOS/live/instruction.md","ref":"chapter4/iOS/live/instruction.md","articles":[]},{"title":"API参考","level":"1.5.2.2.5","depth":4,"path":"chapter4/iOS/live/api.md","ref":"chapter4/iOS/live/api.md","articles":[]}]},{"title":"播放端","level":"1.5.2.3","depth":3,"path":"chapter4/iOS/player.md","ref":"chapter4/iOS/player.md","articles":[]},{"title":"消息交互","level":"1.5.2.4","depth":3,"path":"chapter4/iOS/message.md","ref":"chapter4/iOS/message.md","articles":[{"title":"概述","level":"1.5.2.4.1","depth":4,"path":"chapter4/iOS/message/overview.md","ref":"chapter4/iOS/message/overview.md","articles":[]},{"title":"快速开始","level":"1.5.2.4.2","depth":4,"path":"chapter4/iOS/message/quickstart.md","ref":"chapter4/iOS/message/quickstart.md","articles":[]},{"title":"示例代码","level":"1.5.2.4.3","depth":4,"path":"chapter4/iOS/message/sample.md","ref":"chapter4/iOS/message/sample.md","articles":[]},{"title":"功能说明","level":"1.5.2.4.4","depth":4,"path":"chapter4/iOS/message/instruction.md","ref":"chapter4/iOS/message/instruction.md","articles":[]},{"title":"API参考","level":"1.5.2.4.5","depth":4,"path":"chapter4/iOS/message/api.md","ref":"chapter4/iOS/message/api.md","articles":[]}]}]},{"title":"Windows SDK","level":"1.5.3","depth":2,"path":"chapter4/windows.md","ref":"chapter4/windows.md","articles":[]},{"title":"JS SDK","level":"1.5.4","depth":2,"path":"chapter4/js.md","ref":"chapter4/js.md","articles":[{"title":"历史记录","level":"1.5.4.1","depth":3,"path":"chapter4/js/history.md","ref":"chapter4/js/history.md","articles":[]},{"title":"播放端","level":"1.5.4.2","depth":3,"path":"chapter4/js/player.md","ref":"chapter4/js/player.md","articles":[{"title":"API参考","level":"1.5.4.2.1","depth":4,"path":"chapter4/js/player/api.md","ref":"chapter4/js/player/api.md","articles":[]}]},{"title":"消息交互","level":"1.5.4.3","depth":3,"path":"chapter4/js/message.md","ref":"chapter4/js/message.md","articles":[]}]}]},"previous":{"title":"获取禁言用户列表","level":"1.4.1.3.6","depth":4,"path":"chapter3/server/user-shutup-list.md","ref":"chapter3/server/user-shutup-list.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter3/server/user-unshutup.md","mtime":"2017-06-27T11:05:07.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-27T11:46:44.734Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
