@@ -648,6 +648,77 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.3.1" data-path="../player/overview.html">
+            
+                <a href="../player/overview.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3.2" data-path="../player/quickstart.html">
+            
+                <a href="../player/quickstart.html">
+            
+                    
+                    快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3.3" data-path="../player/sample.html">
+            
+                <a href="../player/sample.html">
+            
+                    
+                    示例代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3.4" data-path="../player/instruction.html">
+            
+                <a href="../player/instruction.html">
+            
+                    
+                    功能说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3.5" data-path="../player/api.html">
+            
+                <a href="../player/api.html">
+            
+                    
+                    API参考
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.5.1.4" data-path="../message.html">
@@ -860,6 +931,77 @@
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.3.1" data-path="../../iOS/player/overview.html">
+            
+                <a href="../../iOS/player/overview.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3.2" data-path="../../iOS/player/quickstart.html">
+            
+                <a href="../../iOS/player/quickstart.html">
+            
+                    
+                    快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3.3" data-path="../../iOS/player/sample.html">
+            
+                <a href="../../iOS/player/sample.html">
+            
+                    
+                    示例代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3.4" data-path="../../iOS/player/instruction.html">
+            
+                <a href="../../iOS/player/instruction.html">
+            
+                    
+                    功能说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3.5" data-path="../../iOS/player/api.html">
+            
+                <a href="../../iOS/player/api.html">
+            
+                    
+                    API参考
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -1102,10 +1244,10 @@
 <li>MESSAGE_TYPE_SYS = &quot;system&quot;; //&#x7CFB;&#x7EDF;&#x6D88;&#x606F;</li>
 </ul>
 <h4 id="&#x666E;&#x901A;&#x63A5;&#x53E3;">&#x666E;&#x901A;&#x63A5;&#x53E3;</h4>
-<pre><code>public void send(String topic, String message, String userdata, String type, MyRequestCallBack&lt;String&gt; callBack)
+<pre><code>public void send(String channel, String message, String userdata, String type, MyRequestCallBack&lt;String&gt; callBack)
 </code></pre><p>&#x6D88;&#x606F;&#x7CFB;&#x7EDF;sdk&#x63D0;&#x4F9B;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x7684;send&#x63A5;&#x53E3;&#xFF0C;&#x6D88;&#x606F;&#x7EA7;&#x522B;&#x548C;&#x662F;&#x5426;&#x4FDD;&#x5B58;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x503C;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x6307;&#x5B9A;&#x6D88;&#x606F;&#x7EA7;&#x522B;&#x6216;&#x662F;&#x5426;&#x4FDD;&#x5B58;&#xFF0C;&#x4F7F;&#x7528;&#x4EE5;&#x4E0B;&#x7684;&#x9AD8;&#x7EA7;&#x63A5;&#x53E3;sendMsg&#x3002;</p>
 <h4 id="&#x9AD8;&#x7EA7;&#x63A5;&#x53E3;">&#x9AD8;&#x7EA7;&#x63A5;&#x53E3;</h4>
-<pre><code>public void sendMsg(String topic, String message, String userdata, String type, int level, boolean save, MyRequestCallBack&lt;String&gt; callBack)
+<pre><code>public void sendMsg(String channel, String message, String userdata, String type, int level, boolean save, MyRequestCallBack&lt;String&gt; callBack)
 </code></pre><ul>
 <li>&#x6307;&#x5B9A;&#x6D88;&#x606F;&#x4F18;&#x5148;&#x7EA7;&#xFF0C;&#x4F18;&#x5148;&#x7EA7;[0,10]&#xFF0C;&#x503C;&#x8D8A;&#x5927;&#x8D8A;&#x91CD;&#x8981;&#xFF0C;&#x7F3A;&#x7701;&#x4E3A;4; level&#x4E3A;9,10&#x7684;&#x4E0D;&#x80FD;&#x8FC7;&#x6EE4;</li>
 <li>&#x6307;&#x5B9A;&#x6D88;&#x606F;&#x662F;&#x5426;&#x4FDD;&#x5B58;&#xFF0C;&#x7F3A;&#x7701;&#x4E3A;true</li>
@@ -1208,7 +1350,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"功能说明","level":"1.5.1.4.4","depth":4,"next":{"title":"API参考","level":"1.5.1.4.5","depth":4,"path":"chapter4/android/message/api.md","ref":"chapter4/android/message/api.md","articles":[]},"previous":{"title":"示例代码","level":"1.5.1.4.3","depth":4,"path":"chapter4/android/message/sample.md","ref":"chapter4/android/message/sample.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/android/message/instruction.md","mtime":"2017-06-12T12:08:46.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-27T11:46:44.734Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"功能说明","level":"1.5.1.4.4","depth":4,"next":{"title":"API参考","level":"1.5.1.4.5","depth":4,"path":"chapter4/android/message/api.md","ref":"chapter4/android/message/api.md","articles":[]},"previous":{"title":"示例代码","level":"1.5.1.4.3","depth":4,"path":"chapter4/android/message/sample.md","ref":"chapter4/android/message/sample.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/android/message/instruction.md","mtime":"2017-06-28T02:06:48.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-28T02:38:01.908Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
