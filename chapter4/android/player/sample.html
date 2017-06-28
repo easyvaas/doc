@@ -1234,7 +1234,152 @@
     
                                 <section class="normal markdown-section">
                                 
-                                
+                                <h3 id="&#x793A;&#x4F8B;&#x4EE3;&#x7801;">&#x793A;&#x4F8B;&#x4EE3;&#x7801;</h3>
+<h4 id="&#x521B;&#x5EFA;&#x5168;&#x5C40;application">&#x521B;&#x5EFA;&#x5168;&#x5C40;Application</h4>
+<p>&#x521B;&#x5EFA;&#x5168;&#x5C40;Application&#x6587;&#x4EF6;&#xFF0C;&#x5982;&#x679C;&#x76EE;&#x6807;&#x5DE5;&#x7A0B;&#x5168;&#x5C40;Application&#x6587;&#x4EF6;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x5728;&#x8BE5;&#x6587;&#x4EF6;&#x5408;&#x9002;&#x7684;&#x5730;&#x65B9;&#x4F7F;&#x7528;EVSdk.init()&#x65B9;&#x6CD5;&#x6765;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5C06;&#x4E0A;&#x9762;&#x83B7;&#x53D6;&#x5230;&#x7684;APPID&#xFF0C;Access Key&#xFF0C;Secret Key&#x4F5C;&#x4E3A;&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x7684;&#x4F4D;&#x7F6E;&#x5E94;&#x8BE5;&#x662F;&#xFF1A;&#x76EE;&#x6807;&#x5DE5;&#x7A0B;&#x7528;&#x6237;&#x767B;&#x5F55;&#x6210;&#x529F;&#x540E;&#x8C03;&#x7528;&#x5168;&#x5C40;Application&#x8BBE;&#x7F6E;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x5C06;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x4F5C;&#x4E3A;EVSdk.init&#x7684;&#x53C2;&#x6570;&#x3002;&#x5982;&#x679C;&#x521D;&#x671F;&#x76EE;&#x6807;&#x5DE5;&#x7A0B;&#x6CA1;&#x6709;&#x7528;&#x6237;&#x7CFB;&#x7EDF;&#xFF0C;&#x5728;&#x5168;&#x5C40;Application&#x7684;onCreate()&#x51FD;&#x6570;&#x4E2D;&#x8C03;&#x7528;EVSdk.init()&#xFF0C;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x7684;&#x53C2;&#x6570;&#x4F20;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#x5373;&#x53EF;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>    @Override public void onCreate() {
+        super.onCreate();
+
+        app = this;
+
+        //&#x6253;&#x5F00;SDK&#x8BE6;&#x7EC6;&#x65E5;&#x5FD7;&#x5F00;&#x5173;
+        EVSdk.enableDebugLog();
+
+        //&#x521D;&#x59CB;&#x5316;SDK&#xFF0C;&#x4F20;&#x5165;APPID&#xFF0C;Access Key&#xFF0C;Secret Key&#xFF0C;userdata&#x7B49;&#x53C2;&#x6570;
+        EVSdk.init(app.getApplicationContext(), &quot;APPID&quot;, &quot;Access Key&quot;, &quot;Secret Key&quot;, &quot;userdata&quot;);
+    }
+</code></pre><h4 id="&#x521B;&#x5EFA;&#x64AD;&#x653E;&#x4E3B;&#x754C;&#x9762;">&#x521B;&#x5EFA;&#x64AD;&#x653E;&#x4E3B;&#x754C;&#x9762;</h4>
+<p>&#x53EF;&#x53C2;&#x8003;demo&#x5DE5;&#x7A0B;&#x4E2D;&#x7684;com.easyvaas.sdk.demo.PlayerActivity&#x7C7B;&#x5B8C;&#x6210;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x64AD;&#x653E;&#x793A;&#x4F8B;</p>
+<ul>
+<li><p>&#x5728;AndroidManifest.xml&#x6587;&#x4EF6;&#x4E2D;&#x6CE8;&#x518C;Activity&#xFF0C;&#x56FA;&#x5B9A;&#x4E3A;&#x7AD6;&#x5C4F;&#x3001;&#x5168;&#x5C4F;&#x64AD;&#x653E;</p>
+<pre><code>  &lt;activity
+      android:name=&quot;.PlayerActivity&quot;
+      android:configChanges=&quot;orientation|keyboardHidden&quot;
+      android:label=&quot;@string/title_activity_player&quot;
+      android:screenOrientation=&quot;portrait&quot;
+      android:theme=&quot;@style/Theme.AppCompat.Light.NoActionBar&quot;
+      android:windowSoftInputMode=&quot;stateHidden|adjustResize&quot; &gt;
+  &lt;/activity&gt;
+</code></pre></li>
+<li><p>&#x5728;&#x5E03;&#x5C40;&#x6587;&#x4EF6;&#x4E2D;&#x52A0;&#x5165;&#x64AD;&#x653E;&#x663E;&#x793A;View</p>
+<pre><code>  &lt;com.easyvaas.sdk.player.base.EVVideoView
+      android:id=&quot;@+id/player_surface_view&quot;
+      android:layout_width=&quot;match_parent&quot;
+      android:layout_height=&quot;match_parent&quot;
+      android:layout_gravity=&quot;center&quot;/&gt;
+</code></pre></li>
+<li><p>&#x521D;&#x59CB;&#x5316;EVVideoView</p>
+<pre><code>  mVideoView = (EVVideoView) findViewById(R.id.player_surface_view);
+</code></pre></li>
+<li><p>&#x64AD;&#x653E;&#x53C2;&#x6570;&#x8BBE;&#x7F6E;
+&#x64AD;&#x653E;&#x53C2;&#x6570;EVPlayerParameter&#x4F7F;&#x7528;&#x4E86;Builder&#x6A21;&#x5F0F;&#xFF0C;&#x8FD9;&#x91CC;&#x53EA;&#x8BBE;&#x7F6E;&#x5F53;&#x524D;&#x64AD;&#x653E;&#x7684;&#x6D41;&#x662F;&#x5426;&#x4E3A;&#x76F4;&#x64AD;&#x6D41;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>  EVPlayerParameter.Builder builder = new EVPlayerParameter.Builder();
+  builder.setLive(true);
+</code></pre></li>
+<li><p>&#x521B;&#x5EFA;&#x64AD;&#x653E;&#x4E8B;&#x4EF6;&#x3001;&#x9519;&#x8BEF;&#x56DE;&#x8C03;
+&#x64AD;&#x653E;&#x8FC7;&#x7A0B;&#x4E2D;&#x51FA;&#x73B0;&#x9519;&#x8BEF;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x9519;&#x8BEF;&#x56DE;&#x8C03;&#x4E2D;&#x6355;&#x83B7;&#x76F8;&#x5173;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF0C;&#x7ED9;&#x4E88;&#x7528;&#x6237;&#x53CB;&#x597D;&#x7684;&#x63D0;&#x793A;&#x3002;&#x540C;&#x65F6;&#x4E00;&#x4E9B;&#x91CD;&#x8981;&#x7684;&#x4E8B;&#x4EF6;&#x4FE1;&#x606F;&#x4E5F;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x5408;&#x9002;&#x7684;&#x5904;&#x7406;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>  private EVPlayerBase.OnPreparedListener mOnPreparedListener = new EVPlayerBase.OnPreparedListener() {
+      @Override public boolean onPrepared() {
+          //&#x64AD;&#x653E;&#x51C6;&#x5907;&#x5B8C;&#x6210;&#xFF0C;&#x5F00;&#x59CB;&#x64AD;&#x653E;
+          return true;
+      }
+  };
+
+  private EVPlayerBase.OnCompletionListener mOnCompletionListener = new EVPlayerBase.OnCompletionListener() {
+      @Override public boolean onCompletion() {
+          //&#x89C2;&#x770B;&#x5F55;&#x64AD;&#x65F6;&#xFF0C;&#x6536;&#x5230;&#x8BE5;&#x56DE;&#x8C03;&#x5F39;&#x51FA;&#x64AD;&#x653E;&#x7ED3;&#x675F;&#x63D0;&#x793A;&#xFF1B;&#x5BF9;&#x4E8E;&#x76F4;&#x64AD;&#x800C;&#x8A00;&#xFF0C;&#x6536;&#x5230;&#x8BE5;&#x56DE;&#x8C03;&#x540E;&#x5E94;&#x8BE5;&#x67E5;&#x8BE2;&#x4E1A;&#x52A1;&#x670D;&#x52A1;&#x5668;&#x8BE5;&#x76F4;&#x64AD;&#x662F;&#x5426;&#x7ED3;&#x675F;&#xFF0C;&#x5982;&#x679C;&#x672A;&#x7ED3;&#x675F;&#xFF0C;&#x5E94;&#x8BE5;&#x5C1D;&#x8BD5;&#x91CD;&#x8FDE;
+          return true;
+      }
+  };
+
+  private EVPlayerBase.OnInfoListener mOnInfoListener = new EVPlayerBase.OnInfoListener() {
+      @Override public boolean onInfo(int what, int extra) {
+          switch (what) {
+              case IMediaPlayer.MEDIA_INFO_BUFFERING_START:
+                  //&#x5F00;&#x59CB;&#x7F13;&#x51B2;&#xFF0C;&#x754C;&#x9762;&#x4E0A;&#x7ED9;&#x51FA;&#x63D0;&#x793A;
+                  break;
+              case IMediaPlayer.MEDIA_INFO_BUFFERING_END:
+                  //&#x7F13;&#x51B2;&#x7ED3;&#x675F;&#xFF0C;&#x754C;&#x9762;&#x4E0A;&#x63D0;&#x793A;&#x6D88;&#x5931;
+                  break;
+          }
+          return true;
+      }
+  };
+
+  private EVPlayerBase.OnErrorListener mOnErrorListener = new EVPlayerBase.OnErrorListener() {
+      @Override public boolean onError(int what, int extra) {
+          switch (what) {
+              case PlayerConstants.EV_PLAYER_ERROR_SDK_INIT:
+                  //sdk&#x521D;&#x59CB;&#x5931;&#x8D25;&#xFF0C;&#x7ED9;&#x51FA;&#x63D0;&#x793A;
+                  break;
+              case PlayerConstants.EV_PLAYER_ERROR_GET_RESOURCE:
+                  //&#x64AD;&#x653E;&#x8D44;&#x6E90;&#x8C03;&#x5EA6;&#x5931;&#x8D25;&#xFF0C;&#x7ED9;&#x51FA;&#x63D0;&#x793A;
+                  break;
+              case PlayerConstants.EV_PLAYER_ERROR_GET_URL:
+                  //&#x83B7;&#x53D6;&#x64AD;&#x653E;&#x5730;&#x5740;&#x5931;&#x8D25;&#xFF0C;&#x7ED9;&#x51FA;&#x63D0;&#x793A;
+                  break;
+              default:
+                  //&#x5E95;&#x5C42;&#x64AD;&#x653E;&#x5668;&#x629B;&#x51FA;&#x7684;&#x9519;&#x8BEF;&#xFF0C;&#x5BF9;&#x4E8E;&#x7F51;&#x7EDC;io&#x9519;&#x8BEF;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x8FDB;&#x884C;&#x91CD;&#x8FDE;
+                  break;
+          }
+
+          return true;
+      }
+  };
+</code></pre></li>
+<li><p>&#x521B;&#x5EFA;EVPlayer&#x5BF9;&#x8C61;&#xFF0C;&#x5728;onCreate()&#x51FD;&#x6570;&#x4E2D;&#x8C03;&#x7528;</p>
+<pre><code>  mEVPlayer = new EVPlayer(this);
+  mEVPlayer.setParameter(builder.build());
+  mEVPlayer.setVideoView(mVideoView);
+  mEVPlayer.setEnableAutoReconnect(true);  //&#x662F;&#x5426;&#x6253;&#x5F00;&#x81EA;&#x52A8;&#x91CD;&#x8FDE;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x5173;&#x95ED;&#xFF0C;&#x7F51;&#x7EDC;&#x53D1;&#x751F;&#x6296;&#x52A8;&#x76F4;&#x63A5;&#x62A5;&#x64AD;&#x653E;&#x9519;&#x8BEF;
+  mEVPlayer.setOnPreparedListener(mOnPreparedListener);
+  mEVPlayer.setOnCompletionListener(mOnCompletionListener);
+  mEVPlayer.setOnInfoListener(mOnInfoListener);
+  mEVPlayer.setOnErrorListener(mOnErrorListener);
+  mEVPlayer.onCreate();
+</code></pre></li>
+<li><p>&#x5F00;&#x59CB;&#x64AD;&#x653E;
+&#x8C03;&#x7528;mEVPlayer.watchStart()&#x51FD;&#x6570;&#x5F00;&#x59CB;&#x64AD;&#x653E;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x9700;&#x8981;&#x4F20;&#x5165;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;lid&#x548C;&#x8868;&#x793A;&#x662F;&#x5426;&#x5728;&#x76F4;&#x64AD;&#x7684;living&#xFF0C;&#x8FD9;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x901A;&#x8FC7;&#x4E0A;&#x5C42;&#x4E1A;&#x52A1;&#x83B7;&#x53D6;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>  mEVPlayer.watchStart(lid&#xFF0C; living);
+</code></pre></li>
+</ul>
+<p><strong>&#x5173;&#x4E8E;lid&#x548C;living&#x53C2;&#x6570;</strong>&#xFF0C;sdk&#x4F7F;&#x7528;&#x8005;&#x5E94;&#x8BE5;&#x81EA;&#x5DF1;&#x642D;&#x5EFA;&#x57FA;&#x672C;&#x7684;&#x89C6;&#x9891;&#x7BA1;&#x7406;&#x540E;&#x53F0;&#xFF0C;&#x7BA1;&#x7406;&#x76F4;&#x64AD;&#x6D41;&#x7684;&#x5217;&#x8868;&#x4EE5;&#x53CA;&#x5404;&#x4E2A;&#x6D41;&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x5305;&#x62EC;&#x6D41;&#x521B;&#x5EFA;&#x3001;&#x76F4;&#x64AD;&#x4E2D;&#x3001;&#x505C;&#x6B62;&#x3001;&#x5F55;&#x64AD;&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x4E2D;&#x3001;&#x5F55;&#x64AD;&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x5B8C;&#x6210;&#x7B49;&#x72B6;&#x6001;&#xFF08;&#x7BA1;&#x7406;&#x540E;&#x53F0;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x76F4;&#x64AD;&#x6D41;&#x72B6;&#x6001;&#x901A;&#x77E5;url&#x63A5;&#x6536;&#x72B6;&#x6001;&#x901A;&#x77E5;&#xFF09;&#x3002;&#x6D41;&#x5217;&#x8868;&#x4E2D;&#x5904;&#x4E8E;&#x76F4;&#x64AD;&#x4E2D;&#x6216;&#x5F55;&#x64AD;&#x6587;&#x4EF6;&#x521B;&#x5EFA;&#x5B8C;&#x6210;&#x72B6;&#x6001;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;lid&#x548C;living&#x53C2;&#x6570;&#x4E0B;&#x53D1;&#x7ED9;&#x64AD;&#x653E;&#x5668;sdk&#x8FDB;&#x884C;&#x76F4;&#x64AD;&#x6216;&#x56DE;&#x653E;&#x89C6;&#x9891;&#x7684;&#x64AD;&#x653E;&#x3002;</p>
+<ul>
+<li><p>Activity&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x56DE;&#x8C03;&#x5904;&#x7406;&#x3002;&#x64AD;&#x653E;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x5904;&#x7406;&#x6765;&#x7535;&#x3001;&#x8BEF;&#x89E6;&#x3001;&#x5207;&#x540E;&#x53F0;&#x7B49;&#x60C5;&#x51B5;&#xFF0C;<strong>&#x8FD9;&#x4E9B;&#x72B6;&#x6001;&#x90FD;&#x4F9D;&#x8D56;&#x4E8E;Activity&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x6240;&#x4EE5;&#x5FC5;&#x987B;&#x5728;Activity&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;&#x4E2D;&#x4E5F;&#x8C03;&#x7528;EVPlayer SDK&#x76F8;&#x5E94;&#x7684;&#x63A5;&#x53E3;</strong>&#xFF0C;&#x4EE5;&#x786E;&#x4FDD;&#x64AD;&#x653E;&#x6B63;&#x5E38;&#x9000;&#x51FA;&#x6216;&#x6062;&#x590D;&#x3002;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>  @Override
+  protected void onStart() {
+      super.onStart();
+      if (null != mEVPlayer) {
+          mEVPlayer.onStart();
+      }
+  }
+
+  @Override
+  protected void onResume() {
+      super.onResume();
+      if (null != mEVPlayer) {
+          mEVPlayer.onResume();
+      }
+  }
+
+  @Override
+  protected void onStop() {
+      super.onStop();
+      if (null != mEVPlayer) {
+          mEVPlayer.onStop();
+      }
+  }
+
+  @Override
+  protected void onDestroy() {
+      super.onDestroy();
+      if (null != mEVPlayer) {
+          mEVPlayer.onDestroy();
+      }
+  }
+</code></pre></li>
+</ul>
+
                                 
                                 </section>
                             
@@ -1277,7 +1422,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"示例代码","level":"1.5.1.3.3","depth":4,"next":{"title":"功能说明","level":"1.5.1.3.4","depth":4,"path":"chapter4/android/player/instruction.md","ref":"chapter4/android/player/instruction.md","articles":[]},"previous":{"title":"快速开始","level":"1.5.1.3.2","depth":4,"path":"chapter4/android/player/quickstart.md","ref":"chapter4/android/player/quickstart.md","articles":[]},"dir":"neutral"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/android/player/sample.md","mtime":"2017-06-05T03:48:55.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-28T02:38:01.908Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"示例代码","level":"1.5.1.3.3","depth":4,"next":{"title":"功能说明","level":"1.5.1.3.4","depth":4,"path":"chapter4/android/player/instruction.md","ref":"chapter4/android/player/instruction.md","articles":[]},"previous":{"title":"快速开始","level":"1.5.1.3.2","depth":4,"path":"chapter4/android/player/quickstart.md","ref":"chapter4/android/player/quickstart.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/android/player/sample.md","mtime":"2017-06-28T08:59:07.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-28T10:22:02.294Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
