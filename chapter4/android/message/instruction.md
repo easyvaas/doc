@@ -8,11 +8,11 @@
 * MESSAGE_TYPE_SYS = "system"; //系统消息
 
 #### 普通接口
-	public void send(String topic, String message, String userdata, String type, MyRequestCallBack<String> callBack)
+	public void send(String channel, String message, String userdata, String type, MyRequestCallBack<String> callBack)
 消息系统sdk提供发送消息的send接口，消息级别和是否保存使用默认值，如果需要指定消息级别或是否保存，使用以下的高级接口sendMsg。
 
 #### 高级接口
-	public void sendMsg(String topic, String message, String userdata, String type, int level, boolean save, MyRequestCallBack<String> callBack)
+	public void sendMsg(String channel, String message, String userdata, String type, int level, boolean save, MyRequestCallBack<String> callBack)
 	
 * 指定消息优先级，优先级[0,10]，值越大越重要，缺省为4; level为9,10的不能过滤
 * 指定消息是否保存，缺省为true

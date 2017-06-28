@@ -10,7 +10,7 @@
 * 申请开通直播权限，获得Access Key和Secret Key，用于鉴权
 
 ## 使用Gradle导入SDK
-易视云SDK提供Gradle添加依赖的导入方式，此种方式导入过程较为简便，省略了上述手动导 入库文件、资源文件、第三方库依赖等繁琐操作，推荐使用。如果您使用Android Studio或 IntelliJ IDEA开发，请按照如下的方法导入SDK。 在Gradle依赖中添加:
+易视云SDK提供Gradle添加依赖的导入方式，此种方式导入过程较为简便，省去手动导入库文件、资源文件、第三方库依赖等繁琐操作，推荐使用。如果您使用Android Studio或 IntelliJ IDEA开发，请按照如下的方法导入SDK。 在Gradle依赖中添加:
 
 ```
 dependencies {

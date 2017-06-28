@@ -28,7 +28,7 @@
                 Log.d(TAG, "连接聊天服务器成功");
             }
 
-            @Override public void onNewMessage(String message, String userdata, String userid, String topic) {
+            @Override public void onNewMessage(String message, String userdata, String userid, String channel) {
                 Log.d(TAG, "收到消息：" + message);
             }
             
@@ -72,39 +72,35 @@
 
 * 连接消息系统服务器
 
-        mEVMessage.connect(mTopic);
-mTopic:连接消息时需要指定topic字符串，即频道名称，一般指直播间的唯一id，由上层业务决定
+        mEVMessage.connect(mChannel);
+mChannel:连接消息时需要指定channel字符串，即频道名称，一般指直播间的唯一id，由上层业务决定
 
 * 发送消息      
     
 	    //发送评论
-	    mEVMessage.send(mTopic, comment, userData, Constants.MESSAGE_TYPE_MSG, mSendCallback);
+	    mEVMessage.send(mChannel, comment, userData, Constants.MESSAGE_TYPE_MSG, mSendCallback);
 
 * 点赞
 
 		//增加点赞数，上层可以点一次调用一次，也可以记录用户的点击次数，定时调用该接口，减少接口调用开销
-		mEVMessage.addLikeCount(mTopic, 1);
+		mEVMessage.addLikeCount(mChannel, 1);
 * 获取最近条数历史消息
 		
 		//获取最近count条历史消息
-		public void getLastHistoryMsgs(String topic, int count, String type)
+		public void getLastHistoryMsgs(String channel, int count, String type)
 
-	* topic：聊天topic id，指聊天房间唯一id
+	* channel：聊天频道id，指聊天房间唯一id
 	* count：获取历史消息的条数
 	* type：历史消息类型，如果想要获取多种类型的历史消息，使用逗号分隔，例如"system,msg,redpack,gift"，如果该字符串为空，获取全部类型的历史消息
 
 * 获取历史消息
 		
 		//获取从start开始的count条历史消息
-		public void getHistoryMsgs(String topic, int start, int count, String type)
-	* topic：聊天topic id，指聊天房间唯一id
+		public void getHistoryMsgs(String channel, int start, int count, String type)
+	* channel：聊天频道id，指聊天房间唯一id
 	* start：历史消息起始点消息id
 	* count：获取历史消息的条数
 	* type：历史消息类型，如果想要获取多种类型的历史消息，使用逗号分隔，例如"system,msg,redpack,gift"，如果该字符串为空，获取全部类型的历史消息
-
-* 用户离开
-
-        mEVMessage.leaveTopic(mTopic);
         
 * 关闭
 

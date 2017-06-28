@@ -18,13 +18,13 @@ public void setMessageCallback(MessageCallback callback)
 #### 连接（connect）
 
 ```
-public void connect(String topic)
+public void connect(String channel)
 ```
-连接房间，房间号topic字符串由上层业务指定，一般以视频唯一id作为房间号
+连接房间，频道号channel字符串由上层业务指定，一般以视频唯一id作为房间号
 
 #### 发送消息（send）
 ```
-public void send(String topic, String message, String userdata, String type,
+public void send(String channel, String message, String userdata, String type,
                      MyRequestCallBack<String> callBack)
 ```
 
@@ -32,7 +32,7 @@ public void send(String topic, String message, String userdata, String type,
 
 | 名称 | 描述 |
 |:--|:--|
-| topic | 房间唯一id |
+| channel | 房间唯一id，频道号 |
 | message | 文本消息内容，用户发送普通文本消息时使用，可以为空 |
 | userdata | 用户发送自定义消息时使用，一般为json字符串，由上层业务系统定义该协议 |
 | type | 消息类型，用于指定发送消息的类型 |
@@ -40,14 +40,14 @@ public void send(String topic, String message, String userdata, String type,
 
 #### 发送消息（sendMsg）
 ```
-public void sendMsg(String topic, String message, String userdata, String type, int level,
+public void sendMsg(String channel, String message, String userdata, String type, int level,
                         boolean save, boolean filter, MyRequestCallBack<String> callBack)
 ```
 该方法是send方法的高级版本，可以指定消息级别、是否保存、是否过滤等。参数说明如下：
 
 | 名称 | 描述 |
 |:--|:--|
-| topic | 房间唯一id |
+| channel | 房间唯一id，频道号 |
 | message | 文本消息内容，用户发送普通文本消息时使用，可以为空 |
 | userdata | 用户发送自定义消息时使用，一般为json字符串，由上层业务系统定义该协议 |
 | type | 消息类型，用于指定发送消息的类型 |
@@ -58,19 +58,19 @@ public void sendMsg(String topic, String message, String userdata, String type, 
 
 #### 获取最近N条历史消息（getLastHistoryMsgs）
 ```
-public void getLastHistoryMsgs(String topic, int count, String type)
+public void getLastHistoryMsgs(String channel, int count, String type)
 ```
 该方法用于获取最近的N条历史消息，第一次获取历史消息时使用。
 
 | 名称 | 描述 |
 |:--|:--|
-| topic | 房间唯一id |
+| channel | 房间唯一id，频道号 |
 | count | 获取历史消息的条数 |
 | type | 逗号分隔的字符串,表示历史消息的消息类型,例如"sys,msg,gift",为空表示获取全部类型的历史消息 |
 
 #### 获取从指定位置开始的N条历史消息（getHistoryMsgs）
 ```
-public void getHistoryMsgs(String topic, int start, int count, String type)
+public void getHistoryMsgs(String channel, int start, int count, String type)
 ```
 
 该方法用于获取从指定位置开始的N条历史消息，当start为0时，和getLastHistoryMsgs方法效果相同
@@ -92,7 +92,7 @@ void onConnected()
 #### 接收到消息回调（onNewMessage）
 ```
 void onNewMessage(final String message, final String userdata, final String userid,
-                      final String topic, final String type)
+                      final String channel, final String type)
 ```
 
 表示收到交互房间中的新消息，参数说明如下：
@@ -102,7 +102,7 @@ void onNewMessage(final String message, final String userdata, final String user
 | message | 文本消息内容 |
 | userdata | 自定义消息字符串 |
 | userid | 用户唯一id |
-| topic | 房间唯一id |
+| channel | 房间唯一id，频道号 |
 | type | 消息类型 |
 
 #### 历史消息回调（onHistoryMessage）

@@ -648,6 +648,77 @@
             
 
             
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.3.1" data-path="../player/overview.html">
+            
+                <a href="../player/overview.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3.2" data-path="../player/quickstart.html">
+            
+                <a href="../player/quickstart.html">
+            
+                    
+                    快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3.3" data-path="../player/sample.html">
+            
+                <a href="../player/sample.html">
+            
+                    
+                    示例代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3.4" data-path="../player/instruction.html">
+            
+                <a href="../player/instruction.html">
+            
+                    
+                    功能说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.3.5" data-path="../player/api.html">
+            
+                <a href="../player/api.html">
+            
+                    
+                    API参考
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
         </li>
     
         <li class="chapter " data-level="1.5.1.4" data-path="../message.html">
@@ -860,6 +931,77 @@
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.3.1" data-path="../../iOS/player/overview.html">
+            
+                <a href="../../iOS/player/overview.html">
+            
+                    
+                    概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3.2" data-path="../../iOS/player/quickstart.html">
+            
+                <a href="../../iOS/player/quickstart.html">
+            
+                    
+                    快速开始
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3.3" data-path="../../iOS/player/sample.html">
+            
+                <a href="../../iOS/player/sample.html">
+            
+                    
+                    示例代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3.4" data-path="../../iOS/player/instruction.html">
+            
+                <a href="../../iOS/player/instruction.html">
+            
+                    
+                    功能说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2.3.5" data-path="../../iOS/player/api.html">
+            
+                <a href="../../iOS/player/api.html">
+            
+                    
+                    API参考
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -1118,7 +1260,7 @@
           Log.d(TAG, &quot;&#x8FDE;&#x63A5;&#x804A;&#x5929;&#x670D;&#x52A1;&#x5668;&#x6210;&#x529F;&quot;);
       }
 
-      @Override public void onNewMessage(String message, String userdata, String userid, String topic) {
+      @Override public void onNewMessage(String message, String userdata, String userid, String channel) {
           Log.d(TAG, &quot;&#x6536;&#x5230;&#x6D88;&#x606F;&#xFF1A;&quot; + message);
       }
 
@@ -1160,39 +1302,36 @@
   mEVMessage.setMessageCallback(mMessageCallback);
 </code></pre></li>
 <li><p>&#x8FDE;&#x63A5;&#x6D88;&#x606F;&#x7CFB;&#x7EDF;&#x670D;&#x52A1;&#x5668;</p>
-<pre><code>  mEVMessage.connect(mTopic);
-</code></pre><p>mTopic:&#x8FDE;&#x63A5;&#x6D88;&#x606F;&#x65F6;&#x9700;&#x8981;&#x6307;&#x5B9A;topic&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5373;&#x9891;&#x9053;&#x540D;&#x79F0;&#xFF0C;&#x4E00;&#x822C;&#x6307;&#x76F4;&#x64AD;&#x95F4;&#x7684;&#x552F;&#x4E00;id&#xFF0C;&#x7531;&#x4E0A;&#x5C42;&#x4E1A;&#x52A1;&#x51B3;&#x5B9A;</p>
+<pre><code>  mEVMessage.connect(mChannel);
+</code></pre><p>mChannel:&#x8FDE;&#x63A5;&#x6D88;&#x606F;&#x65F6;&#x9700;&#x8981;&#x6307;&#x5B9A;channel&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5373;&#x9891;&#x9053;&#x540D;&#x79F0;&#xFF0C;&#x4E00;&#x822C;&#x6307;&#x76F4;&#x64AD;&#x95F4;&#x7684;&#x552F;&#x4E00;id&#xFF0C;&#x7531;&#x4E0A;&#x5C42;&#x4E1A;&#x52A1;&#x51B3;&#x5B9A;</p>
 </li>
 <li><p>&#x53D1;&#x9001;&#x6D88;&#x606F;      </p>
 <pre><code>  //&#x53D1;&#x9001;&#x8BC4;&#x8BBA;
-  mEVMessage.send(mTopic, comment, userData, Constants.MESSAGE_TYPE_MSG, mSendCallback);
+  mEVMessage.send(mChannel, comment, userData, Constants.MESSAGE_TYPE_MSG, mSendCallback);
 </code></pre></li>
 <li><p>&#x70B9;&#x8D5E;</p>
 <pre><code>  //&#x589E;&#x52A0;&#x70B9;&#x8D5E;&#x6570;&#xFF0C;&#x4E0A;&#x5C42;&#x53EF;&#x4EE5;&#x70B9;&#x4E00;&#x6B21;&#x8C03;&#x7528;&#x4E00;&#x6B21;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x8BB0;&#x5F55;&#x7528;&#x6237;&#x7684;&#x70B9;&#x51FB;&#x6B21;&#x6570;&#xFF0C;&#x5B9A;&#x65F6;&#x8C03;&#x7528;&#x8BE5;&#x63A5;&#x53E3;&#xFF0C;&#x51CF;&#x5C11;&#x63A5;&#x53E3;&#x8C03;&#x7528;&#x5F00;&#x9500;
-  mEVMessage.addLikeCount(mTopic, 1);
+  mEVMessage.addLikeCount(mChannel, 1);
 </code></pre></li>
 <li><p>&#x83B7;&#x53D6;&#x6700;&#x8FD1;&#x6761;&#x6570;&#x5386;&#x53F2;&#x6D88;&#x606F;</p>
 <pre><code>  //&#x83B7;&#x53D6;&#x6700;&#x8FD1;count&#x6761;&#x5386;&#x53F2;&#x6D88;&#x606F;
-  public void getLastHistoryMsgs(String topic, int count, String type)
+  public void getLastHistoryMsgs(String channel, int count, String type)
 </code></pre><ul>
-<li>topic&#xFF1A;&#x804A;&#x5929;topic id&#xFF0C;&#x6307;&#x804A;&#x5929;&#x623F;&#x95F4;&#x552F;&#x4E00;id</li>
+<li>channel&#xFF1A;&#x804A;&#x5929;&#x9891;&#x9053;id&#xFF0C;&#x6307;&#x804A;&#x5929;&#x623F;&#x95F4;&#x552F;&#x4E00;id</li>
 <li>count&#xFF1A;&#x83B7;&#x53D6;&#x5386;&#x53F2;&#x6D88;&#x606F;&#x7684;&#x6761;&#x6570;</li>
 <li>type&#xFF1A;&#x5386;&#x53F2;&#x6D88;&#x606F;&#x7C7B;&#x578B;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x8981;&#x83B7;&#x53D6;&#x591A;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x5386;&#x53F2;&#x6D88;&#x606F;&#xFF0C;&#x4F7F;&#x7528;&#x9017;&#x53F7;&#x5206;&#x9694;&#xFF0C;&#x4F8B;&#x5982;&quot;system,msg,redpack,gift&quot;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x5B57;&#x7B26;&#x4E32;&#x4E3A;&#x7A7A;&#xFF0C;&#x83B7;&#x53D6;&#x5168;&#x90E8;&#x7C7B;&#x578B;&#x7684;&#x5386;&#x53F2;&#x6D88;&#x606F;</li>
 </ul>
 </li>
 <li><p>&#x83B7;&#x53D6;&#x5386;&#x53F2;&#x6D88;&#x606F;</p>
 <pre><code>  //&#x83B7;&#x53D6;&#x4ECE;start&#x5F00;&#x59CB;&#x7684;count&#x6761;&#x5386;&#x53F2;&#x6D88;&#x606F;
-  public void getHistoryMsgs(String topic, int start, int count, String type)
+  public void getHistoryMsgs(String channel, int start, int count, String type)
 </code></pre><ul>
-<li>topic&#xFF1A;&#x804A;&#x5929;topic id&#xFF0C;&#x6307;&#x804A;&#x5929;&#x623F;&#x95F4;&#x552F;&#x4E00;id</li>
+<li>channel&#xFF1A;&#x804A;&#x5929;&#x9891;&#x9053;id&#xFF0C;&#x6307;&#x804A;&#x5929;&#x623F;&#x95F4;&#x552F;&#x4E00;id</li>
 <li>start&#xFF1A;&#x5386;&#x53F2;&#x6D88;&#x606F;&#x8D77;&#x59CB;&#x70B9;&#x6D88;&#x606F;id</li>
 <li>count&#xFF1A;&#x83B7;&#x53D6;&#x5386;&#x53F2;&#x6D88;&#x606F;&#x7684;&#x6761;&#x6570;</li>
 <li>type&#xFF1A;&#x5386;&#x53F2;&#x6D88;&#x606F;&#x7C7B;&#x578B;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x8981;&#x83B7;&#x53D6;&#x591A;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x5386;&#x53F2;&#x6D88;&#x606F;&#xFF0C;&#x4F7F;&#x7528;&#x9017;&#x53F7;&#x5206;&#x9694;&#xFF0C;&#x4F8B;&#x5982;&quot;system,msg,redpack,gift&quot;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x5B57;&#x7B26;&#x4E32;&#x4E3A;&#x7A7A;&#xFF0C;&#x83B7;&#x53D6;&#x5168;&#x90E8;&#x7C7B;&#x578B;&#x7684;&#x5386;&#x53F2;&#x6D88;&#x606F;</li>
 </ul>
 </li>
-<li><p>&#x7528;&#x6237;&#x79BB;&#x5F00;</p>
-<pre><code>  mEVMessage.leaveTopic(mTopic);
-</code></pre></li>
 <li><p>&#x5173;&#x95ED;</p>
 <pre><code>  mEVMessage.close();  //&#x91CD;&#x8981;&#xFF0C;&#x9000;&#x51FA;Activity&#x65F6;&#x5728;OnDestroy&#x51FD;&#x6570;&#x4E2D;&#x8C03;&#x7528;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x91CD;&#x590D;&#x6536;&#x5230;&#x6D88;&#x606F;
 </code></pre></li>
@@ -1240,7 +1379,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"示例代码","level":"1.5.1.4.3","depth":4,"next":{"title":"功能说明","level":"1.5.1.4.4","depth":4,"path":"chapter4/android/message/instruction.md","ref":"chapter4/android/message/instruction.md","articles":[]},"previous":{"title":"快速开始","level":"1.5.1.4.2","depth":4,"path":"chapter4/android/message/quickstart.md","ref":"chapter4/android/message/quickstart.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/android/message/sample.md","mtime":"2017-06-05T04:09:31.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-27T11:46:44.734Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"示例代码","level":"1.5.1.4.3","depth":4,"next":{"title":"功能说明","level":"1.5.1.4.4","depth":4,"path":"chapter4/android/message/instruction.md","ref":"chapter4/android/message/instruction.md","articles":[]},"previous":{"title":"快速开始","level":"1.5.1.4.2","depth":4,"path":"chapter4/android/message/quickstart.md","ref":"chapter4/android/message/quickstart.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/android/message/sample.md","mtime":"2017-06-28T02:06:21.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-06-28T10:22:02.294Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
