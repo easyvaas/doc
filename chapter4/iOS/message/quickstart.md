@@ -74,16 +74,16 @@
 [EVMessageManager shareManager].delegate = self;
 ```
 
-* 开始回话前，首先建立连接，加入某一话题，connect成功后会回调`- (void)EVMessageConnected`
+* 开始回话前，首先建立连接，加入某一频道，connect成功后会回调`- (void)EVMessageConnected`
 
 ```objective-c
-[[EVMessageManager shareManager] connect:topic];
+[[EVMessageManager shareManager] connect:channel];
 ```
 
-* 在已加入的话题中发送消息，可以根据需求透传附加消息userData，userData的格式是一个字典
+* 在已加入的频道中发送消息，可以根据需求透传附加消息userData，userData的格式是一个字典
 
 ```objective-c
-[[EVMessageManager shareManager] sendWithTopic:topic message:message userData:customUserData type:EVMessageTypeMsg result:^(NSDictionary *response, NSError *error) {
+[[EVMessageManager shareManager] sendWithChannel:channel message:message userData:customUserData type:EVMessageTypeMsg result:^(NSDictionary *response, NSError *error) {
     // 发送消息的block回调，error为nil则成功
 }];
 ```
@@ -91,7 +91,7 @@
 * 发送点赞操作，点赞数为10
 
 ```objective-c
-[[EVMessageManager shareManager] addLikeCountWithTopic:topic count:10 result:^(NSDictionary *response, NSError *error) {
+[[EVMessageManager shareManager] addLikeCountWithChannel:channel count:10 result:^(NSDictionary *response, NSError *error) {
     // 发送点赞的block回调，error为nil则成功
 }];
 ```
@@ -99,16 +99,16 @@
 * 获取最近20条的历史消息
 
 ```objective-c
-[[EVMessageManager shareManager] getLastHistoryMessageWithTopic:topic count:20 type:EVMessageTypeMsg result:^(NSDictionary *response, NSError *error) {
+[[EVMessageManager shareManager] getLastHistoryMessageWithChannel:channel count:20 type:EVMessageTypeMsg result:^(NSDictionary *response, NSError *error) {
     // 获取历史消息的block回调，error为nil则成功，并可获取response中的历史消息内容
 }];
 ```
 
-* 离开当前话题
+* 离开当前频道
 
 ```objective-c
-[[EVMessageManager shareManager] leaveWithTopic:topic result:^(NSDictionary *response, NSError *error) {
-    // 发送离开话题的block回调，error为nil则成功
+[[EVMessageManager shareManager] leaveWithChannel:channel result:^(NSDictionary *response, NSError *error) {
+    // 发送离开频道的block回调，error为nil则成功
 }];
 ```
 
@@ -134,27 +134,27 @@
     // 连接关闭
 }
 
-- (void)EVMessageRecievedNewMessageInTopic:(NSString *)topic sendedFrom:(NSString *)userid message:(NSString *)message userData:(NSDictionary *)userData {
+- (void)EVMessageRecievedNewMessageInChannel:(NSString *)channel sendedFrom:(NSString *)userid message:(NSString *)message userData:(NSDictionary *)userData {
     // 收到了新的消息
 }
 
-- (void)EVMessageUsers:(NSArray<NSString *> *)userids joinedTopic:(NSString *)topic {
-    // 有用户加入了当前话题
+- (void)EVMessageUsers:(NSArray<NSString *> *)userids joinedChannel:(NSString *)channel {
+    // 有用户加入了当前频道
 }
 
-- (void)EVMessageUsers:(NSArray<NSString *> *)userids leftTopic:(NSString *)topic {
-    // 有用户从当前话题离开
+- (void)EVMessageUsers:(NSArray<NSString *> *)userids leftChannel:(NSString *)channel {
+    // 有用户从当前频道离开
 }
 
-- (void)EVMessageDidUpdateLikeCount:(long long)likeCount inTopic:(NSString *)topic {
+- (void)EVMessageDidUpdateLikeCount:(long long)likeCount inChannel:(NSString *)channel {
     // 更新like数
 }
 
-- (void)EVMessageDidUpdateWatchingCount:(NSInteger)watchingCount inTopic:(NSString *)topic {
+- (void)EVMessageDidUpdateWatchingCount:(NSInteger)watchingCount inChannel:(NSString *)channel {
     // 更新正在观看的人数
 }
 
-- (void)EVMessageDidUpdateWatchedCount:(NSInteger)watchedCount inTopic:(NSString *)topic {
+- (void)EVMessageDidUpdateWatchedCount:(NSInteger)watchedCount inChannel:(NSString *)channel {
     // 更新已经观看的人数
 }
 

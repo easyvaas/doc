@@ -41,13 +41,13 @@ typedef NS_ENUM(NSUInteger, EVMessageLevel) {
 /**
  发送消息
 
- @param topic 所在topic
- @param message 发送的消息字符串
- @param userData 透传消息
- @param type 消息类型
- @param callBack 回调
+ @param channel     所在频道
+ @param message     发送的消息字符串
+ @param userData    透传消息
+ @param type        消息类型
+ @param callBack    回调
  */
-- (void)sendWithTopic:(NSString *)topic message:(NSString *)message userData:(NSDictionary *)userData type:(EVMessageType)type result:(EVMessageCallBack)callBack;
+- (void)sendWithChannel:(NSString *)channel message:(NSString *)message userData:(NSDictionary *)userData type:(EVMessageType)type result:(EVMessageCallBack)callBack;
 ```
 消息系统发送消息的简易方法，主要传入消息内容、透传信息、消息类型即可，默认消息等级为4，并保留消息。
 
@@ -57,15 +57,15 @@ typedef NS_ENUM(NSUInteger, EVMessageLevel) {
 /**
  发送消息(全参数)
 
- @param topic 所在topic
- @param message 发送的消息字符串
- @param userData 透传消息
- @param type 消息类型
- @param level 消息等级
- @param save 是否保留为历史消息
- @param callBack 回调
+ @param channel     所在频道
+ @param message     发送的消息字符串
+ @param userData    透传消息
+ @param type        消息类型
+ @param level       消息等级
+ @param save        是否保留为历史消息
+ @param callBack    回调
  */
-- (void)sendWithTopic:(NSString *)topic message:(NSString *)message userData:(NSDictionary *)userData type:(EVMessageType)type level:(EVMessageLevel)level save:(BOOL)save result:(EVMessageCallBack)callBack;
+- (void)sendWithChannel:(NSString *)channel message:(NSString *)message userData:(NSDictionary *)userData type:(EVMessageType)type level:(EVMessageLevel)level save:(BOOL)save result:(EVMessageCallBack)callBack;
 ```
 消息系统发送消息的完整方法，除了上述简易方法中的参数外，还可对消息等级（level）、是否保留为历史消息（save）进行设置。
 
@@ -84,7 +84,7 @@ typedef NS_ENUM(NSUInteger, EVMessageLevel) {
 | EVMessageErrorSDKNotInit | -2001 | sdk未初始化或初始化不成功 |
 | EVMessageErrorInternalServer | -3001 | 消息服务器内部错误 |
 | EVMessageErrorPermissionDenied | -3002 | 没有权限 | 
-| EVMessageErrorJoinTopic | -3003 | 加入 topic 失败 |
+| EVMessageErrorJoinChannel | -3003 | 加入频道失败 |
 | EVMessageErrorSend | -3004 | 发送失败 |
 | EVMessageErrorShutuped | -3005 | 被禁言 |
 
