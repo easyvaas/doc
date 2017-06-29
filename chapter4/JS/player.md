@@ -1,7 +1,7 @@
 # JS播放端SDK使用说明
 
 ## **快速开始**
-本节提供快速集成易视云WEB播放端SDK的步骤和示例代码。具体可 [参考Demo](http://h5.api.easyvaas.com/ysyPlayer/demo.html) 中相关代码。
+本节提供快速集成易视云WEB播放端SDK的步骤和示例代码。具体可 [参考Demo](http://static.easyvaas.com/sdk/h5/demo/player.html) 中相关代码。
 
 ### 配置项目
 引入sdk相关的js文件后，依次进行如下配置：
@@ -14,7 +14,7 @@
 
 #### 在body闭合前引用js，并且创建播放器
 ```
-<script type="text/javascript" src="//h5.api.easyvaas.com/ysyPlayer/ysyPlayer-1.1.min.js"></script>
+<script type="text/javascript" src="//static.easyvaas.com/sdk/h5/player/ysyPlayer-1.1.min.js"></script>
 <script type="text/javascript">
     var ysyPlayer = new ysyPlayer({
         playerid:'player',//播放器id

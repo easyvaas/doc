@@ -9,7 +9,7 @@
 ### 示例代码
 #### 在body闭合前引用js
 ```
-<script type="text/javascript" src="//h5.api.easyvaas.com/ysyPlayer/ysyChat-1.1.min.js"></script>
+<script type="text/javascript" src="//static.easyvaas.com/sdk/h5/chat/ysyChat-1.1.min.js"></script>
 <script type="text/javascript">
     //聊天初始化
     ysyChat.init({
