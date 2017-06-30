@@ -4,6 +4,7 @@
 ---
 
 ### 2017-06-28
+> [Demo v1.1.5下载](https://github.com/easyvaas/sdk_demo_Android/releases/download/v1.1.5/easyvaas_sdk_demo_android_v1.1.5.zip)
 
 #### EVLive 1.1.4
 
@@ -26,6 +27,7 @@
 ---
 
 ### 2017-06-15
+> [Demo v1.1.4下载](https://github.com/easyvaas/sdk_demo_Android/releases/download/v1.1.4/android-sdk-demo-1.1.4.zip)
 
 #### EVLive 1.1.3
 

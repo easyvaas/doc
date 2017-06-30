@@ -1,6 +1,8 @@
 ## Easyvaas iOS SDK 更新日志
 
-* 版本 1.1.10  2017-06-27  
+* 版本 1.1.10  2017-06-27
+> [下载地址](https://github.com/easyvaas/sdk_demo_iOS/releases/download/v1.1.10/sdk_demo_iOS_v1.1.10.zip)
+  
     *新功能：*
     1. 更新了消息系统，新版消息系统在速度和稳定性上都有大幅度提升
     2. 针对新版消息系统更新了`EVMessageManager`大部分 API，使用方式简易，可轻松过渡版本
