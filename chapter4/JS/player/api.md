@@ -1,5 +1,8 @@
 # 播放器相关事件API
 
+## **快速开始**
+本节提供快速集成易视云WEB播放端SDK的步骤和示例代码。具体可 [参考Demo](http://static.easyvaas.com/sdk/h5/demo/player.html) 中相关代码。
+
 ### 示例代码
 
 #### 播放事件
