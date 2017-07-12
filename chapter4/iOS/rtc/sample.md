@@ -54,12 +54,12 @@ Easyvaas 多人连麦 SDK 中提供了三种身份：Owner（频道拥有者）�
 
 Owner 和 Broadcaster 加入频道的方式是不一样的，此处以 Owner 为例
 
-Owner 作为频道的拥有者，需要调用 `- (void)createAndJoinChannel:(NSString *)channel hasPublisher:(BOOL)hasPublisher record:(BOOL)record callback:(EVRTCCallback)callback;` 方法创建并加入频道，可以设置是否进行*旁路推流*，以及是否需要*保存视频*
+Owner 作为频道的拥有者，需要调用 `- (void)createAndJoinChannel:(NSString *)channel uid:(NSUInteger)uid hasPublisher:(BOOL)hasPublisher record:(BOOL)record callback:(EVRTCCallback)callback;` 方法创建并加入频道，可以设置是否进行*旁路推流*，以及是否需要*保存视频*
 
 处理后，SDK 会返回回调结果，如果为`EVRtcResponseCode_None`，则准备开始直播；如为其他 code，则表示出现问题，可以弹框提示用户，并联系客服解决。
 
 ```objective-c
-[self.rtcKit createAndJoinChannel:customChannel hasPublisher:YES record:YES callback:^(EVRtcResponseCode code, NSDictionary *info, NSError *error) {
+[self.rtcKit createAndJoinChannel:customChannel uid:0 hasPublisher:YES record:YES callback:^(EVRtcResponseCode code, NSDictionary *info, NSError *error) {
     if (code == EVRtcResponseCode_None) {
         // 创建、加入频道成功
     } else {

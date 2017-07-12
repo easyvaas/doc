@@ -13,7 +13,7 @@ Easyvaas 多人连麦 SDK 中提供了三种身份：Owner（频道拥有者）�
 **一. Owner 创建并加入一个频道 `customChannel`，开启旁路直播，保存视频**
 
 ```objective-c
-[self.rtcKit createAndJoinChannel:customChannel hasPublisher:YES record:YES callback:^(EVRtcResponseCode code, NSDictionary *info, NSError *error) {
+[self.rtcKit createAndJoinChannel:customChannel uid:0 hasPublisher:YES record:YES callback:^(EVRtcResponseCode code, NSDictionary *info, NSError *error) {
     if (code == EVRtcResponseCode_None) {
         // 创建、加入频道成功
     } else {
@@ -27,7 +27,7 @@ Easyvaas 多人连麦 SDK 中提供了三种身份：Owner（频道拥有者）�
 **二. 一名连麦主播（Broadcaster）想加入 `customChannel` 频道**
 
 ```objective-c
-[self.rtcKit joinChannel:customChannel callback:^(EVRtcResponseCode code, NSDictionary *info, NSError *error) {
+[self.rtcKit joinChannel:customChannel uid:0 callback:^(EVRtcResponseCode code, NSDictionary *info, NSError *error) {
     if (code == EVRtcResponseCode_None) {
         // 加入频道成功
     } else {

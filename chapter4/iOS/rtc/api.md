@@ -18,20 +18,20 @@
 - (instancetype)initWithRTCID:(NSString *)rtcId;
 ```
 
-创建并加入一个频道，可以设置是否开启旁路推流，是否保存视频（对应操作身份为 Owner）
+创建并加入一个频道，可以设置自定义uid，是否开启旁路推流，是否保存视频（对应操作身份为 Owner）
 
 处理后，SDK 会返回回调结果，如果为`EVRtcResponseCode_None`，则准备开始直播；如为其他 code，则表示出现问题，可以弹框提示用户，并联系客服解决。
 
 ```objective-c
-- (void)createAndJoinChannel:(NSString *)channel hasPublisher:(BOOL)hasPublisher record:(BOOL)record callback:(EVRTCCallback)callback;
+- (void)createAndJoinChannel:(NSString *)channel uid:(NSUInteger)uid hasPublisher:(BOOL)hasPublisher record:(BOOL)record callback:(EVRTCCallback)callback;
 ```
 
-加入一个频道（对应操作身份为 Broadcaster）
+加入一个频道，可以设置自定义uid（对应操作身份为 Broadcaster）
 
 处理后，SDK 会返回回调结果，如果为`EVRtcResponseCode_None`，则准备开始直播；如为其他 code，则表示出现问题，可以弹框提示用户，并联系客服解决。
 
 ```objective-c
-- (void)joinChannel:(NSString *)channel callback:(EVRTCCallback)callback;
+- (void)joinChannel:(NSString *)channel uid:(NSUInteger)uid callback:(EVRTCCallback)callback;
 ```
 
 离开当前频道，返回 0 则成功，返回负数则表明出现异常
