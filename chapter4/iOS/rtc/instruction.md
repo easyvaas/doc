@@ -2,15 +2,15 @@
 
 #### 关于创建、加入频道
 
-Easyvaas 多人连麦 SDK 中提供了三种身份：Owner（频道拥有者）、Broadcaster（主播）、Audience（观众），一个频道中只能有一个 Owner，可以有最多六个 Broadcaster，若干 Audience。
+Easyvaas 多人连麦 SDK 中提供了三种身份：Master（主播）、LiveGuest（连麦观众）、Guest（观众），一个频道中只能有一个 Master，可以有最多六个 LiveGuest，若干 Guest。
 
-* 一个频道只能创建一次，创建该频道的用户身份应为 `Owner`
-* 用户只能加入已创建的频道进行多人连麦，加入已有频道进行连麦的用户身份应为 `Broadcaster`
-* 当某一频道开启了旁路直播，则可以通过获取流地址进行观看，观看者用户身份应为 `Audience`
+* 一个频道只能创建一次，创建该频道的用户身份应为 `Master`
+* 用户只能加入已创建的频道进行多人连麦，加入已有频道进行连麦的用户身份应为 `LiveGuest`
+* 当某一频道开启了旁路直播，则可以通过获取流地址进行观看，观看者用户身份应为 `Guest`
 
 所以，一个频道的连麦步骤大体如下：
 
-**一. Owner 创建并加入一个频道 `customChannel`，开启旁路直播，保存视频**
+**一. Master 创建并加入一个频道 `customChannel`，开启旁路直播，保存视频**
 
 ```objective-c
 [self.rtcKit createAndJoinChannel:customChannel uid:0 hasPublisher:YES record:YES callback:^(EVRtcResponseCode code, NSDictionary *info, NSError *error) {
@@ -22,9 +22,9 @@ Easyvaas 多人连麦 SDK 中提供了三种身份：Owner（频道拥有者）�
 }];
 ```
 
-此时名为 `customChannel` 的频道已经由一名 Owner 用户成功创建了，此频道中当前只有创建频道的用户一个人
+此时名为 `customChannel` 的频道已经由一名 Master 用户成功创建了，此频道中当前只有创建频道的用户一个人
 
-**二. 一名连麦主播（Broadcaster）想加入 `customChannel` 频道**
+**二. 一名连麦观众（LiveGuest）想加入 `customChannel` 频道**
 
 ```objective-c
 [self.rtcKit joinChannel:customChannel uid:0 callback:^(EVRtcResponseCode code, NSDictionary *info, NSError *error) {
@@ -36,11 +36,11 @@ Easyvaas 多人连麦 SDK 中提供了三种身份：Owner（频道拥有者）�
 }];
 ```
 
-此时频道 `customChannel` 中有两名用户，其他主播也可以通过第[二]步操作，以 `Broadcaster` 身份加入连麦，进行多人连麦
+此时频道 `customChannel` 中有两名用户，其他主播也可以通过第[二]步操作，以 `LiveGuest` 身份加入连麦，进行多人连麦
 
-*注：一个频道中包括 Owner 在内最多可以容纳七人。*
+*注：一个频道中包括 Master 在内最多可以容纳七人。*
 
-**三. 一名观众（Audience）想观看 `customChannel` 频道中的多人连麦视频流，但自己不进行连麦操作**
+**三. 一名观众（Guest）想观看 `customChannel` 频道中的多人连麦视频流，但自己不进行连麦操作**
 
 ```objective-c
 [self.rtcKit watchLiveWithChannel:self.roomName callback:^(EVRtcResponseCode code, NSDictionary *info, NSError *error) {
@@ -70,7 +70,7 @@ Easyvaas 多人连麦 SDK 中提供了三种身份：Owner（频道拥有者）�
 
 ##### 旁路视频流中画布设置
 
-是否开启旁路推流，以及旁路视频流中画布的布局设置，只有 Owner 才有权限设置
+是否开启旁路推流，以及旁路视频流中画布的布局设置，只有 Master 才有权限设置
 
 设置旁路视频流画布布局可在视图渲染后，通过 `- (void)configVideoRegion:(NSArray<EVRTCVideoRegion *> *)regions;` 方法进行设置，regions 是一个由 `EVRTCVideoRegion` 类型对象组成的数组，每个对象中主要包含对应的 uid、x、y、width、height 等
 
@@ -86,9 +86,9 @@ Easyvaas 多人连麦 SDK 中提供了三种身份：Owner（频道拥有者）�
 
 | 名称 | 数值 | 含义 |
 | :-- | :-- | :-- |
-|EVRtc_ClientRole_Broadcaster|1|主播|
-|EVRtc_ClientRole_Audience|2|观众|
-|EVRtc_ClientRole_Owner|3|频道拥有者|
+|EVRtc_ClientRole_Master|0|主播|
+|EVRtc_ClientRole_LiveGuest|1|连麦观众|
+|EVRtc_ClientRole_Guest|2|观众|
 
 连麦断线理由枚举 `EVRtcOfflineReason`
 
@@ -123,7 +123,7 @@ Easyvaas 多人连麦 SDK 中提供了三种身份：Owner（频道拥有者）�
 |EVRtcResponseCode_Core|-4000|核心处理模块错误 |
 |EVRtcResponseCode_NoRtcId|-4001|没有传入连麦 id|
 |EVRtcResponseCode_NoCanvasView|-4002|没有传入画布视图|
-|EVRtcResponseCode_NotTheOwner|-4003|操作用户不是 owner|
+|EVRtcResponseCode_NotTheMaster|-4003|操作用户不是 master|
 |EVRtcResponseCode_NoRegions|-4004|没有传入 Regions 数组|
 |EVRtcResponseCode_NoChannel|-4005|没有传入频道字符串|
 

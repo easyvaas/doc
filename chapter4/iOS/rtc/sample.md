@@ -50,11 +50,11 @@ VideoSession *newSession = [[VideoSession alloc] initWithUID:uid];
 
 #### 创建频道
 
-Easyvaas 多人连麦 SDK 中提供了三种身份：Owner（频道拥有者）、Broadcaster（主播）、Audience（观众），一个频道中只能有一个 Owner，可以有最多六个 Broadcaster，若干 Audience。
+Easyvaas 多人连麦 SDK 中提供了三种身份：Master（主播）、LiveGuest（连麦观众）、Guest（观众），一个频道中只能有一个 Master，可以有最多六个 LiveGuest，若干 Guest。
 
-Owner 和 Broadcaster 加入频道的方式是不一样的，此处以 Owner 为例
+Master 和 LiveGuest 加入频道的方式是不一样的，此处以 Master 为例
 
-Owner 作为频道的拥有者，需要调用 `- (void)createAndJoinChannel:(NSString *)channel uid:(NSUInteger)uid hasPublisher:(BOOL)hasPublisher record:(BOOL)record callback:(EVRTCCallback)callback;` 方法创建并加入频道，可以设置是否进行*旁路推流*，以及是否需要*保存视频*
+Master 作为频道的拥有者，需要调用 `- (void)createAndJoinChannel:(NSString *)channel uid:(NSUInteger)uid hasPublisher:(BOOL)hasPublisher record:(BOOL)record callback:(EVRTCCallback)callback;` 方法创建并加入频道，可以设置是否进行*旁路推流*，以及是否需要*保存视频*
 
 处理后，SDK 会返回回调结果，如果为`EVRtcResponseCode_None`，则准备开始直播；如为其他 code，则表示出现问题，可以弹框提示用户，并联系客服解决。
 
@@ -70,9 +70,9 @@ Owner 作为频道的拥有者，需要调用 `- (void)createAndJoinChannel:(NSS
 
 #### 设置旁路推流布局
 
-Owner 在*创建频道*的方法中，可以设置是否进行*旁路推流*(`hasPublisher`)，如果设置为 `true`，则 Owner 可以通过调用 `- (void)configVideoRegion:(NSArray <EVRTCVideoRegion*> *)regions;` 方法，设置当前频道中各个用户在旁路视频流中的视频画面布局
+Master 在*创建频道*的方法中，可以设置是否进行*旁路推流*(`hasPublisher`)，如果设置为 `true`，则 Master 可以通过调用 `- (void)configVideoRegion:(NSArray <EVRTCVideoRegion*> *)regions;` 方法，设置当前频道中各个用户在旁路视频流中的视频画面布局
 
-*注：只有 Owner 身份才可以设置旁路推流视频布局*
+*注：只有 Master 身份才可以设置旁路推流视频布局*
 
 ```objective-c
 [self.rtcKit configVideoRegion:regions];

@@ -6,10 +6,10 @@
 @property (nonatomic, weak) id<EVRTCDelegate> delegate;
 ```
 
-查看当前用户是否为当前频道的 Owner
+查看当前用户是否为当前频道的 Master
 
 ```objective-c
-@property (nonatomic, assign, readonly) BOOL isOwner;
+@property (nonatomic, assign, readonly) BOOL isMaster;
 ```
 
 初始化方法，必须传入连麦 ID
@@ -18,7 +18,7 @@
 - (instancetype)initWithRTCID:(NSString *)rtcId;
 ```
 
-创建并加入一个频道，可以设置自定义uid，是否开启旁路推流，是否保存视频（对应操作身份为 Owner）
+创建并加入一个频道，可以设置自定义uid，是否开启旁路推流，是否保存视频（对应操作身份为 Master）
 
 处理后，SDK 会返回回调结果，如果为`EVRtcResponseCode_None`，则准备开始直播；如为其他 code，则表示出现问题，可以弹框提示用户，并联系客服解决。
 
@@ -26,7 +26,7 @@
 - (void)createAndJoinChannel:(NSString *)channel uid:(NSUInteger)uid hasPublisher:(BOOL)hasPublisher record:(BOOL)record callback:(EVRTCCallback)callback;
 ```
 
-加入一个频道，可以设置自定义uid（对应操作身份为 Broadcaster）
+加入一个频道，可以设置自定义uid（对应操作身份为 LiveGuest）
 
 处理后，SDK 会返回回调结果，如果为`EVRtcResponseCode_None`，则准备开始直播；如为其他 code，则表示出现问题，可以弹框提示用户，并联系客服解决。
 
@@ -46,7 +46,7 @@
 - (void)configCanvasWithView:(UIView *)view uid:(NSUInteger)uid mode:(EVRtcRenderMode)mode;
 ```
 
-配置旁路推流画面中，各个画面的位置信息 （只有频道 owner 才有权限调用此方法）
+配置旁路推流画面中，各个画面的位置信息 （只有频道 Master 才有权限调用此方法）
 
 ```objective-c
 - (void)configVideoRegion:(NSArray <EVRTCVideoRegion*> *)regions;
@@ -66,7 +66,7 @@
 - (void)watchLiveWithChannel:(NSString *)channel callback:(EVRTCCallback)callback;
 ```
 
-获取录播中某频道的旁路推流地址（如果频道 owner 未保存视频流，则无法获取）
+获取录播中某频道的旁路推流地址（如果频道 Master 未保存视频流，则无法获取）
 
 处理后，SDK 会返回回调结果，如果为`EVRtcResponseCode_None`，则准备开始直播；如为其他 code，则表示出现问题，可以弹框提示用户，并联系客服解决。
 
