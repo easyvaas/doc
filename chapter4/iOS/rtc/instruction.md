@@ -126,5 +126,6 @@ Easyvaas 多人连麦 SDK 中提供了三种身份：Master（主播）、LiveGu
 |EVRtcResponseCode_NotTheMaster|-4003|操作用户不是 master|
 |EVRtcResponseCode_NoRegions|-4004|没有传入 Regions 数组|
 |EVRtcResponseCode_NoChannel|-4005|没有传入频道字符串|
+|EVRtcResponseCode_MasterExit|-4006|主播退出了频道|
 
 
