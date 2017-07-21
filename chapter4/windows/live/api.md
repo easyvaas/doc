@@ -194,7 +194,7 @@ float GetDesktopVolume()
 
 #### 连麦-加入频道（JoinChannel）
 ```
-int JoinChannel(const char* lpChannelName, const char* info)
+int JoinChannel(const char* lpChannelName, const char* info,  const unsigned int uid, const char* channelKey)
 ```
 加入频道(连麦、视频会议使用), 如果还未创建频道, 会自动创建。该方法让用户加入通话频道，在同一个频道内的用户可以互相通话，多个用户加入同一个频道，可以群聊。如果已在通话中，用户必须调用leaveChannel退出当前通话，才能进入下一个频道。
 
@@ -204,6 +204,8 @@ int JoinChannel(const char* lpChannelName, const char* info)
 |:--|:--|
 | lpChannelName | 标识通话的频道名称，长度在64字节以内的字符串，由业务后台提供 |
 | info | (非必选项)附加信息，一般可设置为空字符串 |
+| uid | 用户uid，UserAuth返回的用户uid|
+| channelKey | 进入频道验证信息，UserAuth返回channellkey |
 | 返回值 | 0-成功，<0-失败 |
 
 #### 连麦-离开频道（LeaveChannel）
@@ -328,5 +330,108 @@ int SetupLocalVideo(const EVVideoCanvas& canvas)
 |:--|:--|
 | canvas | 视频显示相关信息 |
 | 返回值 | 0-成功，<0-失败 |
+
+#### 配置旁路推流地址 (ConfigurePublisher)
+```
+int ConfigurePublisher(const EVPublisherConfiguration& config)
+```
+* 该方法用于配置旁路推流地址，以决定是否推流给普通观众观看。
+* 请确保用户已经调用 SetClientRole() 且已将用户角色设为主播。
+* 必须在调用CreateChannel之后，JoinChannel之前调用。
+* CreateChannel的回调函数返回旁路推流地址，作为该函数入口参数config的推流地址。
+
+ 参数说明:
+ 
+| 名称 | 描述 |
+|:--|:--|
+| config | 旁路推流信息 |
+| 返回值 | 0-成功，<0-失败 |
+
+#### 创建频道(CreateChannel)
+```
+void CreateChannel(IN const char* appid, IN const char* channel_id, IN const int type = 1, IN const int record = 1)
+```
+* 房间拥有者调用此接口创建频道。
+* 对应的回调函数为onCreateChannel。如果创建成功会返回channel id和推流地址。房间拥有者自行决定是否进行旁路推流。
+* 可以指定要创建的channel_id，如果channel_id不存在，则创建成功，否则失败。如果不指定channel_id则服务器自动分配channel_id返回。
+* 一个频道只能有一个拥有者，其他用户只能作为连麦观众进入频道。
+
+参数说明:
+
+| 名称 | 描述 |
+|:--|:--|
+| appid | appid |
+| channel_id | 频道id |
+| type | 0-不开启旁路直播，1-开启旁路直播，缺省为1 |
+| record | 是否开启录制，0-不开启录制，1-开启录制，缺省为1 |
+
+#### 用户获取鉴权信息 (UserAuth)
+```
+void UserAuth(const char* appid, const char* channel_id, unsigned int uid, bool bNoUseUid = true)
+```
+* 无论是作为频道拥有者还是作为连麦请求者都需要调用此接口。
+* 对应的回调函数onUserAuth返回，鉴权使用的key、channel key、用户uid和房间拥有者uid，即调用CreateChannel的用户uid。用户调用SetClientRole时，传入key值进行实际的鉴权。JoinChannel时传入channel key和用户uid。
+* 返回的鉴权key和uid都需要用户自行维护，以便做其他操作。
+  比如频道拥有者退出房间，其他用户会收到用户退出消息，此时需要判断退出用户是否为频道拥有者。如果是，需要调用LeaveChannel自动离开。
+
+参数说明:
+
+| 名称 | 描述 |
+|:--|:--|
+| appid | appid |
+| channel_id | 频道id |
+| uid | 用户uid，不是必须参数，调用时即可0 |
+| bNoUseUid  | 是否 使用uid，如果为true，则uid无效。如果false，需要传入有效uid。 |
+
+注释:onJoinChannelSuccess回调函数，在加入频道成功之后会返回uid，需要用户维护。
+
+### 用户进入频道通知 (JoinEVChannel)
+```
+void JoinEVChannel(IN const char* appid, IN const char* channel_id, IN const unsigned  int uid, int role)
+```
+
+* 通知业务服务器用户已经进入频道，该接口需要在onJoinChannelSuccess回调函数之后调用。
+* 对应的回调函数onJoinEVChannel。如果该接口执行成功，则整个进入频道流程完成。
+
+| 名称 | 描述 |
+|:--|:--|
+| appid | appid |
+| channel_id | 频道id |
+| uid | 用户uid，JoinChannel成功加入频道后返回的uid |
+| role | 用户角色, 0为连麦，1为主播，默认为连麦，主播需要传1 |
+
+### 用户离开频道通知 (LeaveEVChannel)
+```
+void LeaveEVChannel(IN const char* appid, IN const char* channel_id, IN unsigned int uid)
+```
+
+* 通知业务服务器用户已经离开频道，该接口需要在离开频道成功onLeaveChannel回调函数之后调用。
+* 对应的回调函数onLeaveEVChannel。如果该接口执行成功，则整个离开频道流程完成。
+
+| 名称 | 描述 |
+|:--|:--|
+| appid | appid |
+| channel_id | 频道id |
+| uid | 用户uid，JoinChannel成功加入频道后返回的uid |
+
+
+
+### 与业务服务器的心跳检测 (StartCommHeart)
+```
+void StartCommHeart(IN const char* appid, IN const char* channel_id, IN const unsigned int uid)
+```
+
+* 定时向服务器发送信息，告诉业务服务器还在频道内。
+* JoinEVChannel的回到函数onJoinEVChannel，通知业务服务器进入频道成功之后，调用该接口。
+* 如果用户离开频道，心跳会自动停止
+* 对应的回调函数onStartCommHeart。
+
+| 名称 | 描述 |
+|:--|:--|
+| appid | appid |
+| channel_id | 频道id |
+| uid | 用户uid，JoinChannel成功加入频道后返回的uid |
+
+
 
 
