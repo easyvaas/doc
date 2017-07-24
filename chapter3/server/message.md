@@ -2,7 +2,7 @@
 易视云消息服务API提供消息相关的API接口，帮助服务使用者快速搭建自己的消息后台服务。
 ### 调用方式
 #### 服务域名
-	msg.api.easyvaas.com
+	api.msg.easyvaas.com
 #### 服务版本号
 	v1
 #### 通信协议

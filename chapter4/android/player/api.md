@@ -64,6 +64,13 @@ public void watchStart(String lid, boolean living)
 | lid | 播放视频唯一id |
 | living | 播放的视频是否为直播 |
 
+#### 停止播放（stopPlay）
+```
+public void stopPlay()
+```
+
+停止播放，该接口一般不会主动调用，只有在播放过程中申请连麦时调用，主动停止直播流播放，进入连麦状态
+
 #### 生命周期函数
 ```
 public void onCreate()

@@ -1,5 +1,14 @@
-# Android SDK版本更新记录
+# Android SDK版本更新日志
 ## V1.1
+
+---
+
+### 2017-07-11
+> [Demo v1.1.6下载](https://github.com/easyvaas/sdk_demo_Android/releases/download/v1.1.6/easyvaas_sdk_demo_android_v1.1.6.zip)
+
+#### EVPlayer 1.1.5
+
+* 播放端增加停止接口，支持播放过程中发起连麦
 
 ---
 
