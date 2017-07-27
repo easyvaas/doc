@@ -337,9 +337,9 @@ int ConfigurePublisher(const EVPublisherConfiguration& config)
 ```
 * 该方法用于配置旁路推流地址，以决定是否推流给普通观众观看。
 * 请确保用户已经调用 SetClientRole() 且已将用户角色设为主播。
-* 必须在调用CreateChannel之后，JoinChannel之前调用。
+* 主播必须在调用CreateChannel之后，JoinChannel之前调用。
 * CreateChannel的回调函数返回旁路推流地址，作为该函数入口参数config的推流地址。
-
+**注解:主播必须在进入频道之前调用该接口，也就是说进入频道开始连麦之后，就不能再对旁路推流信息进行配置**
  参数说明:
  
 | 名称 | 描述 |
