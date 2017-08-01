@@ -12,15 +12,11 @@
 * 申请多人连麦 RtcId 用于初始化连麦类
 
 ## 导入SDK
-将如下所需的 .framework、.a、.h 导入工程中
+将如下所需的 .framework 导入工程中
 
 ```
-- EVRTCKit.h
-- EVRTCConfig.h
-- EVRTCVideoRegion.h
-- EVSDKManager.h
-- libEVSDKBase.a
-- libEVRTC.a
+- EVSDKBaseFramework.framework
+- EVRTCFramework.framework
 - AgoraRtcEngineKit.framework
 ```
 

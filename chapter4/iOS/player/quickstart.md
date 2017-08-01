@@ -11,17 +11,25 @@
 * 申请开通消息系统权限，获得Access Key和Secret Key，用于鉴权
 
 ## 导入SDK
-将`EVSDKBase`、`EVPlayer`文件夹中的导入到工程中（也可以直接将如下的**.a**、**.framework**、**.h**直接导入工程中）
+导入对应的静态 framework:
 
 ```
-- EVSDKBase（文件夹）
-    - EVSDKManager.h
-    - libEVMedia.a
-    - libEVSDKBase.a
-- EVPlayer（文件夹）
-    - EVPlayer.h
-    - EVPlayerConfig.h
+- EVSDKBaseFramework.framework
+- EVMediaFramework.framework
 ```
+
+## VR 播放器 
+如使用 EVPlayer 的同时，还需使用 VR 播放器，则导入如下 framework：
+
+```
+- EVVRFramework.framework
+- ios_player_dylib.framework
+```
+
+注：  
+
+* 其中 `ios_player_dylib.framework` 为动态库，需要添加到项目工程 TARGETS->General->Embedded Binaries 中，否则运行应用时控制台会输出 **image not found** 的错误
+* `EVMediaFramework.framework` 和 `ios_player_dylib.framework` 同时导入时，需要在项目工程 TARGETS->Build Settings->Other Linker Flags 中添加 **-all_load**
 
 ## 工程配置
 

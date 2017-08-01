@@ -11,19 +11,13 @@
 * 申请开通消息系统权限，获得Access Key和Secret Key，用于鉴权
 
 ## 导入SDK
-将`EVSDKBase`、`EVStreamer`文件夹中的导入到工程中（也可以直接将如下的**.a**、**.framework**、**.h**直接导入工程中）
+导入对应的静态 framework:
 
 ```
-- EVSDKBase（文件夹）
-    - EVSDKManager.h
-    - libEVMedia.a
-    - libEVSDKBase.a
-- EVStreamer（文件夹）
-    - AgoraRtcEngineKit.framework
-    - EVStreamer.h
-    - EVStreamerConfig.h
-    - KSYGPUResource.bundle
-    - videoprp.framework
+- EVSDKBaseFramework.framework
+- EVMediaFramework.framework
+- AgoraRtcEngineKit.framework
+- videoprp.framework
 ```
 
 ## 工程配置

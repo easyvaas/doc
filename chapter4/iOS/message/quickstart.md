@@ -11,22 +11,16 @@
 * 申请开通消息系统权限，获得Access Key和Secret Key，用于鉴权
 
 ## 导入SDK
-
-将`EVMessage`、`EVSDKBase`文件夹中的文件导入到工程中（也可以直接将如下的**.a**、**.framework**、**.h**直接导入工程中）
+导入对应的 framework:
 
 ```
-- EVMessage（文件夹）
-    - EVSocket.framework
-    - libEVMessage.a
-    - EVMessage.h
-    - EVMessageConfig.h
-    - EVMessageManager.h
-    - EVMessageModel.h
-    - EVMessageProtocol.h
-- EVSDKBase（文件夹）
-    - libEVSDKBase.a
-    - EVSDKManager.h
+- EVSDKBaseFramework.framework
+- EVMessageFramework.framework
+- EVSocket.framework
 ```
+
+注：其中 `EVSocket.framework` 为动态库，需要添加到项目工程 TARGETS->General->Embedded Binaries 中，否则运行应用时控制台会输出 **image not found** 的错误
+
 
 ## 工程配置
 #### 网络配置
