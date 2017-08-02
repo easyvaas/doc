@@ -98,6 +98,14 @@
 - (void)watchRecordWithChannel:(NSString *)channel callback:(EVRTCCallback)callback;
 ```
 
+获取特定频道分享地址，分享地址为H5，可播放直播视频
+
+处理后，SDK 会返回回调结果，如果为`EVRtcResponseCode_None`，则准备开始直播；如为其他 code，则表示出现问题，可以弹框提示用户，并联系客服解决。
+
+```objectvie-c
+- (void)fetchShareURLWithChannel:(NSString *)channel callback:(EVRTCCallback)callback;
+```
+
 本地音频推流开关，返回 0 则成功，返回负数则表明出现异常
 
 ```objective-c
