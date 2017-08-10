@@ -98,10 +98,15 @@
 - (void)watchRecordWithChannel:(NSString *)channel callback:(EVRTCCallback)callback;
 ```
 
-关闭本地音频推流，返回 0 则成功，返回负数则表明出现异常
+本地音频推流开关，返回 0 则成功，返回负数则表明出现异常
 
 ```objective-c
 - (int)muteLocalAudioStream:(BOOL)mute;
+```
+本地视频推流开关，返回 0 则成功，返回负数则表明出现异常
+
+```objective-c
+- (int)muteLocalVideoStream:(BOOL)mute;
 ```
 
 切换本地摄像头方向，返回 0 则成功，返回负数则表明出现异常
