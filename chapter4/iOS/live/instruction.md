@@ -31,7 +31,6 @@ SDK 推流器的默认视频码率为 *700 kbps*，默认最大视频码率 *800
 |EVStreamerResponse_error_sdkNoLid|4|没有设置 lid, lid 一定要在 liveStart 之前设置|
 |EVStreamerResponse_error_sdkNoURI|5|没有设置URI, URI 一定要在 liveStart 之前设置|
 |EVStreamerResponse_error_sdkInitHardware|6|初始化硬件错误|
-|EVStreamerResponse_error_sdkNoKey|7|没有设置 key|
 
 #### 横屏直播
 推流器支持横屏直播，采用当前主流的 `UIInterfaceOrientationLandscapeRight` 屏幕方向，SDK 使用者需要先将屏幕方向设置为 UIInterfaceOrientationLandscapeRight，然后设置 `useHorizonMode` 属性为 `YES`，则可开启横屏直播。

@@ -3,11 +3,12 @@
 * 消息类型
 
 ```objective-c
-typedef NS_ENUM(NSUInteger, EVMessageType) {
-    EVMessageTypeMsg = 0,   // default message type
-    EVMessageTypeSystem,
-    EVMessageTypeGift,
-    EVMessageTypeRedPack
+typedef NS_OPTIONS(NSUInteger, EVMessageType) {
+  EVMessageTypeAll      = 0,
+  EVMessageTypeMsg      = 1 << 0,
+  EVMessageTypeSystem   = 1 << 1,
+  EVMessageTypeGift     = 1 << 2,
+  EVMessageTypeRedPack  = 1 << 3
 };
 ```
 
@@ -44,7 +45,7 @@ typedef NS_ENUM(NSUInteger, EVMessageLevel) {
  @param channel     所在频道
  @param message     发送的消息字符串
  @param userData    透传消息
- @param type        消息类型
+ @param type        消息类型（不可传入多个类型）
  @param callBack    回调
  */
 - (void)sendWithChannel:(NSString *)channel message:(NSString *)message userData:(NSDictionary *)userData type:(EVMessageType)type result:(EVMessageCallBack)callBack;
@@ -60,7 +61,7 @@ typedef NS_ENUM(NSUInteger, EVMessageLevel) {
  @param channel     所在频道
  @param message     发送的消息字符串
  @param userData    透传消息
- @param type        消息类型
+ @param type        消息类型（不可传入多个类型）
  @param level       消息等级
  @param save        是否保留为历史消息
  @param callBack    回调

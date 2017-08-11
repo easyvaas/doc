@@ -41,6 +41,8 @@ eg:
 #### 发送消息（简易方法）
 成功加入频道后，就可以同该频道下的其他人聊天了，我们提供了一个发送消息的简易方法，只需要传入最基础的消息内容等信息，未传入的参数为默认值。
 
+*注：只能传入一种消息类型*
+
 ```objective-c
 /**
  发送消息
@@ -48,14 +50,14 @@ eg:
  @param channel     所在频道
  @param message     发送的消息字符串
  @param userData    透传消息
- @param type        消息类型
+ @param type        消息类型（不可传入多个类型）
  @param callBack    回调
  */
 - (void)sendWithChannel:(NSString *)channel message:(NSString *)message userData:(NSDictionary *)userData type:(EVMessageType)type result:(EVMessageCallBack)callBack;
 ```
 
 #### 发送消息（全参数）
-全参数发送消息的方法，主要增加了消息等级、是否保留为历史消息的设置，默认`level=EVMessageLevel_4、save=true、type=EVMessageTypeMsg`
+全参数发送消息的方法，主要增加了消息等级、是否保留为历史消息的设置，默认`level=EVMessageLevel_4、save=true`
 
 ```objective-c
 /**
@@ -64,7 +66,7 @@ eg:
  @param channel     所在频道
  @param message     发送的消息字符串
  @param userData    透传消息
- @param type        消息类型
+ @param type        消息类型（不可传入多个类型）
  @param level       消息等级
  @param save        是否保留为历史消息
  @param callBack    回调
@@ -91,19 +93,21 @@ eg:
 
 ```objective-c
 /**
- 点赞操作
+ 获取最近的历史消息
 
- @param channel     所在频道
- @param count       点赞数
- @param callBack    回调
+ @param channel 所在频道
+ @param count 历史消息数
+ @param type 消息类型（可传入多个类型）
+ @param callBack 回调（字典中的历史消息是 EVMessageModel 对象）
  */
-- (void)addLikeCountWithChannel:(NSString *)channel count:(NSUInteger)count result:(EVMessageCallBack)callBack;
+- (void)getLastHistoryMessageWithChannel:(NSString *)channel count:(NSUInteger)count type:(EVMessageType)type result:(EVMessageCallBack)callBack;
 ```
 
 获取历史消息成功后，如果有值，则从 response[@"content"] 中获取消息数组，数组中是 EVMessageModel 对象，用户可以根据自身需求对其进行处理。
 
 #### 获取历史消息（history）
 完整的获取历史消息接口，可以指定获取的 start、count、type 信息，以针对性的获取对应的历史消息。
+如果需要获取多种类型的历史消息（eg：system以及gift消息），可以使用 `|` 将参数串联起来（eg：EVMessageTypeSystem | EVMessageTypeGift），如果需要获取全部类型的消息，EVMessageType 中提供了 EVMessageTypeAll 枚举可供使用。
 
 ```objective-c
 /**
@@ -112,7 +116,7 @@ eg:
  @param channel     所在频道
  @param start       开始位置
  @param count       历史消息数
- @param type        消息类型
+ @param type        消息类型（可传入多个类型）
  @param callBack    回调（字典中的历史消息是 EVMessageModel 对象）
  */
 - (void)getHistoryMessageWithChannel:(NSString *)channel start:(NSUInteger)start count:(NSUInteger)count type:(EVMessageType)type result:(EVMessageCallBack)callBack;
