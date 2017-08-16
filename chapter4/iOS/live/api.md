@@ -51,6 +51,24 @@
 @property (nonatomic, readonly, assign) NSInteger videoLength;
 ```
 
+预览设置成镜像模式，默认为NO
+
+```objective-c
+@property (nonatomic, assign) BOOL previewMirrored;
+```
+
+推流设置成镜像模式, 默认为NO
+
+```objective-c
+@property (nonatomic, assign) BOOL streamerMirrored;
+```
+
+音效类型 default = EVAudioEffectType_NONE
+
+```objective-c
+@property (nonatomic, assign) EVAudioEffectType effectType;
+```
+
 **注：以下参数要在 livePrepareComplete: 之前完成**
 
 推流器预览视图，推流前需要将其插入到目标视图中（只读）
@@ -75,6 +93,18 @@
 
 ```objective-c
 @property (nonatomic, assign) EVStreamFrameSize streamFrameSize;
+```
+
+视频编码器类型, default = EVVideoCodec_AUTO
+
+```objective-c
+@property (nonatomic, assign) EVVideoCodec videoCodec;
+```
+
+本次直播的目标场景 default = EVLiveScene_Default
+
+```objective-c
+@property (nonatomic, assign) EVLiveScene liveScene;
 ```
 
 视频初始化码率默认为 700 kbps, 然后会根据网络情况动态调整
@@ -107,16 +137,16 @@
 @property (nonatomic, assign) BOOL useHorizonMode;
 ```
 
+立体声推流，主播推流为单声道，背景音乐如果是双声道的音频,通过修改bStereoStream, 可以让观众听到双声道的音乐。只能在开始推流前修改本属性, 开始推流后, 修改无效 default = NO
+
+```objective-c
+@property (nonatomic, assign) BOOL bStereoAudioStream;
+```
+
 视频 id (必填)
 
 ```objective-c
 @property (nonatomic, copy) NSString *lid;
-```
-
-密钥 (必填)
-
-```objective-c
-@property (nonatomic, copy) NSString *key;
 ```
 
 水印 logo 图片
@@ -336,6 +366,12 @@
 
 ```objective-c
 @property (nonatomic, assign) float BGMVolume;
+```
+
+音乐的音调，调整范围 [-24.0 ~ 24.0], 默认为0.01, 单位为半音。  0.01 为1度, 1.0为一个半音, 12个半音为1个八度
+
+```objective-c
+@property (nonatomic, assign) double BGMPitch;
 ```
 
 当前背景音乐播放进度

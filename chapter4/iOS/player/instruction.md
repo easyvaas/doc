@@ -57,6 +57,15 @@ EVPlayer 为录播播放进度的修改，提供了两种修改的方式：
 |EVPlayerResponse_error_sdkNoPlayerContainerView|3|没有设置视频显示的 container view|
 |EVPlayerResponse_error_sdkNoLid|4|没有设置 lid|
 
+视频解码模式：
+
+|枚举值|含义|
+|:--|:--|
+|EVMovieVideoDecoderMode_Software|视频解码方式采用软解|
+|EVMovieVideoDecoderMode_Hardware|视频解码方式采用硬解|
+|EVMovieVideoDecoderMode_AUTO|自动选择解码方式，8.0以上的系统优先选择硬解|
+|EVMovieVideoDecoderMode_DisplayLayer|使用系统接口进行解码和渲染，只适用于8.0及以上系统，低于8.0的系统自动使用软解|
+
 播放状态列表：
 
 |枚举值|含义|

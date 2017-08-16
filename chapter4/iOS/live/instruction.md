@@ -32,6 +32,52 @@ SDK 推流器的默认视频码率为 *700 kbps*，默认最大视频码率 *800
 |EVStreamerResponse_error_sdkNoURI|5|没有设置URI, URI 一定要在 liveStart 之前设置|
 |EVStreamerResponse_error_sdkInitHardware|6|初始化硬件错误|
 
+#### 视频编码器类型
+```
+typedef NS_ENUM(NSUInteger, EVVideoCodec) {
+    /// 视频编码器 - h264 软件编码器
+    EVVideoCodec_X264 = 0,
+    /// 视频编码器 - KSY265 软件编码器
+    EVVideoCodec_QY265,
+    /// 视频编码器 - iOS VT264硬件编码器 (iOS 8.0以上支持)
+    EVVideoCodec_VT264,
+    /// 视频编码器 - 由SDK自动选择（ VT264 > X264）
+    EVVideoCodec_AUTO = 100,
+    /// 视频编码器 - gif
+    EVVideoCodec_GIF,
+};
+```
+
+#### 直播场景
+
+```
+typedef NS_ENUM(NSUInteger, EVLiveScene) {
+    /// 默认通用场景(不确定场景时使用)
+    EVLiveScene_Default = 0,
+    /// 秀场场景, 主播上半身为主
+    EVLiveScene_Showself,
+    /// 游戏场景
+    EVLiveScene_Game,
+};
+```
+
+#### 音效类型
+
+```
+typedef NS_ENUM(NSUInteger, EVAudioEffectType){
+    /// 初始化时状态为空闲
+    EVAudioEffectType_NONE = 0,
+    /// 大叔
+    EVAudioEffectType_MALE,
+    /// 萝莉
+    EVAudioEffectType_FEMALE,
+    /// 宏大
+    EVAudioEffectType_HEROIC,
+    /// 机器人
+    EVAudioEffectType_ROBOT,
+};
+```
+
 #### 横屏直播
 推流器支持横屏直播，采用当前主流的 `UIInterfaceOrientationLandscapeRight` 屏幕方向，SDK 使用者需要先将屏幕方向设置为 UIInterfaceOrientationLandscapeRight，然后设置 `useHorizonMode` 属性为 `YES`，则可开启横屏直播。
 

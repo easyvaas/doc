@@ -8,10 +8,49 @@
 @property (nonatomic, strong) UIView *playerContainerView;
 ```
 
+是否开启硬件解码。如果系统版本高于8.0，默认开启硬件解码；否则，默认使用软件解码 default = EVMovieVideoDecoderMode_AUTO (需要在 -prepare 之前配置)
+
+```objective-c
+@property (nonatomic, assign) EVMovieVideoDecoderMode videoDecoderMode;
+```
+
+bufferTimeMax指定播放时的缓冲时长，单位秒
+对于直播流，该属性用于直播延时控制；对于点播流，该属性用于缓冲时长控制
+直播流该属性默认为2秒，设置为0或负值时为关闭直播追赶
+点播流该属性默认为3600秒，且与bufferSizeMax同时生效，两者取小值
+
+```objective-c
+@property (nonatomic, assign) NSTimeInterval bufferTimeMax;
+```
+
+指定逆时针旋转角度，只能是0/90/180/270, 不符合上述值不进行旋转
+
+```objective-c
+@property (nonatomic, assign) int rotateDegress; 
+```
+
 是否是直播视频（必填）
 
 ```objective-c
 @property (nonatomic, assign) BOOL live;
+```
+
+是否静音 default = NO
+
+```objective-c
+@property (nonatomic, assign) BOOL shouldMute; 
+```
+
+是否隐藏视频，隐藏视频时播放器本身不再进行渲染动作，如果设置了videoDataBlock回调，隐藏视频时数据会照常上抛 default = NO
+
+```objective-c
+@property (nonatomic, assign) BOOL shouldHideVideo;
+```
+
+指定视频是否镜像显示
+
+```objective-c
+@property (nonatomic, assign) BOOL mirror; 
 ```
 
 播放器视图的位置及尺寸
@@ -54,6 +93,18 @@
 
 ```objective-c
 @property (nonatomic) MPMovieScalingMode scalingMode;
+```
+
+视频数据回调(需要在 -prepare 之前配置)
+
+```objective-c
+@property (nonatomic, copy) void(^videoDataBlock)(CMSampleBufferRef pixelBuffer);
+```
+
+音频数据回调(需要在 -prepare 之前配置)
+
+```objective-c
+@property (nonatomic, copy) void(^audioDataBlock)(CMSampleBufferRef sampleBuffer);
 ```
 
 #### 拉流相关方法
@@ -104,6 +155,13 @@
 
 ```objective-c
 - (void)seekTo:(double)pos;
+```
+
+指定播放器输出音量
+参数范围：[0~2.0f] 输入参数超出范围将失效
+
+```objective-c
+- (void)setVolume:(float)volume;
 ```
 
 
