@@ -143,6 +143,30 @@
 - (void)evRTCKit:(EVRTCKit *)kit firstLocalVideoFrameWithSize:(CGSize)size elapsed:(NSInteger)elapsed;
 ```
 
+远端用户是否主动禁用了音频
+
+```objective-c
+- (void)evRTCKit:(EVRTCKit *)kit didAudioMuted:(BOOL)muted byUid:(NSUInteger)uid;
+```
+
+远端用户是否主动禁用了视频
+
+```objective-c
+- (void)evRTCKit:(EVRTCKit *)kit didVideoMuted:(BOOL)muted byUid:(NSUInteger)uid;
+```
+
+当前用户网络连接中断
+
+```objective-c
+- (void)evRTCKitConnectionDidInterrupted:(EVRTCKit *)kit;
+```
+
+当前用户网络连接丢失
+
+```objective-c
+- (void)evRTCKitConnectionDidLost:(EVRTCKit *)kit;
+```
+
 频道中有用户断线的回调
 
 ```objective-c
