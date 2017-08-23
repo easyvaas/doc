@@ -472,7 +472,7 @@
                 <a href="../../">
             
                     
-                    SDK
+                    视频直播SDK
             
                 </a>
             
@@ -1031,6 +1031,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4.2.5" data-path="../rtc.html">
+            
+                <a href="../rtc.html">
+            
+                    
+                    多人连麦
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1234,6 +1247,153 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5" data-path="../../../chapter5/">
+            
+                <a href="../../../chapter5/">
+            
+                    
+                    互动直播SDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../chapter5/android.html">
+            
+                <a href="../../../chapter5/android.html">
+            
+                    
+                    Android SDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../../chapter5/android/history.md">
+            
+                <span>
+            
+                    
+                    更新日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../../chapter5/iOS.html">
+            
+                <a href="../../../chapter5/iOS.html">
+            
+                    
+                    iOS SDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../../../chapter5/iOS/history.md">
+            
+                <span>
+            
+                    
+                    更新日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../../chapter5/windows.html">
+            
+                <a href="../../../chapter5/windows.html">
+            
+                    
+                    Windows SDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../../../chapter5/windows/history.md">
+            
+                <span>
+            
+                    
+                    更新日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../../chapter5/js.html">
+            
+                <a href="../../../chapter5/js.html">
+            
+                    
+                    JS SDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../../../chapter5/js/history.md">
+            
+                <span>
+            
+                    
+                    历史记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -1284,8 +1444,29 @@
 <p>&#x64AD;&#x653E;&#x5668;&#x5C06;&#x4F1A;&#x5728;&#x6B64; view &#x4E0A;&#x6E32;&#x67D3;&#x64AD;&#x653E;&#x753B;&#x9762;,&#x5FC5;&#x987B;&#x5728;&#x8C03;&#x7528; playPrepareComplete: &#x4E4B;&#x524D;&#x8BBE;&#x7F6E;(&#x5FC5;&#x586B;)</p>
 <pre><code class="lang-objective-c">@property (nonatomic, strong) UIView *playerContainerView;
 </code></pre>
+<p>&#x662F;&#x5426;&#x5F00;&#x542F;&#x786C;&#x4EF6;&#x89E3;&#x7801;&#x3002;&#x5982;&#x679C;&#x7CFB;&#x7EDF;&#x7248;&#x672C;&#x9AD8;&#x4E8E;8.0&#xFF0C;&#x9ED8;&#x8BA4;&#x5F00;&#x542F;&#x786C;&#x4EF6;&#x89E3;&#x7801;&#xFF1B;&#x5426;&#x5219;&#xFF0C;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x8F6F;&#x4EF6;&#x89E3;&#x7801; default = EVMovieVideoDecoderMode_AUTO (&#x9700;&#x8981;&#x5728; -prepare &#x4E4B;&#x524D;&#x914D;&#x7F6E;)</p>
+<pre><code class="lang-objective-c">@property (nonatomic, assign) EVMovieVideoDecoderMode videoDecoderMode;
+</code></pre>
+<p>bufferTimeMax&#x6307;&#x5B9A;&#x64AD;&#x653E;&#x65F6;&#x7684;&#x7F13;&#x51B2;&#x65F6;&#x957F;&#xFF0C;&#x5355;&#x4F4D;&#x79D2;
+&#x5BF9;&#x4E8E;&#x76F4;&#x64AD;&#x6D41;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x7528;&#x4E8E;&#x76F4;&#x64AD;&#x5EF6;&#x65F6;&#x63A7;&#x5236;&#xFF1B;&#x5BF9;&#x4E8E;&#x70B9;&#x64AD;&#x6D41;&#xFF0C;&#x8BE5;&#x5C5E;&#x6027;&#x7528;&#x4E8E;&#x7F13;&#x51B2;&#x65F6;&#x957F;&#x63A7;&#x5236;
+&#x76F4;&#x64AD;&#x6D41;&#x8BE5;&#x5C5E;&#x6027;&#x9ED8;&#x8BA4;&#x4E3A;2&#x79D2;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E3A;0&#x6216;&#x8D1F;&#x503C;&#x65F6;&#x4E3A;&#x5173;&#x95ED;&#x76F4;&#x64AD;&#x8FFD;&#x8D76;
+&#x70B9;&#x64AD;&#x6D41;&#x8BE5;&#x5C5E;&#x6027;&#x9ED8;&#x8BA4;&#x4E3A;3600&#x79D2;&#xFF0C;&#x4E14;&#x4E0E;bufferSizeMax&#x540C;&#x65F6;&#x751F;&#x6548;&#xFF0C;&#x4E24;&#x8005;&#x53D6;&#x5C0F;&#x503C;</p>
+<pre><code class="lang-objective-c">@property (nonatomic, assign) NSTimeInterval bufferTimeMax;
+</code></pre>
+<p>&#x6307;&#x5B9A;&#x9006;&#x65F6;&#x9488;&#x65CB;&#x8F6C;&#x89D2;&#x5EA6;&#xFF0C;&#x53EA;&#x80FD;&#x662F;0/90/180/270, &#x4E0D;&#x7B26;&#x5408;&#x4E0A;&#x8FF0;&#x503C;&#x4E0D;&#x8FDB;&#x884C;&#x65CB;&#x8F6C;</p>
+<pre><code class="lang-objective-c">@property (nonatomic, assign) int rotateDegress;
+</code></pre>
 <p>&#x662F;&#x5426;&#x662F;&#x76F4;&#x64AD;&#x89C6;&#x9891;&#xFF08;&#x5FC5;&#x586B;&#xFF09;</p>
 <pre><code class="lang-objective-c">@property (nonatomic, assign) BOOL live;
+</code></pre>
+<p>&#x662F;&#x5426;&#x9759;&#x97F3; default = NO</p>
+<pre><code class="lang-objective-c">@property (nonatomic, assign) BOOL shouldMute;
+</code></pre>
+<p>&#x662F;&#x5426;&#x9690;&#x85CF;&#x89C6;&#x9891;&#xFF0C;&#x9690;&#x85CF;&#x89C6;&#x9891;&#x65F6;&#x64AD;&#x653E;&#x5668;&#x672C;&#x8EAB;&#x4E0D;&#x518D;&#x8FDB;&#x884C;&#x6E32;&#x67D3;&#x52A8;&#x4F5C;&#xFF0C;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;videoDataBlock&#x56DE;&#x8C03;&#xFF0C;&#x9690;&#x85CF;&#x89C6;&#x9891;&#x65F6;&#x6570;&#x636E;&#x4F1A;&#x7167;&#x5E38;&#x4E0A;&#x629B; default = NO</p>
+<pre><code class="lang-objective-c">@property (nonatomic, assign) BOOL shouldHideVideo;
+</code></pre>
+<p>&#x6307;&#x5B9A;&#x89C6;&#x9891;&#x662F;&#x5426;&#x955C;&#x50CF;&#x663E;&#x793A;</p>
+<pre><code class="lang-objective-c">@property (nonatomic, assign) BOOL mirror;
 </code></pre>
 <p>&#x64AD;&#x653E;&#x5668;&#x89C6;&#x56FE;&#x7684;&#x4F4D;&#x7F6E;&#x53CA;&#x5C3A;&#x5BF8;</p>
 <pre><code class="lang-objective-c">@property (nonatomic, assign) CGRect playerViewFrame;
@@ -1307,6 +1488,12 @@
 </code></pre>
 <p>&#x64AD;&#x653E;&#x89C6;&#x56FE;&#x7684;&#x586B;&#x5145;&#x6A21;&#x5F0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; <code>MPMovieScalingModeAspectFit</code></p>
 <pre><code class="lang-objective-c">@property (nonatomic) MPMovieScalingMode scalingMode;
+</code></pre>
+<p>&#x89C6;&#x9891;&#x6570;&#x636E;&#x56DE;&#x8C03;(&#x9700;&#x8981;&#x5728; -prepare &#x4E4B;&#x524D;&#x914D;&#x7F6E;)</p>
+<pre><code class="lang-objective-c">@property (nonatomic, copy) void(^videoDataBlock)(CMSampleBufferRef pixelBuffer);
+</code></pre>
+<p>&#x97F3;&#x9891;&#x6570;&#x636E;&#x56DE;&#x8C03;(&#x9700;&#x8981;&#x5728; -prepare &#x4E4B;&#x524D;&#x914D;&#x7F6E;)</p>
+<pre><code class="lang-objective-c">@property (nonatomic, copy) void(^audioDataBlock)(CMSampleBufferRef sampleBuffer);
 </code></pre>
 <h4 id="&#x62C9;&#x6D41;&#x76F8;&#x5173;&#x65B9;&#x6CD5;">&#x62C9;&#x6D41;&#x76F8;&#x5173;&#x65B9;&#x6CD5;</h4>
 <p>&#x64AD;&#x653E;&#x51C6;&#x5907;&#x65B9;&#x6CD5;&#xFF0C;&#x5904;&#x7406;&#x5B8C;&#x6210;&#x540E;&#x4F1A;&#x56DE;&#x8C03; <code>EVPlayerCompleteBlock</code> block&#xFF0C;&#x5305;&#x542B; <em>&#x9519;&#x8BEF;&#x7801;&#xFF08;EVPlayerResponseCode&#x679A;&#x4E3E;&#xFF09;&#x3001;&#x7ED3;&#x679C;&#x4FE1;&#x606F;&#xFF08;&#x5B57;&#x5178;&#xFF09;&#x3001;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#xFF08;NSError&#xFF09;</em>&#xFF0C;&#x5982;&#x679C;&#x9519;&#x8BEF;&#x7801;&#x4E3A; <code>EVPlayerResponse_Okay</code>&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x5F00;&#x59CB;&#x64AD;&#x653E;</p>
@@ -1332,6 +1519,10 @@
 </code></pre>
 <p>&#x8DF3;&#x8F6C;&#x5230;&#x5236;&#x5B9A;&#x64AD;&#x653E;&#x4F4D;&#x7F6E;&#xFF08;&#x7CBE;&#x51C6;&#x5B9A;&#x4F4D;&#xFF0C;&#x9002;&#x7528;&#x4E8E;&#x5A92;&#x4F53;&#x6587;&#x4EF6;&#x603B;&#x65F6;&#x957F;&#x8F83;&#x5C0F;&#x4E14;&#x5173;&#x952E;&#x5E27;&#x95F4;&#x9694;&#x8F83;&#x5927;&#x65F6;&#xFF09;&#xFF08;&#x5355;&#x4F4D;&#xFF1A;s&#xFF09;</p>
 <pre><code class="lang-objective-c">- (void)seekTo:(double)pos;
+</code></pre>
+<p>&#x6307;&#x5B9A;&#x64AD;&#x653E;&#x5668;&#x8F93;&#x51FA;&#x97F3;&#x91CF;
+&#x53C2;&#x6570;&#x8303;&#x56F4;&#xFF1A;[0~2.0f] &#x8F93;&#x5165;&#x53C2;&#x6570;&#x8D85;&#x51FA;&#x8303;&#x56F4;&#x5C06;&#x5931;&#x6548;</p>
+<pre><code class="lang-objective-c">- (void)setVolume:(float)volume;
 </code></pre>
 
                                 
@@ -1376,7 +1567,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"API参考","level":"1.4.2.3.5","depth":4,"next":{"title":"消息交互","level":"1.4.2.4","depth":3,"path":"chapter4/iOS/message.md","ref":"chapter4/iOS/message.md","articles":[{"title":"概述","level":"1.4.2.4.1","depth":4,"path":"chapter4/iOS/message/overview.md","ref":"chapter4/iOS/message/overview.md","articles":[]},{"title":"快速开始","level":"1.4.2.4.2","depth":4,"path":"chapter4/iOS/message/quickstart.md","ref":"chapter4/iOS/message/quickstart.md","articles":[]},{"title":"功能说明","level":"1.4.2.4.3","depth":4,"path":"chapter4/iOS/message/instruction.md","ref":"chapter4/iOS/message/instruction.md","articles":[]},{"title":"API参考","level":"1.4.2.4.4","depth":4,"path":"chapter4/iOS/message/api.md","ref":"chapter4/iOS/message/api.md","articles":[]}]},"previous":{"title":"功能说明","level":"1.4.2.3.4","depth":4,"path":"chapter4/iOS/player/instruction.md","ref":"chapter4/iOS/player/instruction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/iOS/player/api.md","mtime":"2017-06-27T11:46:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-24T03:21:42.645Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"API参考","level":"1.4.2.3.5","depth":4,"next":{"title":"消息交互","level":"1.4.2.4","depth":3,"path":"chapter4/iOS/message.md","ref":"chapter4/iOS/message.md","articles":[{"title":"概述","level":"1.4.2.4.1","depth":4,"path":"chapter4/iOS/message/overview.md","ref":"chapter4/iOS/message/overview.md","articles":[]},{"title":"快速开始","level":"1.4.2.4.2","depth":4,"path":"chapter4/iOS/message/quickstart.md","ref":"chapter4/iOS/message/quickstart.md","articles":[]},{"title":"功能说明","level":"1.4.2.4.3","depth":4,"path":"chapter4/iOS/message/instruction.md","ref":"chapter4/iOS/message/instruction.md","articles":[]},{"title":"API参考","level":"1.4.2.4.4","depth":4,"path":"chapter4/iOS/message/api.md","ref":"chapter4/iOS/message/api.md","articles":[]}]},"previous":{"title":"功能说明","level":"1.4.2.3.4","depth":4,"path":"chapter4/iOS/player/instruction.md","ref":"chapter4/iOS/player/instruction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/iOS/player/api.md","mtime":"2017-08-23T02:56:32.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-23T03:12:22.997Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>

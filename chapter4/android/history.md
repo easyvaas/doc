@@ -1,5 +1,22 @@
-# Android SDK版本更新日志
+# 视频直播Android SDK版本更新日志
 ## V1.1
+
+---
+
+### 2017-08-09
+> [Demo v1.1.7下载](https://github.com/easyvaas/EasyLive_Android/releases/download/v1.1.7/easyvaas_sdk_demo_android_v1.1.7.zip)
+
+#### EVLive 1.1.5
+
+* 解决直播过程中进入后台或锁屏再恢复推流出现错误
+
+#### EVCore 1.1.9
+
+* 解决部分手机getAbsolutePath()函数返回空指针的错误
+
+#### EVCore 1.1.8
+
+* 解决部分手机获取deviceid为null导致初始化失败的问题
 
 ---
 

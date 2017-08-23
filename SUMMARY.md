@@ -25,7 +25,7 @@
             * [用户禁言](chapter3/server/user-shutup.md)
             * [获取禁言用户列表](chapter3/server/user-shutup-list.md)
             * [取消用户禁言](chapter3/server/user-unshutup.md)
-* [SDK](chapter4/README.md)
+* [视频直播SDK](chapter4/README.md)
     * [Android SDK](chapter4/android.md)
         * [更新日志](chapter4/android/history.md)
         * [推流端](chapter4/android/live.md)
@@ -65,6 +65,7 @@
             * [快速开始](chapter4/iOS/message/quickstart.md)
             * [功能说明](chapter4/iOS/message/instruction.md)
             * [API参考](chapter4/iOS/message/api.md)
+        * [多人连麦](chapter4/iOS/rtc.md)
     * [Windows SDK](chapter4/windows.md)
         * [更新日志](chapter4/windows/history.md)
         * [推流端](chapter4/windows/live.md)
@@ -78,7 +79,15 @@
         * [播放端](chapter4/js/player.md)
             * [API参考](chapter4/js/player/api.md)
         * [消息交互](chapter4/js/message.md)
-
+* [互动直播SDK](chapter5/README.md)
+    * [Android SDK](chapter5/android.md)
+        * [更新日志](chapter5/android/history.md)
+    * [iOS SDK](chapter5/iOS.md)
+        * [更新日志](chapter5/iOS/history.md)
+    * [Windows SDK](chapter5/windows.md)
+        * [更新日志](chapter5/windows/history.md)
+    * [JS SDK](chapter5/js.md)
+        * [历史记录](chapter5/js/history.md)
 
 
 

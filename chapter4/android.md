@@ -1,4 +1,4 @@
-###易视云Android SDK
+###视频直播Android SDK
 
 * [更新日志](android/history.md)
 * [推流端](android/live.md)

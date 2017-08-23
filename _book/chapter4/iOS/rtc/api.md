@@ -98,10 +98,23 @@
 - (void)watchRecordWithChannel:(NSString *)channel callback:(EVRTCCallback)callback;
 ```
 
-关闭本地音频推流，返回 0 则成功，返回负数则表明出现异常
+获取特定频道分享地址，分享地址为H5，可播放直播视频
+
+处理后，SDK 会返回回调结果，如果为`EVRtcResponseCode_None`，则准备开始直播；如为其他 code，则表示出现问题，可以弹框提示用户，并联系客服解决。
+
+```objectvie-c
+- (void)fetchShareURLWithChannel:(NSString *)channel callback:(EVRTCCallback)callback;
+```
+
+本地音频推流开关，返回 0 则成功，返回负数则表明出现异常
 
 ```objective-c
 - (int)muteLocalAudioStream:(BOOL)mute;
+```
+本地视频推流开关，返回 0 则成功，返回负数则表明出现异常
+
+```objective-c
+- (int)muteLocalVideoStream:(BOOL)mute;
 ```
 
 切换本地摄像头方向，返回 0 则成功，返回负数则表明出现异常
@@ -128,6 +141,30 @@
 
 ```objective-c
 - (void)evRTCKit:(EVRTCKit *)kit firstLocalVideoFrameWithSize:(CGSize)size elapsed:(NSInteger)elapsed;
+```
+
+远端用户是否主动禁用了音频
+
+```objective-c
+- (void)evRTCKit:(EVRTCKit *)kit didAudioMuted:(BOOL)muted byUid:(NSUInteger)uid;
+```
+
+远端用户是否主动禁用了视频
+
+```objective-c
+- (void)evRTCKit:(EVRTCKit *)kit didVideoMuted:(BOOL)muted byUid:(NSUInteger)uid;
+```
+
+当前用户网络连接中断
+
+```objective-c
+- (void)evRTCKitConnectionDidInterrupted:(EVRTCKit *)kit;
+```
+
+当前用户网络连接丢失
+
+```objective-c
+- (void)evRTCKitConnectionDidLost:(EVRTCKit *)kit;
 ```
 
 频道中有用户断线的回调

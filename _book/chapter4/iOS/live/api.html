@@ -472,7 +472,7 @@
                 <a href="../../">
             
                     
-                    SDK
+                    视频直播SDK
             
                 </a>
             
@@ -1031,6 +1031,19 @@
             
         </li>
     
+        <li class="chapter " data-level="1.4.2.5" data-path="../rtc.html">
+            
+                <a href="../rtc.html">
+            
+                    
+                    多人连麦
+            
+                </a>
+            
+
+            
+        </li>
+    
 
             </ul>
             
@@ -1234,6 +1247,153 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5" data-path="../../../chapter5/">
+            
+                <a href="../../../chapter5/">
+            
+                    
+                    互动直播SDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../chapter5/android.html">
+            
+                <a href="../../../chapter5/android.html">
+            
+                    
+                    Android SDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../../chapter5/android/history.md">
+            
+                <span>
+            
+                    
+                    更新日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../../chapter5/iOS.html">
+            
+                <a href="../../../chapter5/iOS.html">
+            
+                    
+                    iOS SDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../../../chapter5/iOS/history.md">
+            
+                <span>
+            
+                    
+                    更新日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../../chapter5/windows.html">
+            
+                <a href="../../../chapter5/windows.html">
+            
+                    
+                    Windows SDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../../../chapter5/windows/history.md">
+            
+                <span>
+            
+                    
+                    更新日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../../chapter5/js.html">
+            
+                <a href="../../../chapter5/js.html">
+            
+                    
+                    JS SDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../../../chapter5/js/history.md">
+            
+                <span>
+            
+                    
+                    历史记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -1306,6 +1466,15 @@
 <p>&#x89C6;&#x9891;&#x65F6;&#x957F;&#xFF08;&#x53EA;&#x8BFB;&#xFF09;</p>
 <pre><code class="lang-objective-c">@property (nonatomic, readonly, assign) NSInteger videoLength;
 </code></pre>
+<p>&#x9884;&#x89C8;&#x8BBE;&#x7F6E;&#x6210;&#x955C;&#x50CF;&#x6A21;&#x5F0F;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;NO</p>
+<pre><code class="lang-objective-c">@property (nonatomic, assign) BOOL previewMirrored;
+</code></pre>
+<p>&#x63A8;&#x6D41;&#x8BBE;&#x7F6E;&#x6210;&#x955C;&#x50CF;&#x6A21;&#x5F0F;, &#x9ED8;&#x8BA4;&#x4E3A;NO</p>
+<pre><code class="lang-objective-c">@property (nonatomic, assign) BOOL streamerMirrored;
+</code></pre>
+<p>&#x97F3;&#x6548;&#x7C7B;&#x578B; default = EVAudioEffectType_NONE</p>
+<pre><code class="lang-objective-c">@property (nonatomic, assign) EVAudioEffectType effectType;
+</code></pre>
 <p><strong>&#x6CE8;&#xFF1A;&#x4EE5;&#x4E0B;&#x53C2;&#x6570;&#x8981;&#x5728; livePrepareComplete: &#x4E4B;&#x524D;&#x5B8C;&#x6210;</strong></p>
 <p>&#x63A8;&#x6D41;&#x5668;&#x9884;&#x89C8;&#x89C6;&#x56FE;&#xFF0C;&#x63A8;&#x6D41;&#x524D;&#x9700;&#x8981;&#x5C06;&#x5176;&#x63D2;&#x5165;&#x5230;&#x76EE;&#x6807;&#x89C6;&#x56FE;&#x4E2D;&#xFF08;&#x53EA;&#x8BFB;&#xFF09;</p>
 <pre><code class="lang-objective-c">@property (nonatomic, readonly, weak) UIView *preview;
@@ -1318,6 +1487,12 @@
 </code></pre>
 <p>&#x4E0A;&#x4F20;&#x5230;&#x670D;&#x52A1;&#x5668;&#x7684;&#x89C6;&#x9891;&#x6D41;&#xFF0C;&#x6BCF;&#x5E27;&#x7684;&#x5927;&#x5C0F;&#xFF08;&#x5BBD;&#x9AD8;&#xFF09;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A; CCRecorderStreamFrameSize_360x640</p>
 <pre><code class="lang-objective-c">@property (nonatomic, assign) EVStreamFrameSize streamFrameSize;
+</code></pre>
+<p>&#x89C6;&#x9891;&#x7F16;&#x7801;&#x5668;&#x7C7B;&#x578B;, default = EVVideoCodec_AUTO</p>
+<pre><code class="lang-objective-c">@property (nonatomic, assign) EVVideoCodec videoCodec;
+</code></pre>
+<p>&#x672C;&#x6B21;&#x76F4;&#x64AD;&#x7684;&#x76EE;&#x6807;&#x573A;&#x666F; default = EVLiveScene_Default</p>
+<pre><code class="lang-objective-c">@property (nonatomic, assign) EVLiveScene liveScene;
 </code></pre>
 <p>&#x89C6;&#x9891;&#x521D;&#x59CB;&#x5316;&#x7801;&#x7387;&#x9ED8;&#x8BA4;&#x4E3A; 700 kbps, &#x7136;&#x540E;&#x4F1A;&#x6839;&#x636E;&#x7F51;&#x7EDC;&#x60C5;&#x51B5;&#x52A8;&#x6001;&#x8C03;&#x6574;</p>
 <pre><code class="lang-objective-c">@property (nonatomic, assign) NSUInteger videoBitrate;
@@ -1334,11 +1509,11 @@
 <p>&#x662F;&#x5426;&#x5F00;&#x542F;&#x6A2A;&#x5C4F;&#x76F4;&#x64AD;&#xFF0C;&#x5982;&#x5F00;&#x542F;&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x8BA9;&#x5C4F;&#x5E55;&#x5904;&#x4E8E; UIInterfaceOrientationLandscapeRight &#x72B6;&#x6001; </p>
 <pre><code class="lang-objective-c">@property (nonatomic, assign) BOOL useHorizonMode;
 </code></pre>
+<p>&#x7ACB;&#x4F53;&#x58F0;&#x63A8;&#x6D41;&#xFF0C;&#x4E3B;&#x64AD;&#x63A8;&#x6D41;&#x4E3A;&#x5355;&#x58F0;&#x9053;&#xFF0C;&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x5982;&#x679C;&#x662F;&#x53CC;&#x58F0;&#x9053;&#x7684;&#x97F3;&#x9891;,&#x901A;&#x8FC7;&#x4FEE;&#x6539;bStereoStream, &#x53EF;&#x4EE5;&#x8BA9;&#x89C2;&#x4F17;&#x542C;&#x5230;&#x53CC;&#x58F0;&#x9053;&#x7684;&#x97F3;&#x4E50;&#x3002;&#x53EA;&#x80FD;&#x5728;&#x5F00;&#x59CB;&#x63A8;&#x6D41;&#x524D;&#x4FEE;&#x6539;&#x672C;&#x5C5E;&#x6027;, &#x5F00;&#x59CB;&#x63A8;&#x6D41;&#x540E;, &#x4FEE;&#x6539;&#x65E0;&#x6548; default = NO</p>
+<pre><code class="lang-objective-c">@property (nonatomic, assign) BOOL bStereoAudioStream;
+</code></pre>
 <p>&#x89C6;&#x9891; id (&#x5FC5;&#x586B;)</p>
 <pre><code class="lang-objective-c">@property (nonatomic, copy) NSString *lid;
-</code></pre>
-<p>&#x5BC6;&#x94A5; (&#x5FC5;&#x586B;)</p>
-<pre><code class="lang-objective-c">@property (nonatomic, copy) NSString *key;
 </code></pre>
 <p>&#x6C34;&#x5370; logo &#x56FE;&#x7247;</p>
 <pre><code class="lang-objective-c">@property (strong, nonatomic) UIImage *watermakLogoImage;
@@ -1454,6 +1629,9 @@
 <p>&#x64AD;&#x653E;&#x4E2D;&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x5728;&#x672C;&#x5730;&#x7684;&#x97F3;&#x91CF;&#xFF0C;&#x4E0D;&#x4F1A;&#x5370;&#x8C61;&#x89C2;&#x770B;&#x7AEF;&#x97F3;&#x91CF;</p>
 <pre><code class="lang-objective-c">@property (nonatomic, assign) float BGMVolume;
 </code></pre>
+<p>&#x97F3;&#x4E50;&#x7684;&#x97F3;&#x8C03;&#xFF0C;&#x8C03;&#x6574;&#x8303;&#x56F4; [-24.0 ~ 24.0], &#x9ED8;&#x8BA4;&#x4E3A;0.01, &#x5355;&#x4F4D;&#x4E3A;&#x534A;&#x97F3;&#x3002;  0.01 &#x4E3A;1&#x5EA6;, 1.0&#x4E3A;&#x4E00;&#x4E2A;&#x534A;&#x97F3;, 12&#x4E2A;&#x534A;&#x97F3;&#x4E3A;1&#x4E2A;&#x516B;&#x5EA6;</p>
+<pre><code class="lang-objective-c">@property (nonatomic, assign) double BGMPitch;
+</code></pre>
 <p>&#x5F53;&#x524D;&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x64AD;&#x653E;&#x8FDB;&#x5EA6;</p>
 <pre><code class="lang-objective-c">@property (nonatomic, readonly ,assign) CGFloat BGMCurrentPlayTime;
 </code></pre>
@@ -1503,7 +1681,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"API参考","level":"1.4.2.2.5","depth":4,"next":{"title":"播放端","level":"1.4.2.3","depth":3,"path":"chapter4/iOS/player.md","ref":"chapter4/iOS/player.md","articles":[{"title":"概述","level":"1.4.2.3.1","depth":4,"path":"chapter4/iOS/player/overview.md","ref":"chapter4/iOS/player/overview.md","articles":[]},{"title":"快速开始","level":"1.4.2.3.2","depth":4,"path":"chapter4/iOS/player/quickstart.md","ref":"chapter4/iOS/player/quickstart.md","articles":[]},{"title":"示例代码","level":"1.4.2.3.3","depth":4,"path":"chapter4/iOS/player/sample.md","ref":"chapter4/iOS/player/sample.md","articles":[]},{"title":"功能说明","level":"1.4.2.3.4","depth":4,"path":"chapter4/iOS/player/instruction.md","ref":"chapter4/iOS/player/instruction.md","articles":[]},{"title":"API参考","level":"1.4.2.3.5","depth":4,"path":"chapter4/iOS/player/api.md","ref":"chapter4/iOS/player/api.md","articles":[]}]},"previous":{"title":"功能说明","level":"1.4.2.2.4","depth":4,"path":"chapter4/iOS/live/instruction.md","ref":"chapter4/iOS/live/instruction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/iOS/live/api.md","mtime":"2017-06-27T11:46:28.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-07-24T03:21:42.645Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"API参考","level":"1.4.2.2.5","depth":4,"next":{"title":"播放端","level":"1.4.2.3","depth":3,"path":"chapter4/iOS/player.md","ref":"chapter4/iOS/player.md","articles":[{"title":"概述","level":"1.4.2.3.1","depth":4,"path":"chapter4/iOS/player/overview.md","ref":"chapter4/iOS/player/overview.md","articles":[]},{"title":"快速开始","level":"1.4.2.3.2","depth":4,"path":"chapter4/iOS/player/quickstart.md","ref":"chapter4/iOS/player/quickstart.md","articles":[]},{"title":"示例代码","level":"1.4.2.3.3","depth":4,"path":"chapter4/iOS/player/sample.md","ref":"chapter4/iOS/player/sample.md","articles":[]},{"title":"功能说明","level":"1.4.2.3.4","depth":4,"path":"chapter4/iOS/player/instruction.md","ref":"chapter4/iOS/player/instruction.md","articles":[]},{"title":"API参考","level":"1.4.2.3.5","depth":4,"path":"chapter4/iOS/player/api.md","ref":"chapter4/iOS/player/api.md","articles":[]}]},"previous":{"title":"功能说明","level":"1.4.2.2.4","depth":4,"path":"chapter4/iOS/live/instruction.md","ref":"chapter4/iOS/live/instruction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/iOS/live/api.md","mtime":"2017-08-23T02:56:32.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-23T03:12:22.997Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
