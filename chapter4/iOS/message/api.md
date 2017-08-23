@@ -145,6 +145,13 @@ eg:
 - (void)closeConnect;
 ```
 
+
+#### 获取 EVMessage 模块版本号信息
+
+```objective-c
+- (NSString *)getVersion;
+```
+
 #### 用户操作block回调
 用户在发送消息、点赞、获取历史消息、离开频道时，都会有 `EVMessageCallBack` block作为回调，可通过判断 error == nil 来获知当前操作是否成功。
 获取历史消息时，会回调 response 字典，内部为历史消息内容。

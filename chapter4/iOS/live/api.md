@@ -277,6 +277,12 @@
 @property(nonatomic, copy) void(^audioProcessingCallback)(CMSampleBufferRef sampleBuffer);
 ```
 
+获取 EVStreamer 模块版本号信息
+
+```objective-c
+- (NSString *)getVersion;
+```
+
 ### 连麦
 
 连麦 ID，使用连麦功能必须在 `-livePrepareComplete:` 方法调用前设置连麦 ID

@@ -164,4 +164,10 @@ bufferTimeMax指定播放时的缓冲时长，单位秒
 - (void)setVolume:(float)volume;
 ```
 
+获取 EVPlayer 模块版本号信息
+
+```objective-c
+- (NSString *)getVersion;
+```
+
 

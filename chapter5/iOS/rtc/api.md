@@ -123,6 +123,12 @@
 - (int)switchCamera;
 ```
 
+获取 EVRTC 模块版本号信息
+
+```objective-c
+- (NSString *)getVersion;
+```
+
 #### EVRTCDelegate 代理回调方法
 
 加入频道成功回调
