@@ -472,7 +472,7 @@
                 <a href="../../">
             
                     
-                    SDK
+                    视频直播SDK
             
                 </a>
             
@@ -1247,6 +1247,153 @@
             
         </li>
     
+        <li class="chapter " data-level="1.5" data-path="../../../chapter5/">
+            
+                <a href="../../../chapter5/">
+            
+                    
+                    互动直播SDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../../chapter5/android.html">
+            
+                <a href="../../../chapter5/android.html">
+            
+                    
+                    Android SDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1.1" data-path="../../../chapter5/android/history.md">
+            
+                <span>
+            
+                    
+                    更新日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../../chapter5/iOS.html">
+            
+                <a href="../../../chapter5/iOS.html">
+            
+                    
+                    iOS SDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.2.1" data-path="../../../chapter5/iOS/history.md">
+            
+                <span>
+            
+                    
+                    更新日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../../chapter5/windows.html">
+            
+                <a href="../../../chapter5/windows.html">
+            
+                    
+                    Windows SDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.3.1" data-path="../../../chapter5/windows/history.md">
+            
+                <span>
+            
+                    
+                    更新日志
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../../../chapter5/js.html">
+            
+                <a href="../../../chapter5/js.html">
+            
+                    
+                    JS SDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.4.1" data-path="../../../chapter5/js/history.md">
+            
+                <span>
+            
+                    
+                    历史记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -1362,14 +1509,44 @@ SDK &#x63A8;&#x6D41;&#x5668;&#x7684;&#x9ED8;&#x8BA4;&#x89C6;&#x9891;&#x7801;&#x7
 <td style="text-align:left">6</td>
 <td style="text-align:left">&#x521D;&#x59CB;&#x5316;&#x786C;&#x4EF6;&#x9519;&#x8BEF;</td>
 </tr>
-<tr>
-<td style="text-align:left">EVStreamerResponse_error_sdkNoKey</td>
-<td style="text-align:left">7</td>
-<td style="text-align:left">&#x6CA1;&#x6709;&#x8BBE;&#x7F6E; key</td>
-</tr>
 </tbody>
 </table>
-<h4 id="&#x6A2A;&#x5C4F;&#x76F4;&#x64AD;">&#x6A2A;&#x5C4F;&#x76F4;&#x64AD;</h4>
+<h4 id="&#x89C6;&#x9891;&#x7F16;&#x7801;&#x5668;&#x7C7B;&#x578B;">&#x89C6;&#x9891;&#x7F16;&#x7801;&#x5668;&#x7C7B;&#x578B;</h4>
+<pre><code>typedef NS_ENUM(NSUInteger, EVVideoCodec) {
+    /// &#x89C6;&#x9891;&#x7F16;&#x7801;&#x5668; - h264 &#x8F6F;&#x4EF6;&#x7F16;&#x7801;&#x5668;
+    EVVideoCodec_X264 = 0,
+    /// &#x89C6;&#x9891;&#x7F16;&#x7801;&#x5668; - KSY265 &#x8F6F;&#x4EF6;&#x7F16;&#x7801;&#x5668;
+    EVVideoCodec_QY265,
+    /// &#x89C6;&#x9891;&#x7F16;&#x7801;&#x5668; - iOS VT264&#x786C;&#x4EF6;&#x7F16;&#x7801;&#x5668; (iOS 8.0&#x4EE5;&#x4E0A;&#x652F;&#x6301;)
+    EVVideoCodec_VT264,
+    /// &#x89C6;&#x9891;&#x7F16;&#x7801;&#x5668; - &#x7531;SDK&#x81EA;&#x52A8;&#x9009;&#x62E9;&#xFF08; VT264 &gt; X264&#xFF09;
+    EVVideoCodec_AUTO = 100,
+    /// &#x89C6;&#x9891;&#x7F16;&#x7801;&#x5668; - gif
+    EVVideoCodec_GIF,
+};
+</code></pre><h4 id="&#x76F4;&#x64AD;&#x573A;&#x666F;">&#x76F4;&#x64AD;&#x573A;&#x666F;</h4>
+<pre><code>typedef NS_ENUM(NSUInteger, EVLiveScene) {
+    /// &#x9ED8;&#x8BA4;&#x901A;&#x7528;&#x573A;&#x666F;(&#x4E0D;&#x786E;&#x5B9A;&#x573A;&#x666F;&#x65F6;&#x4F7F;&#x7528;)
+    EVLiveScene_Default = 0,
+    /// &#x79C0;&#x573A;&#x573A;&#x666F;, &#x4E3B;&#x64AD;&#x4E0A;&#x534A;&#x8EAB;&#x4E3A;&#x4E3B;
+    EVLiveScene_Showself,
+    /// &#x6E38;&#x620F;&#x573A;&#x666F;
+    EVLiveScene_Game,
+};
+</code></pre><h4 id="&#x97F3;&#x6548;&#x7C7B;&#x578B;">&#x97F3;&#x6548;&#x7C7B;&#x578B;</h4>
+<pre><code>typedef NS_ENUM(NSUInteger, EVAudioEffectType){
+    /// &#x521D;&#x59CB;&#x5316;&#x65F6;&#x72B6;&#x6001;&#x4E3A;&#x7A7A;&#x95F2;
+    EVAudioEffectType_NONE = 0,
+    /// &#x5927;&#x53D4;
+    EVAudioEffectType_MALE,
+    /// &#x841D;&#x8389;
+    EVAudioEffectType_FEMALE,
+    /// &#x5B8F;&#x5927;
+    EVAudioEffectType_HEROIC,
+    /// &#x673A;&#x5668;&#x4EBA;
+    EVAudioEffectType_ROBOT,
+};
+</code></pre><h4 id="&#x6A2A;&#x5C4F;&#x76F4;&#x64AD;">&#x6A2A;&#x5C4F;&#x76F4;&#x64AD;</h4>
 <p>&#x63A8;&#x6D41;&#x5668;&#x652F;&#x6301;&#x6A2A;&#x5C4F;&#x76F4;&#x64AD;&#xFF0C;&#x91C7;&#x7528;&#x5F53;&#x524D;&#x4E3B;&#x6D41;&#x7684; <code>UIInterfaceOrientationLandscapeRight</code> &#x5C4F;&#x5E55;&#x65B9;&#x5411;&#xFF0C;SDK &#x4F7F;&#x7528;&#x8005;&#x9700;&#x8981;&#x5148;&#x5C06;&#x5C4F;&#x5E55;&#x65B9;&#x5411;&#x8BBE;&#x7F6E;&#x4E3A; UIInterfaceOrientationLandscapeRight&#xFF0C;&#x7136;&#x540E;&#x8BBE;&#x7F6E; <code>useHorizonMode</code> &#x5C5E;&#x6027;&#x4E3A; <code>YES</code>&#xFF0C;&#x5219;&#x53EF;&#x5F00;&#x542F;&#x6A2A;&#x5C4F;&#x76F4;&#x64AD;&#x3002;</p>
 <h4 id="&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x64AD;&#x653E;">&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x64AD;&#x653E;</h4>
 <p>&#x63A8;&#x6D41;&#x5668;&#x652F;&#x6301;&#x80CC;&#x666F;&#x97F3;&#x4E50;&#x64AD;&#x653E;&#x529F;&#x80FD;&#xFF0C;&#x4F46;&#x9700;&#x8981;&#x5C06;&#x97F3;&#x4E50;&#x6587;&#x4EF6;&#x4E0B;&#x8F7D;&#x5230;&#x672C;&#x5730;&#xFF0C;&#x4F20;&#x5165;&#x672C;&#x5730;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x8FDB;&#x884C;&#x64AD;&#x653E;&#x3002;</p>
@@ -1462,7 +1639,7 @@ SDK &#x63A8;&#x6D41;&#x5668;&#x7684;&#x9ED8;&#x8BA4;&#x89C6;&#x9891;&#x7801;&#x7
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"功能说明","level":"1.4.2.2.4","depth":4,"next":{"title":"API参考","level":"1.4.2.2.5","depth":4,"path":"chapter4/iOS/live/api.md","ref":"chapter4/iOS/live/api.md","articles":[]},"previous":{"title":"示例代码","level":"1.4.2.2.3","depth":4,"path":"chapter4/iOS/live/sample.md","ref":"chapter4/iOS/live/sample.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/iOS/live/instruction.md","mtime":"2017-06-27T02:56:12.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-09T11:04:18.148Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"功能说明","level":"1.4.2.2.4","depth":4,"next":{"title":"API参考","level":"1.4.2.2.5","depth":4,"path":"chapter4/iOS/live/api.md","ref":"chapter4/iOS/live/api.md","articles":[]},"previous":{"title":"示例代码","level":"1.4.2.2.3","depth":4,"path":"chapter4/iOS/live/sample.md","ref":"chapter4/iOS/live/sample.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/iOS/live/instruction.md","mtime":"2017-08-23T02:56:32.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-08-23T03:12:22.997Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
