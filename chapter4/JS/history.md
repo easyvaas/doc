@@ -1,5 +1,29 @@
 ## Easyvaas JS SDK 更新日志
 
+* 版本 v1.2  2017-08-28
+
+    *优化：*  
+    
+    1. 播放器更换新皮肤 
+    2. 增加全屏和退出全屏事件
+    3. 为了不出bug，差一点点就自杀祭天了
+      
+    *更新：*  
+        
+        1. 全屏事件
+    
+           ysyPlayer.onFullScreen(function(){
+               console.log('全屏');
+           });
+           
+        2. 退出全屏事件
+    
+           ysyPlayer.onQuitScreen(function(){
+               console.log('退出全屏');
+           });
+
+
+
 * 版本 v1.1  2017-06-07   
     
     *优化：*  

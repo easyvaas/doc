@@ -43,7 +43,21 @@
       
     ysyPlayer.onErrorHandler(function(){
         console.log('监听视频错误');
-    })                 
+    })  
+                   
+#### 全屏事件
+      
+    ysyPlayer.onFullScreen(function(){
+       console.log('全屏');
+    });
+    
+#### 退出全屏事件
+ 
+    ysyPlayer.onQuitScreen(function(){
+       console.log('退出全屏');
+    });
+    
+
 
 ## **快速开始**
 
