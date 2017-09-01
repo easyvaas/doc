@@ -1,2 +1,7 @@
-易视云针对多人连麦的市场需求，推出了**多人连麦**SDK，方便开发者快速实现iOS端多人连麦功能。
+iOS**多人连麦**SDK主要包含以下几个部分：
+* [概述](rtc/overview.md)
+* [快速开始](rtc/quickstart.md)
+* [示例代码](rtc/sample.md)
+* [功能说明](rtc/instruction.md)
+* [API参考](rtc/api.md)
 
