@@ -85,6 +85,7 @@
         * [多人连麦](chapter5/android/rtc.md)
             * [概述](chapter5/android/rtc/overview.md)
             * [快速开始](chapter5/android/rtc/quickstart.md)
+            * [示例代码](chapter5/android/rtc/sample.md)
             * [功能说明](chapter5/android/rtc/instruction.md)
             * [API参考](chapter5/android/rtc/api.md)
     * [iOS SDK](chapter5/iOS.md)

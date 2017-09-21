@@ -1328,7 +1328,20 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.1.2.3" data-path="../../../chapter5/android/rtc/instruction.html">
+        <li class="chapter " data-level="1.5.1.2.3" data-path="../../../chapter5/android/rtc/sample.html">
+            
+                <a href="../../../chapter5/android/rtc/sample.html">
+            
+                    
+                    示例代码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.1.2.4" data-path="../../../chapter5/android/rtc/instruction.html">
             
                 <a href="../../../chapter5/android/rtc/instruction.html">
             
@@ -1341,7 +1354,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5.1.2.4" data-path="../../../chapter5/android/rtc/api.html">
+        <li class="chapter " data-level="1.5.1.2.5" data-path="../../../chapter5/android/rtc/api.html">
             
                 <a href="../../../chapter5/android/rtc/api.html">
             
@@ -1585,16 +1598,7 @@
 <p>&#x5BFC;&#x5165;&#x5BF9;&#x5E94;&#x7684;&#x9759;&#x6001; framework:</p>
 <pre><code>- EVSDKBaseFramework.framework
 - EVMediaFramework.framework
-</code></pre><h2 id="vr-&#x64AD;&#x653E;&#x5668;">VR &#x64AD;&#x653E;&#x5668;</h2>
-<p>&#x5982;&#x4F7F;&#x7528; EVPlayer &#x7684;&#x540C;&#x65F6;&#xFF0C;&#x8FD8;&#x9700;&#x4F7F;&#x7528; VR &#x64AD;&#x653E;&#x5668;&#xFF0C;&#x5219;&#x5BFC;&#x5165;&#x5982;&#x4E0B; framework&#xFF1A;</p>
-<pre><code>- EVVRFramework.framework
-- ios_player_dylib.framework
-</code></pre><p>&#x6CE8;&#xFF1A;  </p>
-<ul>
-<li>&#x5176;&#x4E2D; <code>ios_player_dylib.framework</code> &#x4E3A;&#x52A8;&#x6001;&#x5E93;&#xFF0C;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x5230;&#x9879;&#x76EE;&#x5DE5;&#x7A0B; TARGETS-&gt;General-&gt;Embedded Binaries &#x4E2D;&#xFF0C;&#x5426;&#x5219;&#x8FD0;&#x884C;&#x5E94;&#x7528;&#x65F6;&#x63A7;&#x5236;&#x53F0;&#x4F1A;&#x8F93;&#x51FA; <strong>image not found</strong> &#x7684;&#x9519;&#x8BEF;</li>
-<li><code>EVMediaFramework.framework</code> &#x548C; <code>ios_player_dylib.framework</code> &#x540C;&#x65F6;&#x5BFC;&#x5165;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x9879;&#x76EE;&#x5DE5;&#x7A0B; TARGETS-&gt;Build Settings-&gt;Other Linker Flags &#x4E2D;&#x6DFB;&#x52A0; <strong>-all_load</strong></li>
-</ul>
-<h2 id="&#x5DE5;&#x7A0B;&#x914D;&#x7F6E;">&#x5DE5;&#x7A0B;&#x914D;&#x7F6E;</h2>
+</code></pre><h2 id="&#x5DE5;&#x7A0B;&#x914D;&#x7F6E;">&#x5DE5;&#x7A0B;&#x914D;&#x7F6E;</h2>
 <h4 id="&#x7CFB;&#x7EDF;&#x5E93;&#x914D;&#x7F6E;">&#x7CFB;&#x7EDF;&#x5E93;&#x914D;&#x7F6E;</h4>
 <p>&#x5BFC;&#x5165;&#x5982;&#x4E0B;&#x7CFB;&#x7EDF;&#x5E93;&#xFF1A;</p>
 <pre><code>libsqlite3.tbd
@@ -1611,7 +1615,38 @@ VideoToolbox.framework
    &lt;true/&gt;
 &lt;/dict&gt;
 </code></pre>
-
+<hr>
+<hr>
+<h2 id="vr-&#x64AD;&#x653E;&#x5668;">VR &#x64AD;&#x653E;&#x5668;</h2>
+<p>VR &#x64AD;&#x653E;&#x5668;&#xFF0C;&#x5219;&#x5BFC;&#x5165;&#x5982;&#x4E0B; framework&#xFF1A;</p>
+<pre><code>- EVVRFramework.framework
+- ios_player_dylib.framework
+</code></pre><p>&#x6CE8;&#xFF1A;  </p>
+<ul>
+<li>&#x5176;&#x4E2D; <code>ios_player_dylib.framework</code> &#x4E3A;&#x52A8;&#x6001;&#x5E93;&#xFF0C;&#x9700;&#x8981;&#x6DFB;&#x52A0;&#x5230;&#x9879;&#x76EE;&#x5DE5;&#x7A0B; TARGETS-&gt;General-&gt;Embedded Binaries &#x4E2D;&#xFF0C;&#x5426;&#x5219;&#x8FD0;&#x884C;&#x5E94;&#x7528;&#x65F6;&#x63A7;&#x5236;&#x53F0;&#x4F1A;&#x8F93;&#x51FA; <strong>image not found</strong> &#x7684;&#x9519;&#x8BEF;</li>
+<li><code>EVMediaFramework.framework</code> &#x548C; <code>ios_player_dylib.framework</code> &#x540C;&#x65F6;&#x5BFC;&#x5165;&#x65F6;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x9879;&#x76EE;&#x5DE5;&#x7A0B; TARGETS-&gt;Build Settings-&gt;Other Linker Flags &#x4E2D;&#x6DFB;&#x52A0; <strong>-all_load</strong></li>
+</ul>
+<h4 id="&#x7CFB;&#x7EDF;&#x5E93;&#x914D;&#x7F6E;">&#x7CFB;&#x7EDF;&#x5E93;&#x914D;&#x7F6E;</h4>
+<p>&#x5BFC;&#x5165;&#x5982;&#x4E0B;&#x7CFB;&#x7EDF;&#x5E93;&#xFF1A;</p>
+<pre><code>libc++.tbd
+libstdc++.tbd
+CoreAudioKit.framework
+CoreAudio.framework
+CFNetwork.framework
+AVFoundation.framework
+libxml2.tbd
+</code></pre><h4 id="&#x7F51;&#x7EDC;&#x914D;&#x7F6E;">&#x7F51;&#x7EDC;&#x914D;&#x7F6E;</h4>
+<p>&#x7531;&#x4E8E;SDK&#x5185;&#x90E8;&#x5B58;&#x5728;&#x9274;&#x6743;&#x7684;&#x7F51;&#x7EDC;&#x8BF7;&#x6C42;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x6253;&#x5F00;&#x914D;&#x7F6E;ATS&#xFF0C;&#x5728;&#x5DE5;&#x7A0B;&#x7684;<code>info.plist</code>&#x4E2D;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x5185;&#x5BB9;&#xFF1A;</p>
+<pre><code class="lang-objective-c">&lt;key&gt;NSAppTransportSecurity&lt;/key&gt;
+&lt;dict&gt;
+   &lt;key&gt;NSAllowsArbitraryLoads&lt;/key&gt;
+   &lt;true/&gt;
+&lt;/dict&gt;
+</code></pre>
+<h4 id="&#x9879;&#x76EE;&#x914D;&#x7F6E;">&#x9879;&#x76EE;&#x914D;&#x7F6E;</h4>
+<p>Build Setting &#x914D;&#x7F6E;&#xFF1A;</p>
+<pre><code>TARGETS -&gt; Build Setting -&gt; &#x641C;&#x7D22; bitcode &#x5E76;&#x8BBE;&#x7F6E;&#x4E3A; NO
+</code></pre>
                                 
                                 </section>
                             
@@ -1654,7 +1689,7 @@ VideoToolbox.framework
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"快速开始","level":"1.4.2.3.2","depth":4,"next":{"title":"示例代码","level":"1.4.2.3.3","depth":4,"path":"chapter4/iOS/player/sample.md","ref":"chapter4/iOS/player/sample.md","articles":[]},"previous":{"title":"概述","level":"1.4.2.3.1","depth":4,"path":"chapter4/iOS/player/overview.md","ref":"chapter4/iOS/player/overview.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/iOS/player/quickstart.md","mtime":"2017-08-23T02:56:32.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-09-11T10:23:53.547Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"快速开始","level":"1.4.2.3.2","depth":4,"next":{"title":"示例代码","level":"1.4.2.3.3","depth":4,"path":"chapter4/iOS/player/sample.md","ref":"chapter4/iOS/player/sample.md","articles":[]},"previous":{"title":"概述","level":"1.4.2.3.1","depth":4,"path":"chapter4/iOS/player/overview.md","ref":"chapter4/iOS/player/overview.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/iOS/player/quickstart.md","mtime":"2017-09-19T02:50:41.000Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-09-21T10:48:58.710Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
