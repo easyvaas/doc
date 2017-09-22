@@ -60,6 +60,7 @@
             * [示例代码](chapter4/iOS/player/sample.md)
             * [功能说明](chapter4/iOS/player/instruction.md)
             * [API参考](chapter4/iOS/player/api.md)
+            * [VR播放器](chapter4/iOS/player/vrplayer.md)
         * [消息交互](chapter4/iOS/message.md)
             * [概述](chapter4/iOS/message/overview.md)
             * [快速开始](chapter4/iOS/message/quickstart.md)
