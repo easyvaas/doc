@@ -1,5 +1,8 @@
 # 播放器相关事件API
 
+## **快速开始**
+本节提供快速集成易视云WEB播放端SDK的步骤和示例代码。具体可 [参考Demo](http://static.easyvaas.com/sdk/h5/demo/player.html) 中相关代码。
+
 ### 示例代码
 
 #### 播放事件
@@ -40,7 +43,21 @@
       
     ysyPlayer.onErrorHandler(function(){
         console.log('监听视频错误');
-    })                 
+    })  
+                   
+#### 全屏事件
+      
+    ysyPlayer.onFullScreen(function(){
+       console.log('全屏');
+    });
+    
+#### 退出全屏事件
+ 
+    ysyPlayer.onQuitScreen(function(){
+       console.log('退出全屏');
+    });
+    
+
 
 ## **快速开始**
 

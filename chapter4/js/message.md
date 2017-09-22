@@ -1,7 +1,7 @@
 # JS消息SDK使用说明
 
 ## **快速开始**
-本节提供快速集成易视云消息系统的步骤和示例代码。
+本节提供快速集成易视云消息系统的步骤和示例代码。具体可 [参考Demo](http://static.easyvaas.com/sdk/h5/demo/demo.html) 中相关代码。
 
 ### 配置项目
 引入sdk相关的js文件后，依次进行如下配置：
@@ -9,7 +9,7 @@
 ### 示例代码
 #### 在body闭合前引用js
 ```
-<script type="text/javascript" src="//h5.api.easyvaas.com/ysyPlayer/ysyChat-1.1.min.js"></script>
+<script type="text/javascript" src="//static.easyvaas.com/sdk/h5/chat/ysyChat-1.1.min.js"></script>
 <script type="text/javascript">
     //聊天初始化
     ysyChat.init({
