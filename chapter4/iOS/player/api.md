@@ -167,7 +167,7 @@ bufferTimeMax指定播放时的缓冲时长，单位秒
 获取 EVPlayer 模块版本号信息
 
 ```objective-c
-- (NSString *)getVersion;
++ (NSString *)getVersion;
 ```
 
 

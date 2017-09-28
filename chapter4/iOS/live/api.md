@@ -280,7 +280,7 @@
 获取 EVStreamer 模块版本号信息
 
 ```objective-c
-- (NSString *)getVersion;
++ (NSString *)getVersion;
 ```
 
 ### 连麦

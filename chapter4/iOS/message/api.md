@@ -149,7 +149,7 @@ eg:
 #### 获取 EVMessage 模块版本号信息
 
 ```objective-c
-- (NSString *)getVersion;
++ (NSString *)getVersion;
 ```
 
 #### 用户操作block回调

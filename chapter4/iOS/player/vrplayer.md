@@ -202,7 +202,7 @@ VR播放器代理
 获取 EVVRPlayer 版本号
 
 ```objective-c
-- (NSString *)getVersion;
++ (NSString *)getVersion;
 ```
 
 ##### 代理

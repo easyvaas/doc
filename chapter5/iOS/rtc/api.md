@@ -126,7 +126,7 @@
 获取 EVRTC 模块版本号信息
 
 ```objective-c
-- (NSString *)getVersion;
++ (NSString *)getVersion;
 ```
 
 #### EVRTCDelegate 代理回调方法
