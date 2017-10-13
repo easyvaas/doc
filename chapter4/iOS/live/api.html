@@ -147,9 +147,9 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.2.2.1" data-path="../../../chapter1/core/live.md">
+        <li class="chapter " data-level="1.2.2.1" data-path="../../../chapter1/core/live.html">
             
-                <span>
+                <a href="../../../chapter1/core/live.html">
             
                     
                     直播推流
@@ -160,9 +160,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.2" data-path="../../../chapter1/core/player.md">
+        <li class="chapter " data-level="1.2.2.2" data-path="../../../chapter1/core/player.html">
             
-                <span>
+                <a href="../../../chapter1/core/player.html">
             
                     
                     播放器
@@ -186,9 +186,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.2.2.4" data-path="../../../chapter1/core/videortc.md">
+        <li class="chapter " data-level="1.2.2.4" data-path="../../../chapter1/core/videortc.html">
             
-                <span>
+                <a href="../../../chapter1/core/videortc.html">
             
                     
                     视频连线
@@ -290,9 +290,23 @@
             <ul class="articles">
                 
     
-        <li class="chapter " data-level="1.3.1.2.1" data-path="../../../chapter3/server/live-create.html">
+        <li class="chapter " data-level="1.3.1.2.1" data-path="../../../chapter3/server/v1/video.html">
             
-                <a href="../../../chapter3/server/live-create.html">
+                <a href="../../../chapter3/server/v1/video.html">
+            
+                    
+                    v1版本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.1.1" data-path="../../../chapter3/server/v1/live-create.html">
+            
+                <a href="../../../chapter3/server/v1/live-create.html">
             
                     
                     创建流
@@ -303,9 +317,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.1.2.2" data-path="../../../chapter3/server/live-stop.html">
+        <li class="chapter " data-level="1.3.1.2.1.2" data-path="../../../chapter3/server/v1/live-stop.html">
             
-                <a href="../../../chapter3/server/live-stop.html">
+                <a href="../../../chapter3/server/v1/live-stop.html">
             
                     
                     禁播流
@@ -316,9 +330,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.1.2.3" data-path="../../../chapter3/server/live-list.html">
+        <li class="chapter " data-level="1.3.1.2.1.3" data-path="../../../chapter3/server/v1/live-list.html">
             
-                <a href="../../../chapter3/server/live-list.html">
+                <a href="../../../chapter3/server/v1/live-list.html">
             
                     
                     查询流列表
@@ -329,9 +343,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.1.2.4" data-path="../../../chapter3/server/video-notify.html">
+        <li class="chapter " data-level="1.3.1.2.1.4" data-path="../../../chapter3/server/v1/video-notify.html">
             
-                <a href="../../../chapter3/server/video-notify.html">
+                <a href="../../../chapter3/server/v1/video-notify.html">
             
                     
                     视频服务事件通知
@@ -339,6 +353,95 @@
                 </a>
             
 
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2" data-path="../../../chapter3/server/v2/video.html">
+            
+                <a href="../../../chapter3/server/v2/video.html">
+            
+                    
+                    v2版本
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1.2.2.1" data-path="../../../chapter3/server/v2/cdn-support.html">
+            
+                <a href="../../../chapter3/server/v2/cdn-support.html">
+            
+                    
+                    查询cdn线路
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.2" data-path="../../../chapter3/server/v2/live-create.html">
+            
+                <a href="../../../chapter3/server/v2/live-create.html">
+            
+                    
+                    创建流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.3" data-path="../../../chapter3/server/v2/live-stop.html">
+            
+                <a href="../../../chapter3/server/v2/live-stop.html">
+            
+                    
+                    禁播流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.4" data-path="../../../chapter3/server/v2/live-state.html">
+            
+                <a href="../../../chapter3/server/v2/live-state.html">
+            
+                    
+                    查询流状态
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.1.2.2.5" data-path="../../../chapter3/server/v2/video-notify.html">
+            
+                <a href="../../../chapter3/server/v2/video-notify.html">
+            
+                    
+                    视频服务事件通知
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -1738,7 +1841,7 @@
 <pre><code class="lang-objective-c">@property(nonatomic, copy) void(^audioProcessingCallback)(CMSampleBufferRef sampleBuffer);
 </code></pre>
 <p>&#x83B7;&#x53D6; EVStreamer &#x6A21;&#x5757;&#x7248;&#x672C;&#x53F7;&#x4FE1;&#x606F;</p>
-<pre><code class="lang-objective-c">+ (NSString *)getVersion;
+<pre><code class="lang-objective-c">- (NSString *)getVersion;
 </code></pre>
 <h3 id="&#x8FDE;&#x9EA6;">&#x8FDE;&#x9EA6;</h3>
 <p>&#x8FDE;&#x9EA6; ID&#xFF0C;&#x4F7F;&#x7528;&#x8FDE;&#x9EA6;&#x529F;&#x80FD;&#x5FC5;&#x987B;&#x5728; <code>-livePrepareComplete:</code> &#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x524D;&#x8BBE;&#x7F6E;&#x8FDE;&#x9EA6; ID</p>
@@ -1839,7 +1942,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"API参考","level":"1.4.2.2.5","depth":4,"next":{"title":"播放端","level":"1.4.2.3","depth":3,"path":"chapter4/iOS/player.md","ref":"chapter4/iOS/player.md","articles":[{"title":"概述","level":"1.4.2.3.1","depth":4,"path":"chapter4/iOS/player/overview.md","ref":"chapter4/iOS/player/overview.md","articles":[]},{"title":"快速开始","level":"1.4.2.3.2","depth":4,"path":"chapter4/iOS/player/quickstart.md","ref":"chapter4/iOS/player/quickstart.md","articles":[]},{"title":"示例代码","level":"1.4.2.3.3","depth":4,"path":"chapter4/iOS/player/sample.md","ref":"chapter4/iOS/player/sample.md","articles":[]},{"title":"功能说明","level":"1.4.2.3.4","depth":4,"path":"chapter4/iOS/player/instruction.md","ref":"chapter4/iOS/player/instruction.md","articles":[]},{"title":"API参考","level":"1.4.2.3.5","depth":4,"path":"chapter4/iOS/player/api.md","ref":"chapter4/iOS/player/api.md","articles":[]},{"title":"VR播放器","level":"1.4.2.3.6","depth":4,"path":"chapter4/iOS/player/vrplayer.md","ref":"chapter4/iOS/player/vrplayer.md","articles":[]}]},"previous":{"title":"功能说明","level":"1.4.2.2.4","depth":4,"path":"chapter4/iOS/live/instruction.md","ref":"chapter4/iOS/live/instruction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/iOS/live/api.md","mtime":"2017-09-28T03:27:15.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-28T03:42:03.183Z"},"basePath":"../../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"API参考","level":"1.4.2.2.5","depth":4,"next":{"title":"播放端","level":"1.4.2.3","depth":3,"path":"chapter4/iOS/player.md","ref":"chapter4/iOS/player.md","articles":[{"title":"概述","level":"1.4.2.3.1","depth":4,"path":"chapter4/iOS/player/overview.md","ref":"chapter4/iOS/player/overview.md","articles":[]},{"title":"快速开始","level":"1.4.2.3.2","depth":4,"path":"chapter4/iOS/player/quickstart.md","ref":"chapter4/iOS/player/quickstart.md","articles":[]},{"title":"示例代码","level":"1.4.2.3.3","depth":4,"path":"chapter4/iOS/player/sample.md","ref":"chapter4/iOS/player/sample.md","articles":[]},{"title":"功能说明","level":"1.4.2.3.4","depth":4,"path":"chapter4/iOS/player/instruction.md","ref":"chapter4/iOS/player/instruction.md","articles":[]},{"title":"API参考","level":"1.4.2.3.5","depth":4,"path":"chapter4/iOS/player/api.md","ref":"chapter4/iOS/player/api.md","articles":[]},{"title":"VR播放器","level":"1.4.2.3.6","depth":4,"path":"chapter4/iOS/player/vrplayer.md","ref":"chapter4/iOS/player/vrplayer.md","articles":[]}]},"previous":{"title":"功能说明","level":"1.4.2.2.4","depth":4,"path":"chapter4/iOS/live/instruction.md","ref":"chapter4/iOS/live/instruction.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["toggle-chapters","livereload"],"pluginsConfig":{"toggle-chapters":{},"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chapter4/iOS/live/api.md","mtime":"2017-10-12T09:41:15.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-10-12T12:41:21.371Z"},"basePath":"../../..","book":{"language":""}});
         });
     </script>
 </div>
