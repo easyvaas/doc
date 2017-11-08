@@ -8,7 +8,7 @@ Easyvaas 多人连麦 SDK 中提供了三种身份：Master（主播）、LiveGu
 * 用户只能加入已创建的频道进行多人连麦，加入已有频道进行连麦的用户身份应为 `LiveGuest`
 * 当某一频道开启了旁路直播，则可以通过获取流地址进行观看，观看者用户身份应为 `Guest`
 
-所以，一个频道的连麦步骤大体如下：
+一个频道的连麦步骤大体如下：
 
 **一. Master 创建并加入一个频道 `customChannel`，开启旁路直播，保存视频**
 
@@ -66,7 +66,8 @@ Easyvaas 多人连麦 SDK 中提供了三种身份：Master（主播）、LiveGu
 [self.rtcKit configCanvasWithView:newView uid:uid mode:EVRtc_Render_Fit];
 ```
 
-本地创建或加入频道时，可传入 uid = 0 来标识该视图为本地视频画布；新加入的用户可以在代理回调中*第一帧已解码*的回调中调用该方法。
+本地需要维护一个数组array，来缓存每个用户的 uid、view 等信息。
+当前用户创建或加入频道时，可标识 uid = 0 创建用户信息并加入到array中，本地即可使用 uid=0 来识别当前用户；新加入的用户可以在代理回调`firstRemoteVideoDecodedOfUid`中创建新用户信息，并加入数组array。详情请参考demo。
 
 ##### 旁路视频流中画布设置
 
@@ -79,6 +80,25 @@ Easyvaas 多人连麦 SDK 中提供了三种身份：Master（主播）、LiveGu
 ```objective-c
 [self.rtcKit configVideoRegion:regions];
 ```
+SDK内默认的旁路推流布局如下，其中数字代表连麦观众显示的顺序，最外层为屏幕边缘，具体效果详见 Demo 运行效果
+
+```
+ --------------------------------
+ |       |     4    |     1     |
+ |       -----------------------|
+ |       |     5    |     2     |
+ |       -----------------------|
+ |       |     6    |     3     |
+ --------------------------------
+```
+
+#### 注意事项
+
+* 使用RTC模块前，需要先通过 appid/appkey/appsecret 进行初始化，初始化成功才可使用服务
+* 三种身份中，Master只能、必须有`1个`，LiveGuest最多有`6个`，Guest个数`不限`(Guest身份只是获取播放地址，所以不存在限制)
+* Master如果在连麦过程中出现异常退出，可通过原来的 channel/uid 可重新加入其已创建的房间
+* LiveGuest异常退出后，不能重新以原有 uid 重新加入房间，并且原有 uid 在其心跳超时之前会占用一个 LiveGuest 的位置
+ 
 
 #### 枚举值
 
