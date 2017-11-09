@@ -54,6 +54,7 @@
             * [功能说明](chapter4/android/message/instruction.md)
             * [API参考](chapter4/android/message/api.md)
     * [iOS SDK](chapter4/iOS.md)
+    	* [集成常见问题](chapter4/iOS/questions.md)
         * [更新日志](chapter4/iOS/history.md)
         * [推流端](chapter4/iOS/live.md)
             * [概述](chapter4/iOS/live/overview.md)
