@@ -374,13 +374,15 @@ int SetVideoCompositingLayout(const EVVideoCompositingLayout& sei)
 ```
    struct EVVideoCompositingLayout
    {
-	      struct Region {
-		     unsigned int uid;
-		     double x;//[0,1]
-		     double y;//[0,1]
-	     	double width;//[0,1]
-		     double height;//[0,1]
-	     	int zOrder; //optional, [0, 100] //0 (default): bottom most, 100: top most
+	     struct Region {
+		    unsigned int uid;
+		    double x;//[0,1]
+		    double y;//[0,1]
+	     	
+      double width;//[0,1]
+		    double height;//[0,1]
+	     
+      int zOrder; //optional, [0, 100] //0 (default): bottom most, 100: top most
 
 	     	//  Optional
 		     //  [0, 1.0] where 0 denotes throughly transparent, 1.0 opaque
