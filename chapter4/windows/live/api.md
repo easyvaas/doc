@@ -194,7 +194,7 @@ float GetDesktopVolume()
 
 #### 连麦-加入频道（JoinChannel）
 ```
-int JoinChannel(const char* lpChannelName, const char* info,  const unsigned int uid, const char* channelKey)
+int JoinChannel(IN const char* appid, IN const char* channel_id="", IN unsigned int uid=0, EVLive_User_Role useRole = EVLIVE_USER_ROLE_BROADCASTER, IN const int type = 1, IN const int record = 1)
 ```
 加入频道(连麦、视频会议使用), 如果还未创建频道, 会自动创建。该方法让用户加入通话频道，在同一个频道内的用户可以互相通话，多个用户加入同一个频道，可以群聊。如果已在通话中，用户必须调用leaveChannel退出当前通话，才能进入下一个频道。
 
@@ -202,12 +202,21 @@ int JoinChannel(const char* lpChannelName, const char* info,  const unsigned int
 
 | 名称 | 描述 |
 |:--|:--|
-| lpChannelName | 标识通话的频道名称，长度在64字节以内的字符串，由业务后台提供 |
-| info | (非必选项)附加信息，一般可设置为空字符串 |
-| uid | 用户uid，UserAuth返回的用户uid|
-| channelKey | 进入频道验证信息，UserAuth返回channellkey |
+| appid | 需要向售前申请 |
+| channel_id |频道id，如果为空串则有服务器自动分配，并且在回调函数中返回。需用户自行维护保存维护 |
+| uid | 用户id，如果为空串则有服务器自动分配，并且在回调函数中返回。需用户自行维护保存维护|
+| userRole |  必须为EVLIVE_USER_ROLE_AUDIENCE(0)或者EVLIVE_USER_ROLE_BROADCASTER(1) |
+| type | 0：不开启旁路直播，1：开启旁路直播。默认为1。只有对主播此参数才有效。|
+| record |  0：不开启录制，1：开启录制，默认为1。只有对主播此参数才有效。|
 | 返回值 | 0-成功，<0-失败 |
+**注解**
 
+    channelid不为空，则uid也不空。
+    如果channelid和uid都为空，则服务器会创建一个新频道，并返回channelid和uid，而且此时必须为主播身份。进入成功即为频道拥有者。
+    如果以主播身份，channelid和uid为之前保存的信息，则再次进入频道服务器就不会再创建新频道（后台的逻辑、
+    如果频道有了拥有者，则该channelid不能为其他用户使用，提示Room exist...
+    连麦观众想要进入频道必须有channelid，如果不输入uid则服务器分配一个。
+    
 #### 连麦-离开频道（LeaveChannel）
 ```
 int LeaveChannel()
