@@ -322,7 +322,7 @@ int SetupRemoteVideo(const EVVideoCanvas& canvas)
 
 | 名称 | 描述 |
 |:--|:--|
-| canvas | the canvas information |
+| canvas | 画布信息 |
 | 返回值 | 0-成功，<0-失败 |
 
 #### 连麦-设置本地视频视图（SetupLocalVideo）
@@ -355,6 +355,33 @@ int ConfigurePublisher(const EVPublisherConfiguration& config)
 |:--|:--|
 | config | 旁路推流信息 |
 | 返回值 | 0-成功，<0-失败 |
+
+```
+struct EVPublisherConfiguration{
+	int width;
+	int height;
+	int framerate;
+	int bitrate;
+public:
+
+	EVPublisherConfiguration()
+		: width(640)
+		, height(360)
+		, framerate(15)
+		, bitrate(500)
+	{}
+};
+```
+
+**注解**
+请确保设置的分辨率、码率和帧率与主播上行设置一致，以免视频质量下降。
+
+| 名称 | 描述 |
+|:--|:--|
+| width	| 设置旁路直播的输出码流的宽度。默认值为 360  |
+|height	| 设置旁路直播的输出码流的高度。默认值为 360 |
+|framerate	| 设置旁路直播的输出码率帧率。默认值为 15 fps |
+|bitrate | 	设置旁路直播输出码流的码率。默认设置为 500 Kbps  |
 
 #### 设置旁路推流布局(SetVideoCompositingLayout)
 ```
@@ -426,6 +453,87 @@ Region的详细说明:
 |alpha[0.0, 1.0]|用于定义图像的透明度。 0 表示图像为透明的， 1 表示图像为完全不透明的|
 |renderMode: RENDER_MODE_HIDDEN(1)|经过裁减的|
 
+
+#### 连麦-静音所有远端音频（MuteAllRemoteAudioStreams）
+```
+int MuteAllRemoteAudioStreams(bool mute)
+```
+该方法用于允许/禁止播放远端用户的音频流，即对所有远端用户进行静音与否。该方法不影响音频数据流的接收，只是不播放音频流。参数说明：
+
+| 名称 | 描述 |
+|:--|:--|
+| mute | 是否禁止播放远端音频流。true:禁止，false:取消禁止|
+| 返回值 | 0-成功，<0-失败 |
+
+#### 连麦-静音指定用户音频（MuteRemoteAudioStream）
+```
+int MuteRemoteAudioStream(unsigned int uid, bool mute)
+```
+静音指定远端用户/对指定远端用户取消静音。本方法用于允许/禁止播放远端用户的音频流。该方法不影响音频数据流的接收，只是不播放音频流。参数说明：
+
+| 名称 | 描述 |
+|:--|:--|
+| uid | 用户uid，无符号整型|
+| mute | 是否禁止播放远端音频流。true:禁止，false:取消禁止|
+| 返回值 | 0-成功，<0-失败 |
+
+
+#### 连麦-将自己静音（MuteLocalAudio）
+```
+ BOOL MuteLocalAudio(BOOL bMuted = TRUE)
+```
+/静音/取消静音。该方法用于允许/禁止往网络发送本地音频流。该方法不影响录音状态，并没有禁用麦克风。参数说明：
+
+| 名称 | 描述 |
+|:--|:--|
+| bMuted | 是否禁止本地音频流。true:禁止，false:取消禁止|
+| 返回值 | 0-成功，<0-失败 |
+
+
+#### 连麦-是否将自己静音（IsLocalAudioMuted）
+```
+ BOOL IsLocalAudioMuted()
+```
+/静音/取消静音。该方法用于允许/禁止往网络发送本地音频流。该方法不影响录音状态，并没有禁用麦克风。参数说明：
+
+| 名称 | 描述 |
+|:--|:--|
+| 返回值 | FALSE-未将自己静音，<TRUE-将自己静音 |
+
+
+#### 连麦-暂停所有远端视频流 （MuteAllRemoteVideoStreams）
+```
+  int MuteAllRemoteVideoStreams(bool mute);
+```
+该方法用于允许/禁止播放所有远端视频流。该方法不影响视频数据流的接收，只是不播放视频流。。参数说明：
+
+| 名称 | 描述 |
+|:--|:--|
+| bMuted | 是否禁止远端视频流。True : 停止播放所有用户的视频流，False : 允许播放所有用户的视频流|
+| 返回值 | 0-成功，<0-失败 |
+
+
+#### 连麦-暂停指定远端视频流 （MuteRemoteVideoStream）
+```
+  int MuteRemoteVideoStream(unsigned int uid, bool mute);
+```
+该方法用于允许/禁止播放指定的远端视频流。该方法不影响视频数据流的接收，只是不播放视频流。参数说明：
+
+| 名称 | 描述 |
+|:--|:--|
+| bMuted | 是否禁止uid指定用户的远端视频流。True : 停止播放指定用户的视频流，False : 允许播放指定用户的视频流|
+| 返回值 | 0-成功，<0-失败 |
+
+#### 连麦-暂停本地视频流 （MuteLocalVideo）
+```
+  BOOL MuteLocalVideo(BOOL bMuted = TRUE);
+```
+该方法暂停发送本地视频流。该方法不影响本地视频流获取，没有禁用摄像头。只是不播放视频流。参数说明：
+
+| 名称 | 描述 |
+|:--|:--|
+| bMuted | 是否禁止本地视频流。True : 不发送本地视频流，False : 发送本地视频流|
+| 返回值 | 0-成功，<0-失败 |
 
 
 
