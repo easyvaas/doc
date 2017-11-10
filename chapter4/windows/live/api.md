@@ -372,54 +372,60 @@ int SetVideoCompositingLayout(const EVVideoCompositingLayout& sei)
 | EVVideoCompositingLayout | 旁路推流布局设置 |
 
 ```
-   struct EVVideoCompositingLayout
-   {
-	     struct Region {
-		    unsigned int uid;
-		    double x;//[0,1]
-		    double y;//[0,1]
-	     	
-      double width;//[0,1]
-		    double height;//[0,1]
-	     
-      int zOrder; //optional, [0, 100] //0 (default): bottom most, 100: top most
 
-	     	//  Optional
-		     //  [0, 1.0] where 0 denotes throughly transparent, 1.0 opaque
-		     double alpha;
+struct EVVideoCompositingLayout
+{
+ struct Region {
+                 uid_t uid;
+                 double x;//[0,1]
+                 double y;//[0,1]
+                 double width;//[0,1]
+                 double height;//[0,1]
+                 int zOrder; //optional, [0, 100] //0 (default): bottom most, 100: top most
 
-		     EV_RENDER_MODE_TYPE renderMode;//RENDER_MODE_HIDDEN: Crop, RENDER_MODE_FIT: Zoom to fit
-		     Region()
-		     	:uid(0)
-			     , x(0)
-		     	, y(0)
-		     	, width(0)
-		     	, height(0)
-	     		, zOrder(0)
-		     	, alpha(1.0)
-		     	, renderMode(EV_RENDER_MODE_HIDDEN)
-		     {}
+                 //  Optional
+                 //  [0, 1.0] where 0 denotes throughly transparent, 1.0 opaque
+                 double alpha;
 
-	     };
-	     int canvasWidth;
-     	int canvasHeight;
-     	const char* backgroundColor;//e.g. "#C0C0C0" in RGB
-     	const Region* regions;
-     	int regionCount;
-     	const char* appData;
-     	int appDataLength;
-     	EVVideoCompositingLayout()
-     		:canvasWidth(0)
-		     , canvasHeight(0)
-		     , backgroundColor(NULL)
-     		, regions(NULL)
-	     	, regionCount(0)
-	     	, appData(NULL)
-     		, appDataLength(0)
-     	{}
-    };
+                 EVRENDER_MODE_TYPE renderMode;//EV_RENDER_MODE_HIDDEN: Crop, RENDER_MODE_FIT: Zoom to fit
+                 Region()
+                                 :uid(0)
+                                 , x(0)
+                                 , y(0)
+                                 , width(0)
+                                 , height(0)
+                                 , zOrder(0)
+                                 , alpha(1.0)
+                                 , renderMode(EV_RENDER_MODE_HIDDEN)
+                 {}
+
+ };
 
 ```
+
+下表包含各参数的详细解释。
+
+| 名称 | 描述 |
+|:--|:--|
+| canvasWidth | 请忽略此参数。画布的宽度由 ConfigurePublisher() 方法设置而不是通过 canvasWidth 设置。 |
+| canvasHeight | 请忽略此参数。画布的高度由 ConfigurePublisher() 方法设置而不是通过 canvasHeight 设置。 |
+| backgroundColor | 用以定义屏幕(画布)的背景颜色，可根据 RGB 填写所需颜色对应的 6 位 符号 |
+| regions | AgoraRtcVideoCompositingRegion 的主播用户列表。频道内每位主播在屏幕上均可以有一个区域显示自己的头像或视频,下面会详细说明 |
+| appData | 应用程序自定义的数据 |
+
+Region的详细说明:
+
+| 名称 | 描述 |
+|:--|:--|
+|uid|待显示在该区域的主播用户 uid|
+|x[0.0,1.0]| 屏幕里该区域的横坐标|
+|y[0.0,1.0]|屏幕里该区域的横坐标|
+|width[0.0, 1.0]|该区域的实际宽度|
+|height[0.0, 1.0]|该区域的实际高度|
+|zOrder[0, 100]|用于定义图层。 0 表示该区域图像位于最下层，而 100 表示该区域图像位于最上层|
+|alpha[0.0, 1.0]|用于定义图像的透明度。 0 表示图像为透明的， 1 表示图像为完全不透明的|
+|renderMode: RENDER_MODE_HIDDEN(1)|经过裁减的|
+
 
 
 
