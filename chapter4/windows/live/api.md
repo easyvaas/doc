@@ -536,4 +536,48 @@ int MuteRemoteAudioStream(unsigned int uid, bool mute)
 | 返回值 | 0-成功，<0-失败 |
 
 
+#### 连麦-设置采集摄像头 （SetCurCamera）
+```
+  BOOL SetCurCamera(const char* deviceID)
+```
+设置采集要使用的摄像头设备id。参数说明：
+
+| 名称 | 描述 |
+|:--|:--|
+| deviceID | 摄像头设备id。|
+| 返回值 | 0-成功，<0-失败 |
+
+
+#### 连麦-获取当前采集摄像id （GetCurCameraID）
+```
+  void GetCurCameraID(std::string& cameraId)
+```
+设置采集要使用的摄像头设备id。参数说明：
+
+| 名称 | 描述 |
+|:--|:--|
+| cameraId | 当前使用的摄像头的设备id。|
+
+**注解**
+cameraId需要调用std::string::reserve预定一个足够大的空间。否则，cameraId的大小会超出默认为std::string分配的空间，造成重新分配内存空间，导致报错。
+目前定义MAX_DEV_ID_LENGTH=512，预定内存。
+
+#### 连麦-获取可以使用的所有摄像头（GetCameraDevices）
+```
+BOOL GetCameraDevices(OUT DevicesInfo* pVideoDev, OUT int& iDevCount, int maxDeviceCount)
+```
+
+| 名称 | 描述 |
+|:--|:--|
+| pVideoDev | 返回的可使用摄像头列表。|
+| iDevCount | 可使用的摄像头的数目。|
+| maxDeviceCount | 指定最多支持的摄像头数目。|
+
+**注解**
+DevicesInfo，包含设备名称：strDevName，设备id：strDevID。需要预先在对内存分配空间，并且由用户自行释放内存。
+
+
+
+
+
 
