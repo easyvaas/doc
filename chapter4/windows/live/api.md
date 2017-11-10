@@ -211,11 +211,10 @@ int JoinChannel(IN const char* appid, IN const char* channel_id="", IN unsigned 
 | 返回值 | 0-成功，<0-失败 |
 
 **注解**
-
     channelid不为空，则uid也不空。
     如果channelid和uid都为空，则服务器会创建一个新频道，并返回channelid和uid，而且此时必须为主播身份。进入成功即为频道拥有者。
     如果以主播身份，channelid和uid为之前保存的信息，则再次进入频道服务器就不会再创建新频道（后台的逻辑、
-    如果频道有了拥有者，则该channelid不能为其他用户使用，提示Room exist...
+    如果频道有了拥有者，则该channelid不能为其他用户使用，返回Room exist...
     连麦观众想要进入频道必须有channelid，如果不输入uid则服务器分配一个。
     
 #### 连麦-离开频道（LeaveChannel）
@@ -357,14 +356,14 @@ int ConfigurePublisher(const EVPublisherConfiguration& config)
 | config | 旁路推流信息 |
 | 返回值 | 0-成功，<0-失败 |
 
-#### 创建频道(CreateChannel)
+#### 设置旁路推流布局(SetVideoCompositingLayout)
 ```
-void CreateChannel(IN const char* appid, IN const char* channel_id, IN const int type = 1, IN const int record = 1)
+int SetVideoCompositingLayout(const EVVideoCompositingLayout& sei)
 ```
-* 房间拥有者调用此接口创建频道。
-* 对应的回调函数为onCreateChannel。如果创建成功会返回channel id和推流地址。房间拥有者自行决定是否进行旁路推流。
-* 可以指定要创建的channel_id，如果channel_id不存在，则创建成功，否则失败。如果不指定channel_id则服务器自动分配channel_id返回。
-* 一个频道只能有一个拥有者，其他用户只能作为连麦观众进入频道。
+该方法设置直播场景里的画中画布局。该方法仅适用于在旁路推流的场景。当您在服务器端进行推流时:
+
+* 您需要首先定义一个画布(canvas): 画布的宽和高(即视频的分辨率), 背景颜色，和您想在屏幕上显示的视频总数。
+* 您需要在画布上定义每个视频的位置和尺寸(无论画布定义的宽和高有多大，每个视频用0到1的相对位置和尺寸进行定义)，图片所在的图层，图片的透明度，视频是经过裁减的还是缩放到合适大小等等。
 
 参数说明:
 
