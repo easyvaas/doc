@@ -369,78 +369,55 @@ int SetVideoCompositingLayout(const EVVideoCompositingLayout& sei)
 
 | 名称 | 描述 |
 |:--|:--|
-| appid | appid |
-| channel_id | 频道id |
-| type | 0-不开启旁路直播，1-开启旁路直播，缺省为1 |
-| record | 是否开启录制，0-不开启录制，1-开启录制，缺省为1 |
+| EVVideoCompositingLayout | 旁路推流布局设置 |
 
-#### 用户获取鉴权信息 (UserAuth)
 ```
-void UserAuth(const char* appid, const char* channel_id, unsigned int uid, bool bNoUseUid = true)
+   struct EVVideoCompositingLayout
+   {
+	      struct Region {
+		     unsigned int uid;
+		     double x;//[0,1]
+		     double y;//[0,1]
+	     	double width;//[0,1]
+		     double height;//[0,1]
+	     	int zOrder; //optional, [0, 100] //0 (default): bottom most, 100: top most
+
+	     	//  Optional
+		     //  [0, 1.0] where 0 denotes throughly transparent, 1.0 opaque
+		     double alpha;
+
+		     EV_RENDER_MODE_TYPE renderMode;//RENDER_MODE_HIDDEN: Crop, RENDER_MODE_FIT: Zoom to fit
+		     Region()
+		     	:uid(0)
+			     , x(0)
+		     	, y(0)
+		     	, width(0)
+		     	, height(0)
+	     		, zOrder(0)
+		     	, alpha(1.0)
+		     	, renderMode(EV_RENDER_MODE_HIDDEN)
+		     {}
+
+	     };
+	     int canvasWidth;
+     	int canvasHeight;
+     	const char* backgroundColor;//e.g. "#C0C0C0" in RGB
+     	const Region* regions;
+     	int regionCount;
+     	const char* appData;
+     	int appDataLength;
+     	EVVideoCompositingLayout()
+     		:canvasWidth(0)
+		     , canvasHeight(0)
+		     , backgroundColor(NULL)
+     		, regions(NULL)
+	     	, regionCount(0)
+	     	, appData(NULL)
+     		, appDataLength(0)
+     	{}
+    };
+
 ```
-* 无论是作为频道拥有者还是作为连麦请求者都需要调用此接口。
-* 对应的回调函数onUserAuth返回，鉴权使用的key、channel key、用户uid和房间拥有者uid，即调用CreateChannel的用户uid。用户调用SetClientRole时，传入key值进行实际的鉴权。JoinChannel时传入channel key和用户uid。
-* 返回的鉴权key和uid都需要用户自行维护，以便做其他操作。
-  比如频道拥有者退出房间，其他用户会收到用户退出消息，此时需要判断退出用户是否为频道拥有者。如果是，需要调用LeaveChannel自动离开。
-
-参数说明:
-
-| 名称 | 描述 |
-|:--|:--|
-| appid | appid |
-| channel_id | 频道id |
-| uid | 用户uid，不是必须参数，调用时即可0 |
-| bNoUseUid  | 是否 使用uid，如果为true，则uid无效。如果false，需要传入有效uid。 |
-
-注释:onJoinChannelSuccess回调函数，在加入频道成功之后会返回uid，需要用户维护。
-
-### 用户进入频道通知 (JoinEVChannel)
-```
-void JoinEVChannel(IN const char* appid, IN const char* channel_id, IN const unsigned  int uid, int role)
-```
-
-* 通知业务服务器用户已经进入频道，该接口需要在onJoinChannelSuccess回调函数之后调用。
-* 对应的回调函数onJoinEVChannel。如果该接口执行成功，则整个进入频道流程完成。
-
-| 名称 | 描述 |
-|:--|:--|
-| appid | appid |
-| channel_id | 频道id |
-| uid | 用户uid，JoinChannel成功加入频道后返回的uid |
-| role | 用户角色, 0为连麦，1为主播，默认为连麦，主播需要传1 |
-
-### 用户离开频道通知 (LeaveEVChannel)
-```
-void LeaveEVChannel(IN const char* appid, IN const char* channel_id, IN unsigned int uid)
-```
-
-* 通知业务服务器用户已经离开频道，该接口需要在离开频道成功onLeaveChannel回调函数之后调用。
-* 对应的回调函数onLeaveEVChannel。如果该接口执行成功，则整个离开频道流程完成。
-
-| 名称 | 描述 |
-|:--|:--|
-| appid | appid |
-| channel_id | 频道id |
-| uid | 用户uid，JoinChannel成功加入频道后返回的uid |
-
-
-
-### 与业务服务器的心跳检测 (StartCommHeart)
-```
-void StartCommHeart(IN const char* appid, IN const char* channel_id, IN const unsigned int uid)
-```
-
-* 定时向服务器发送信息，告诉业务服务器还在频道内。
-* JoinEVChannel的回到函数onJoinEVChannel，通知业务服务器进入频道成功之后，调用该接口。
-* 如果用户离开频道，心跳会自动停止
-* 对应的回调函数onStartCommHeart。
-
-| 名称 | 描述 |
-|:--|:--|
-| appid | appid |
-| channel_id | 频道id |
-| uid | 用户uid，JoinChannel成功加入频道后返回的uid |
-
 
 
 
