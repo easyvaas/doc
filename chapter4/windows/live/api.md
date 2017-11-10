@@ -209,6 +209,7 @@ int JoinChannel(IN const char* appid, IN const char* channel_id="", IN unsigned 
 | type | 0：不开启旁路直播，1：开启旁路直播。默认为1。只有对主播此参数才有效。|
 | record |  0：不开启录制，1：开启录制，默认为1。只有对主播此参数才有效。|
 | 返回值 | 0-成功，<0-失败 |
+
 **注解**
 
     channelid不为空，则uid也不空。
