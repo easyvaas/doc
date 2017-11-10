@@ -4,7 +4,7 @@
 ---
 
 ### 2017-11-10
-> [Demo v1.1.0下载](https://github.com/easyvaas/sdk_demo_Windows/releases/download/v1.1.0/EVDemo_Setup.zip)
+> [Demo v1.1.0下载](https://github.com/easyvaas/EasyILive_Windows/releases/download/v1.1.0/EVDemo_Setup.zip)
 
 #### EVLive 1.1.0.0
 
