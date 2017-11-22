@@ -1,10 +1,10 @@
 ### 发送消息
 #### 接口说明
 
-| 名称 | 内容 | 
+| 名称 | 内容 |
 |:--|:--|
-| 接口名称     | /msg/send | 
-| 功能说明|   删除消息   |
+| 接口名称     | /msg/send |
+| 功能说明|   发送消息   |
 | 服务器地址| http://api.msg.easyvaas.com/v1/server/ |
 | 请求方式| GET |
 
@@ -25,10 +25,10 @@
 * 请求示例
 
 	```
-	POST_URL 
+	POST_URL
 	http://112.126.85.64:8081/v1/server/msg/send?appid=yizhibo&channel=test&userid=xyk&type=msg&level=5&save=true&filter=false
 
-    POST_BODY 
+    POST_BODY
     {"one":1}
 	```
 
@@ -49,9 +49,9 @@
 #### 错误码说明
 接口访问返回json字符串中state不为0，接口访问出错，错误说明如下
 
-| state | 错误描述 | 
-|:--|:--| 
-| 1     | 参数错误 | 
+| state | 错误描述 |
+|:--|:--|
+| 1     | 参数错误 |
 | 2     | 系统内部错误 |
 | 101   | appid错误 |
 | 102   | channel不存在 |
