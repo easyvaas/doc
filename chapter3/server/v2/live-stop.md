@@ -4,7 +4,7 @@
 | 名称 | 内容 |
 |:--|:--|
 | 接口名称     | /live/stop |
-| 功能说明|   直播恢复  |
+| 功能说明|   直播停止  |
 | 服务器地址| http://video.api.easyvaas.com/v2/server |
 | 请求方式| GET |
 
