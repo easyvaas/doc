@@ -9,6 +9,7 @@
 * [5. 项目可运行，但输入直播vid后，点击观看为何直接崩溃？](#1.5)
 * [6. 我集成了VR播放功能，但为何无法播放从网上找的VR链接？](#1.6)
 * [7. Xcode运行后控制台输出：Reason: image not found](#1.7)
+* [8. Xcode9运行后报错： "___llvm_profile_runtime", referenced from:](#1.8)
 
 
 <h3 id='1'> 集成易视云iOS SDK常见问题 </h3>
@@ -93,6 +94,18 @@ TARGETS->Build Settings 搜索 other linker，添加 -all_load
 ```
 
 ---
+
+<h4 id='1.8'> 8. Xcode9运行后报错： "___llvm_profile_runtime", referenced from: </h4>
+
+```
+由于Xcode9使用新版本的LLVM，对内部模块进行了改动，出现了该问题
+解：TARGETS->Build Settings 搜索 other linker，添加 -fprofile-instr-generate
+```
+
+---
+
+
+
 
 
 
