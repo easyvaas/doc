@@ -10,6 +10,7 @@
 * [6. 我集成了VR播放功能，但为何无法播放从网上找的VR链接？](#1.6)
 * [7. Xcode运行后控制台输出：Reason: image not found](#1.7)
 * [8. Xcode9运行后报错： "___llvm_profile_runtime", referenced from:](#1.8)
+* [9. 9. 错误信息中提示 ld: symbol(s) not found for architecture x86_64](#1.9)
 
 
 <h3 id='1'> 集成易视云iOS SDK常见问题 </h3>
@@ -100,6 +101,15 @@ TARGETS->Build Settings 搜索 other linker，添加 -all_load
 ```
 由于Xcode9使用新版本的LLVM，对内部模块进行了改动，出现了该问题
 解：TARGETS->Build Settings 搜索 other linker，添加 -fprofile-instr-generate
+```
+
+---
+
+<h4 id='1.9'> 9. 错误信息中提示 ld: symbol(s) not found for architecture x86_64 </h4>
+
+```
+为了避免由于framework中存在模拟器指令集，导致上线失败，并减少包体积，我们去除了模拟器的指令集
+解：请使用真机运行
 ```
 
 ---
