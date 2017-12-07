@@ -1,5 +1,21 @@
 ## Easyvaas iOS SDK 更新日志
 
+### **[demo 地址](https://github.com/easyvaas/EasyLive_iOS)**
+
+* 发布EVStreamer v1.2.1  (2017-12-07)
+
+*优化：*
+1. 适配连麦库的升级
+
+---
+
+* 版本 1.2.0  2017-11-08  
+
+*介绍：*
+整合各个模块，正式发布 v1.2.0
+
+---
+
 * 版本 1.1.10  2017-06-27
 > [下载地址](https://github.com/easyvaas/sdk_demo_iOS/releases/download/v1.1.10/sdk_demo_iOS_v1.1.10.zip)
   
